@@ -1,0 +1,52 @@
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 6.25%;
+	width:77%;
+	left:17%;
+height:auto;
+}
+iframe.pag{position:relative;
+	display:box;
+	border-style:hidden;
+	border-width:1px;
+	height:80%;
+	width:80%;
+	margin:0px;
+	padding:20px;
+	}
+
+div.descriere{
+position:fixed;
+width:17.2%;
+right:10px;
+height:100%;
+bottom:0%;
+}
+
+img.descriere{
+padding-left:10px;
+display:box;
+width:90%;
+height:38%;
+}
+
+img.icon{
+display:inline-block;
+height:5%;
+width:22%;}
+
+a.icon{
+bottom:-2%;
+padding:1%;
+border-style:none;
+height:auto;
+position:fixed}
+
+p.descriere{
+	display: inline-box;
+	color:orange;
+	font-size:1.3vw;
+	font-weight:bold;
+	text-align:center;
+	font-family:Bradley Hand ITC;}

@@ -1,0 +1,46 @@
+Table.search{border-width: 1px 1px 0 0;
+	width:250px;
+	height:40px;
+	top:20px;
+	position:fixed;
+	left:20px;}
+hr{
+	display:block;
+border-width:2px;
+border-color:blue;}
+p.comentarii{
+font-family:Forte;
+padding-left:300px;
+color:red;
+font-size:30px;
+text-align:left;}
+p.comentariu{
+font-family:Rockwell;color:#00BFFF;font-size:1.3vw;text-align:left;font-weight:bold;}
+div.principal{width:41.67%;
+	height:auto;
+	border:1px solid orange;
+	position:relative;
+	top:10px;
+	padding:20px;
+	left:30%;}
+a.ref{display: block;color:red;font-family:Chiller;
+font-size:30px;text-align:center;font-weight:bold;
+border-style:hidden;
+padding-bottom:10px;}
+img.post{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+	width:45%;
+	height:25%;
+	padding:5px;}
+p.postare{
+	font-family: Ink Free;
+	font-size:1.3vw;
+	color:#ffa700;
+	font-weight:bold;
+	text-align:left;
+	padding-left:15px;
+	padding-right:15px;}
+fieldset{display:box;
+border-style:1px;border-color:green;padding:0px;position:relative;height:23.15%;width:31.25%;left:18.23%;}
