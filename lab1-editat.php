@@ -2,7 +2,7 @@
 <title> Laboratorul 1 - Forms </title>
 <body>
 <?php
-//print_r($_POST);
+print_r($_POST);
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -13,7 +13,7 @@ if (mysqli_connect_errno()) {
 $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'sadlsadl')." ')";
 mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
-//echo $cerere;
+echo $cerere;
 ?>
 <FORM method="POST" action="lab1.php">
 <table border=0 width="40%" align="left">
