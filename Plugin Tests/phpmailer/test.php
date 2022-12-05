@@ -1,0 +1,10 @@
+<HTML>
+
+
+<?php
+echo getcwd();
+
+
+
+
+?>
