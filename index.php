@@ -1,4 +1,13 @@
 <HTML>
+
+
+<?php
+echo getcwd();
+
+
+
+
+?>
 <HEAD>
 <Title> Home </Title>
 <link rel="stylesheet" type="text/css" href="CSS/poze.css">
