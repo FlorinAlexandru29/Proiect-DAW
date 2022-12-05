@@ -15,7 +15,7 @@ mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
 echo $cerere;
 ?>
-<FORM method="POST" action="lab1.php">
+<FORM method="POST" action="lab1-editat.php">
 <table border=0 width="40%" align="left">
   <tr>
     <td with="30%">Nume* :</td>
