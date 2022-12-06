@@ -48,8 +48,27 @@ else {
 }
 
 ?>
+<?php
+
+$username=$_POST['username'];
+if(isset($_POST['submit'])){
+  setcookie("user_name", $username, time()+ 60,'/');
+}
+
+?>
+
+
 <div>
 
+<FORM method="POST" action='index.php'>
+<table border=0 width="40%" align="left">
+  <tr>
+    <td with="30%">User* :</td>
+    <td with="70%"><INPUT TYPE="text" name="username" required></td>
+  </tr>
+  <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
+  </table>
+</form>
   </body>
 </html>
 
