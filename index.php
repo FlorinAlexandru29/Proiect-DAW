@@ -48,6 +48,13 @@
     </div>
   </div>
 </div>
+
+<div>
+<?php 
+
+include 'login.php' ?>
+
+</div>
   </body>
 </html>
 
