@@ -46,7 +46,8 @@ include 'login.php'
 </div>
 <?php
 
- echo 'Hello:'.$_COOKIE["user_name"];
+if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
+else echo 'Hello: Guest';
 
 ?>
 <div>
