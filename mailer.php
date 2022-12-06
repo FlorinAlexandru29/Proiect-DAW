@@ -7,8 +7,7 @@ $mail = new PHPMailer(true);
 
 $alert = '';
 
-if(isset($_POST['submit']))
-{
+
     
 $name='nume';
 $email='email';
@@ -41,5 +40,5 @@ $message='mesaj';
         $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
     }
 
-}
+
 
