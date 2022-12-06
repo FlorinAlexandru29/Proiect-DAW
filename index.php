@@ -58,7 +58,7 @@ else {
 
 <div>
 
-<FORM method="POST">
+<FORM method="POST" action='index.php'>
 <table border=0 width="40%" align="left">
   <tr>
     <td with="30%">User* :</td>
