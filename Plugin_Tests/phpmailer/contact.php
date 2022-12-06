@@ -16,15 +16,14 @@ $mail->SMTPDebug  = 5;
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
 //From email address and name
-$mail->From = $_POST['email'];
-$mail->FromName = $_POST['nume'];
+$mail->From = 'florin-alexandru.anghelescu@s.unibuc.ro';
+$mail->FromName = 'Florin Anghelescu';
 
 //To address and name
 $mail->addAddress("lure.production@gmail.com", "Lure Prod");
-$mail->addAddress("recepient1@example.com"); //Recipient name is optional
 
 //Address to which recipient will reply
-$mail->addReplyTo($_POST['email'], "Reply");
+$mail->addReplyTo('florin-alexandru.anghelescu@s.unibuc.ro', "Reply");
 
 
 //Send HTML or Plain Text email
