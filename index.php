@@ -1,3 +1,8 @@
+<?php 
+
+include 'login.php' ?>
+
+</div>
 <!doctype html>
 <html lang="en">
   <head>
@@ -48,13 +53,13 @@
     </div>
   </div>
 </div>
+<?php
 
+echo $_COOKIE["user_name"];
+
+?>
 <div>
-<?php 
 
-include 'login.php' ?>
-
-</div>
   </body>
 </html>
 
