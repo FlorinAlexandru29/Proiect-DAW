@@ -41,19 +41,18 @@
 </div>
 <?php
 
+$username=$_POST['username'];
+if(isset($_POST['submit'])){
+  setcookie("user_name", $username, time()+ 60,'/');
+}
+
 if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
 else {
   echo 'Hello: Guest';
   setcookie("user_name", "guest", time()+ 60,'/'); // expires after 60 seconds
 }
 
-?>
-<?php
 
-$username=$_POST['username'];
-if(isset($_POST['submit'])){
-  setcookie("user_name", $username, time()+ 60,'/');
-}
 
 ?>
 
