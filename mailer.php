@@ -1,21 +1,28 @@
 <?php
 
+//sursa: https://github.com/PHPMailer/PHPMailer
+//tutorial: https://alexwebdevelop.com/phpmailer-tutorial/
+//Gmail restriction: https://support.google.com/mail/answer/22370?hl=en
 
-require_once('Plugin_Tests/phpmailer/class.phpmailer.php');
+require_once('class.phpmailer.php');
+require_once('mail_config.php');
 
-$mail = new PHPMailer(true);
 
-$alert = '';
+$mail = new PHPMailer(true); 
 
+$mail->IsSMTP();
+
+$name=$_POST['nume'];
+    $email=$_POST['email'];
+    $telephone=$_POST['telefon'];
+    $message=$_POST['mesaj'];
+
+    if(isset($_POST['submit'])){
 
     
-$name='nume';
-$email='email';
-$telephone='076456465465';
-$message='mesaj';
-
-    try{
-        $mail->SMTPAuth   = true; 
+try {
+ 
+  $mail->SMTPAuth   = true; 
         $to='lure.production@gmail.com';
         $nume='Lure Prod';
       
@@ -33,12 +40,13 @@ $message='mesaj';
 
         $mail->send();
         $altert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
+  echo "Message Sent OK</p>\n";
+}
 
+
+  catch(Exception $e){
+    $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
+}
     }
-    
-    catch(Exception $e){
-        $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
-    }
 
-
-
+?>

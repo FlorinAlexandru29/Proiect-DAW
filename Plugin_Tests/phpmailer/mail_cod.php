@@ -12,11 +12,14 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
-$name='nume';
-    $email='email';
-    $telephone='076456465465';
-    $message='mesaj';
+$name=$_POST['nume'];
+    $email=$_POST['email'];
+    $telephone=$_POST['telefon'];
+    $message=$_POST['mesaj'];
 
+    if(isset($_POST['submit'])){
+
+    
 try {
  
   $mail->SMTPAuth   = true; 
@@ -38,9 +41,12 @@ try {
         $mail->send();
         $altert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
   echo "Message Sent OK</p>\n";
-} catch (phpmailerException $e) {
-  echo $e->errorMessage(); //error from PHPMailer
-} catch (Exception $e) {
-  echo $e->getMessage(); //error from anything else!
 }
+
+
+  catch(Exception $e){
+    $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
+}
+    }
+
 ?>
