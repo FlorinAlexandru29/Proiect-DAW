@@ -32,6 +32,7 @@ try {
         $mail->send();
         $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
   echo "Message Sent OK</p>\n";
+  unset($_POST);
 }
 
 
