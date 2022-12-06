@@ -1,5 +1,6 @@
 <?php 
 include 'resurse/mailer.php';
+unset($_POST['submit']);
 ?>
 <html>
 <title> Contact </title>
