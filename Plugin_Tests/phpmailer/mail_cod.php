@@ -19,28 +19,31 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
+$name='nume';
+    $email=email;
+    $telephone='076456465465';
+    $message='mesaj';
 
 try {
  
-  $mail->SMTPDebug  = 5;                     
   $mail->SMTPAuth   = true; 
+        $to='lure.production@gmail.com';
+        $nume='Lure Prod';
+      
+        $mail->SMTPSecure = "ssl";                 
+        $mail->Host       = "smtp.gmail.com";    
+        $mail->Port       = 465;                  
+        $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
+        $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
+        $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
+        $mail->AddAddress('lure.production@gmail.com', 'Lure Prod');
 
-  $to='florin-alexandru.anghelescu@s.unibuc.ro';
-  $nume='Florin Anghelescu';
+        $mail->isHTML(true);
+        $mail->Subject = 'Contact:' .$name;
+        $mail->Body = "Nume: $nume <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
 
-  $mail->SMTPSecure = "ssl";                 
-  $mail->Host       = "smtp.gmail.com";    
-  $mail->Port       = 465;                   
-  $mail->Username   = $username;  			// GMAIL username
-  $mail->Password   = $password;            // GMAIL password
-  $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
-  $mail->AddAddress($to, $nume);
- 
-  $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
-  $mail->Subject = 'Cadou';
-  $mail->AltBody = 'To view this post you need a compatible HTML viewer!'; 
-  $mail->MsgHTML($message);
-  $mail->Send();
+        $mail->send();
+        $altert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
   echo "Message Sent OK</p>\n";
 } catch (phpmailerException $e) {
   echo $e->errorMessage(); //error from PHPMailer
