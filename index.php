@@ -2,7 +2,7 @@
 
 include 'login.php' 
 
-if ($_COOKIE["user_name"]) setcookie("user_name", "guest", time()+ 60,'/');
+if (isset($_COOKIE["user_name"])) setcookie("user_name", "guest", time()+ 60,'/');
 
 
 ?>
