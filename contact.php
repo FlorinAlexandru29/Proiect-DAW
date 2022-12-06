@@ -35,7 +35,10 @@ try {
         $mail->send();
         $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>"; //folosit pentru a afisa mesaj de confirmare, se poate folosi bootstrap
   echo "Message Sent OK</p>\n";
-
+    unset($name);
+    unset($email);
+    unset($telephone);
+    unset($message);
 }
 
 
