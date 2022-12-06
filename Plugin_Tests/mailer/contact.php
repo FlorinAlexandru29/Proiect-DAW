@@ -15,13 +15,15 @@ require_once "vendor/autoload.php";
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
 //From email address and name
-$mail->From = 'florin-alexandru.anghelescu@s.unibuc.ro';
-$mail->FromName = 'Florin Anghelescu';
 
+$mail->SetFrom("florin-alexandru.anghelescu@s.unibuc.ro","Florin Anghelescu", 0);
 //To address and name
+
 $mail->addAddress("lure.production@gmail.com", "Lure Prod");
 
 //Address to which recipient will reply
+
+
 $mail->addReplyTo('florin-alexandru.anghelescu@s.unibuc.ro', "Reply");
 
 
