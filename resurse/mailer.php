@@ -12,8 +12,7 @@ $mail->IsSMTP();
     $email=$_POST['email'];
     $telephone=$_POST['telefon'];
     $message=$_POST['mesaj'];
-    $submited=FALSE;
-    if((isset($_POST['submit']))&&(! $submited)){
+    if((isset($_POST['submit']))&&(!$submited)){
 try {
  
         $mail->SMTPAuth   = true; 
