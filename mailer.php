@@ -13,7 +13,7 @@ $name='nume';
     $telephone='076456465465';
     $message='mesaj';
 
-    
+    if(isset($_POST['submit'])){
 try {
  
   $mail->SMTPAuth   = true; 
@@ -41,6 +41,6 @@ try {
   catch(Exception $e){
     $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
 }
-    
+}
 
 ?>
