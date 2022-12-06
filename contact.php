@@ -5,7 +5,7 @@ include 'resurse/mailer.php';
 <title> Contact </title>
 <body>
 
-<FORM method="POST">
+<FORM method="POST" target="_blank">
 <table border=0 width="40%" align="left">
   <tr>
     <td with="30%">Nume* :</td>
