@@ -5,7 +5,6 @@
 //Gmail restriction: https://support.google.com/mail/answer/22370?hl=en
 
 require_once('class.phpmailer.php');
-require_once('mail_config.php');
 
 
 $mail = new PHPMailer(true); 
