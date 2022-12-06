@@ -5,7 +5,7 @@ include 'mailer.php';
 <title> Contact </title>
 <body>
 
-<FORM method="POST" action="lab1-editat.php">
+<FORM method="POST">
 <table border=0 width="40%" align="left">
   <tr>
     <td with="30%">Nume* :</td>
