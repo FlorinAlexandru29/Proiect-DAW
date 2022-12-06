@@ -8,10 +8,10 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
-$name='nume';
-    $email='email';
-    $telephone='076456465465';
-    $message='mesaj';
+$name=$_POST['nume'];
+    $email=$_POST['email'];
+    $telephone=$_POST['telefon'];
+    $message=$_POST['mesaj'];
 
     if(isset($_POST['submit'])){
 try {
