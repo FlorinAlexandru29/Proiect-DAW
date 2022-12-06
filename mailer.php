@@ -1,8 +1,5 @@
 <?php
 
-//sursa: https://github.com/PHPMailer/PHPMailer
-//tutorial: https://alexwebdevelop.com/phpmailer-tutorial/
-//Gmail restriction: https://support.google.com/mail/answer/22370?hl=en
 
 require_once('class.phpmailer.php');
 
@@ -11,12 +8,10 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
-$name=$_POST['nume'];
-    $email=$_POST['email'];
-    $telephone=$_POST['telefon'];
-    $message=$_POST['mesaj'];
-
-    if(isset($_POST['submit'])){
+$name='nume';
+    $email='email';
+    $telephone='076456465465';
+    $message='mesaj';
 
     
 try {
@@ -46,6 +41,6 @@ try {
   catch(Exception $e){
     $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
 }
-    }
+    
 
 ?>
