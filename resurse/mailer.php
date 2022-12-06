@@ -11,8 +11,9 @@ $mail->IsSMTP();
     $name=$_POST['nume'];
     $email=$_POST['email'];
     $telephone=$_POST['telefon'];
-    $message=$_POST['mesaj'];
-    if((isset($_POST['submit']))&&(!$submited)){
+    $message=$_POST['submit'];
+
+    if(isset($_POST['submit'])){
 try {
  
         $mail->SMTPAuth   = true; 
@@ -31,7 +32,7 @@ try {
         $mail->send();
         $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>"; //folosit pentru a afisa mesaj de confirmare, se poate folosi bootstrap
   echo "Message Sent OK</p>\n";
-        $submited=TRUE;
+  unset($_POST['submit']);
 }
 
 
