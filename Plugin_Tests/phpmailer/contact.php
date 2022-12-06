@@ -36,11 +36,3 @@ try {
 }
 
 ?>
-
-
-
-
-
-
-
-<FORM method="POST" action="contact.php">
