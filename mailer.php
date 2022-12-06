@@ -8,7 +8,7 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
-$name=$_POST['nume'];
+    $name=$_POST['nume'];
     $email=$_POST['email'];
     $telephone=$_POST['telefon'];
     $message=$_POST['mesaj'];
@@ -16,10 +16,7 @@ $name=$_POST['nume'];
     if(isset($_POST['submit'])){
 try {
  
-  $mail->SMTPAuth   = true; 
-        $to='lure.production@gmail.com';
-        $nume='Lure Prod';
-      
+        $mail->SMTPAuth   = true; 
         $mail->SMTPSecure = "ssl";                 
         $mail->Host       = "smtp.gmail.com";    
         $mail->Port       = 465;                  
@@ -30,7 +27,7 @@ try {
 
         $mail->isHTML(true);
         $mail->Subject = 'Contact:' .$name;
-        $mail->Body = "Nume: $nume <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
+        $mail->Body = "Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
 
         $mail->send();
         $altert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
