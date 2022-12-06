@@ -4,7 +4,13 @@
 
 
 <?php
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require_once('class.phpmailer.php');
+
 $mail->SMTPDebug  = 5;   
 //PHPMailer Object
 $mail = new PHPMailer(true); //Argument true in constructor enables exceptions
