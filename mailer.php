@@ -13,10 +13,11 @@ $alert = '';
 
 if(isset($_POST['submit']))
 {
-    $name=$_POST['nume'];
-    $email=$_POST['email'];
-    $telephone=$_POST['telefon'];
-    $message=$_POST['mesaj'];
+    
+$name='nume';
+$email='email';
+$telephone='076456465465';
+$message='mesaj';
 
     try{
         $mail->SMTPAuth   = true; 
