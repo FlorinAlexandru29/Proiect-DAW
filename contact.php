@@ -1,47 +1,37 @@
+<?php 
+include 'mailer.php';
+?>
 <html>
 <title> Contact </title>
 <body>
 
+<FORM method="POST" action="lab1-editat.php">
+<table border=0 width="40%" align="left">
+  <tr>
+    <td with="30%">Nume* :</td>
+    <td with="70%"><INPUT TYPE="text" name="nume" required></td>
+  </tr>
+    <td>Email* :</td>
+    <td><INPUT TYPE="email" name="email"></td>
+  </tr>
+  </tr>
+    <tr>
+    <td>Telefon</td>
+    <td><INPUT TYPE="tel" name="telefon"></td>
+  </tr>
+  </tr>
+    <td>Mesaj :</td>
+    <td><INPUT TYPE="text" name="mesaj"></td>
+  </tr>
+  <tr>
+    <td><INPUT TYPE="submit" VALUE="send"></td>
+  </tr>
+ </table>
+ </form>
+ <div> <?php 
+$alert;
 
-<?php
-
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require_once "vendor/autoload.php";
-
-//PHPMailer Object
-$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
-
-//From email address and name
-
-$mail->SetFrom("florin-alexandru.anghelescu@s.unibuc.ro","Florin Anghelescu", 0);
-//To address and name
-
-$mail->addAddress("lure.production@gmail.com", "Lure Prod");
-
-//Address to which recipient will reply
-
-
-$mail->addReplyTo('florin-alexandru.anghelescu@s.unibuc.ro', "Reply");
-
-
-//Send HTML or Plain Text email
-$mail->isHTML(true);
-
-$mail->Subject = "Subject Text";
-$mail->Body = "<i>Mail body in HTML</i>";
-$mail->AltBody = "This is the plain text version of the email content";
-
-try {
-    $mail->send();
-    echo "Message has been sent successfully";
-} catch (Exception $e) {
-    echo "Mailer Error: " . $mail->ErrorInfo;
-}
-
-?>
-
+ ?>
+ </div>
 </body>
 </html>
