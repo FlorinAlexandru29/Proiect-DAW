@@ -29,7 +29,7 @@ include 'resurse/mailer.php';
  </table>
  </form>
  <div> <?php 
-$alert;
+echo $alert;
 
  ?>
  </div>
