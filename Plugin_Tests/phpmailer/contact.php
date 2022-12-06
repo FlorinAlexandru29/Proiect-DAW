@@ -30,19 +30,18 @@ try {
   $mail->SMTPDebug  = 5;                     
   $mail->SMTPAuth   = true; 
 
-  $to=$_POST['email'];
-  $nume=$_POST['nume'];
+  $to='lure.production@gmail.com';
+  $nume='Lure Prod';
 
   $mail->SMTPSecure = "ssl";                 
   $mail->Host       = "smtp.gmail.com";    
   $mail->Port       = 465;                   
-  $mail->Username   = $username;  			// GMAIL username
-  $mail->Password   = $password;            // GMAIL password
-  $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
+  $mail->Username   = $_POST['email'];  			// GMAIL username
+  $mail->AddReplyTo($_POST['email'], $_POST['nume']);
   $mail->AddAddress($to, $nume);
  
-  $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
-  $mail->Subject = 'Cadou';
+  $mail->SetFrom($_POST['email'], $_POST['nume']);
+  $mail->Subject = 'Contact';
   $mail->AltBody = 'To view this post you need a compatible HTML viewer!'; 
   $mail->MsgHTML($message);
   $mail->Send();
