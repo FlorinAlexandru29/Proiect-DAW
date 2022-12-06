@@ -13,7 +13,7 @@ $mail = new PHPMailer(true);
 $mail->IsSMTP();
 
 $name='nume';
-    $email=email;
+    $email='email';
     $telephone='076456465465';
     $message='mesaj';
 
