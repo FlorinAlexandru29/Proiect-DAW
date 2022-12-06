@@ -1,6 +1,4 @@
-<?php 
-include 'mailer.php';
-?>
+
 <html>
 <title> Contact </title>
 <body>
