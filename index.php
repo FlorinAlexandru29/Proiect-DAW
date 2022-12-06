@@ -1,4 +1,19 @@
+<?php
 
+$username=$_POST['username'];
+if(isset($_POST['submit'])){
+  setcookie("user_name", $username, time()+ 60,'/');
+  header('Location:index.php');
+}
+
+if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
+else {
+  echo 'Hello: Guest';
+ // expires after 60 seconds
+}
+
+
+?>
 
 </div>
 <!doctype html>
@@ -39,21 +54,7 @@
     </div>
   </div>
 </div>
-<?php
 
-$username=$_POST['username'];
-if(isset($_POST['submit'])){
-  setcookie("user_name", $username, time()+ 60,'/');
-}
-
-if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
-else {
-  echo 'Hello: Guest';
- // expires after 60 seconds
-}
-
-
-?>
 
 
 <div>
