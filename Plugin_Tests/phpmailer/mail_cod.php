@@ -7,13 +7,6 @@
 require_once('class.phpmailer.php');
 require_once('mail_config.php');
 
-// Mesajul
-$message = "Line 1 Line 2 Line 3";
-
-// În caz că vre-un rând depășește N caractere, trebuie să utilizăm
-// wordwrap()
-$message = wordwrap($message, 6, "<br />\n");
-
 
 $mail = new PHPMailer(true); 
 
