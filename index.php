@@ -49,9 +49,8 @@ if(isset($_POST['submit'])){
 if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
 else {
   echo 'Hello: Guest';
-  setcookie("user_name", "guest", time()+ 60,'/'); // expires after 60 seconds
+ // expires after 60 seconds
 }
-
 
 
 ?>
