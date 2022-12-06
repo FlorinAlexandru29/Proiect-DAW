@@ -1,7 +1,5 @@
 <?php 
 
-include 'login.php' 
-
 if (isset($_COOKIE["user_name"])) setcookie("user_name", "guest", time()+ 60,'/');
 
 
