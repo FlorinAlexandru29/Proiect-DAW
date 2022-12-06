@@ -30,13 +30,13 @@ try {
         $mail->Body = "Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
 
         $mail->send();
-        $altert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
+        $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
   echo "Message Sent OK</p>\n";
 }
 
 
   catch(Exception $e){
-    $altert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
+    $alert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
 }
 }
 
