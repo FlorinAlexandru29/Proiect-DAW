@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('Plugin_Tests/phpmailer/class.phpmailer.php');
+require_once('phpmailer/class.phpmailer.php');
 
 
 $mail = new PHPMailer(true); 

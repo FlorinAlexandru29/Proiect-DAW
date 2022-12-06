@@ -1,5 +1,5 @@
 <?php 
-include 'mailer.php';
+include 'resurse/mailer.php';
 ?>
 <html>
 <title> Contact </title>
