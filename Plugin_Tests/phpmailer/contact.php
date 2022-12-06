@@ -4,53 +4,37 @@
 
 
 <?php
-
-//sursa: https://github.com/PHPMailer/PHPMailer
-//tutorial: https://alexwebdevelop.com/phpmailer-tutorial/
-//Gmail restriction: https://support.google.com/mail/answer/22370?hl=en
-
 require_once('class.phpmailer.php');
-require_once('mail_config.php');
 
-// Mesajul
-$message = "Line 1 Line 2 Line 3";
+//PHPMailer Object
+$mail = new PHPMailer(true); //Argument true in constructor enables exceptions
 
-// În caz că vre-un rând depășește N caractere, trebuie să utilizăm
-// wordwrap()
-$message = wordwrap($message, 6, "<br />\n");
+//From email address and name
+$mail->From = $_POST['email'];
+$mail->FromName = $_POST['nume'];
+
+//To address and name
+$mail->addAddress("lure.production@gmail.com", "Lure Prod");
+$mail->addAddress("recepient1@example.com"); //Recipient name is optional
+
+//Address to which recipient will reply
+$mail->addReplyTo($_POST['email'], "Reply");
 
 
-$mail = new PHPMailer(true); 
+//Send HTML or Plain Text email
+$mail->isHTML(true);
 
-$mail->IsSMTP();
-
+$mail->Subject = "Subject Text";
+$mail->Body = "<i>Mail body in HTML</i>";
+$mail->AltBody = "This is the plain text version of the email content";
 
 try {
- 
-  $mail->SMTPDebug  = 5;                     
-  $mail->SMTPAuth   = true; 
-
-  $to='lure.production@gmail.com';
-  $nume='Lure Prod';
-
-  $mail->SMTPSecure = "ssl";                 
-  $mail->Host       = "smtp.gmail.com";    
-  $mail->Port       = 465;                   
-  $mail->Username   = $_POST['email'];  			// GMAIL username
-  $mail->AddReplyTo($_POST['email'], $_POST['nume']);
-  $mail->AddAddress($to, $nume);
- 
-  $mail->SetFrom($_POST['email'], $_POST['nume']);
-  $mail->Subject = 'Contact';
-  $mail->AltBody = 'To view this post you need a compatible HTML viewer!'; 
-  $mail->MsgHTML($message);
-  $mail->Send();
-  echo "Message Sent OK</p>\n";
-} catch (phpmailerException $e) {
-  echo $e->errorMessage(); //error from PHPMailer
+    $mail->send();
+    echo "Message has been sent successfully";
 } catch (Exception $e) {
-  echo $e->getMessage(); //error from anything else!
+    echo "Mailer Error: " . $mail->ErrorInfo;
 }
+
 ?>
 
 
