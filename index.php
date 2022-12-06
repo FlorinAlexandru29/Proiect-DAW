@@ -1,6 +1,6 @@
 <?php 
 
-if (isset($_COOKIE["user_name"])) setcookie("user_name", "guest", time()+ 60,'/');
+include 'login.php' 
 
 
 ?>
@@ -46,7 +46,8 @@ if (isset($_COOKIE["user_name"])) setcookie("user_name", "guest", time()+ 60,'/'
 </div>
 <?php
 
-echo 'Hello:'.$_COOKIE["user_name"];
+if (isset($_COOKIE["user_name"])) echo 'Hello: Guest";
+else echo 'Hello:'.$_COOKIE["user_name"];
 
 ?>
 <div>
