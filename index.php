@@ -1,6 +1,11 @@
 <?php 
 
-include 'login.php' ?>
+include 'login.php' 
+
+if ($_COOKIE["user_name"]) setcookie("user_name", "guest", time()+ 60,'/');
+
+
+?>
 
 </div>
 <!doctype html>
@@ -42,7 +47,7 @@ include 'login.php' ?>
   </div>
 </div>
 <?php
-if ($_COOKIE["user_name"]) setcookie("user_name", "guest", time()+ 60,'/');
+
 echo 'Hello:'.$_COOKIE["user_name"];
 
 ?>
