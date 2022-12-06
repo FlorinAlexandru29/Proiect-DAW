@@ -30,9 +30,9 @@ try {
         $mail->Body = "Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
 
         $mail->send();
-        $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>";
+        $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>"; //folosit pentru a afisa mesaj de confirmare, se poate folosi bootstrap
   echo "Message Sent OK</p>\n";
-  unset($_POST);
+  unset($_POST['submit']);
 }
 
 

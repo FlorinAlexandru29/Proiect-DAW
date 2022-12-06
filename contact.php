@@ -29,7 +29,7 @@ include 'resurse/mailer.php';
  </table>
  </form>
  <div> <?php 
-echo $alert;
+echo $alert; //afirsare mesaj confirmare
 
  ?>
  </div>
