@@ -24,7 +24,7 @@ include 'mailer.php';
     <td><INPUT TYPE="text" name="mesaj"></td>
   </tr>
   <tr>
-    <td><INPUT TYPE="submit" VALUE="send"></td>
+    <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
   </tr>
  </table>
  </form>
