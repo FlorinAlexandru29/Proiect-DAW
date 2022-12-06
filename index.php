@@ -55,7 +55,7 @@ include 'login.php' ?>
 </div>
 <?php
 
-echo $_COOKIE["user_name"];
+echo 'Hello:'.$_COOKIE["user_name"];
 
 ?>
 <div>
