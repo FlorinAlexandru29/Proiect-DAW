@@ -1,5 +1,5 @@
 <html>
-<title> Laboratorul 1 - Forms </title>
+<title> Contact </title>
 <body>
 
 
@@ -43,27 +43,5 @@ try {
 
 ?>
 
-
-
-
-
-
-
-<FORM method="POST" action="contact.php">
-<table border=0 width="40%" align="left">
-  <tr>
-    <td with="30%">Nume* :</td>
-    <td with="70%"><INPUT TYPE="text" name="nume" required></td>
-  </tr>
-  <tr>
-    <td>Email* :</td>
-    <td><INPUT TYPE="email" name="email"></td>
-  </tr>
-  </tr>
-    <td><INPUT TYPE="reset" VALUE="reset"></td>
-    <td><INPUT TYPE="submit" VALUE="send"></td>
-  </tr>
- </table>
- </form>
 </body>
 </html>
