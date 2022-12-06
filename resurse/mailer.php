@@ -8,6 +8,9 @@ $mail = new PHPMailer(true);
 
 $mail->IsSMTP();
 
+$mail->SMTPDebug = 2;
+
+
     $name=$_POST['nume'];
     $email=$_POST['email'];
     $telephone=$_POST['telefon'];
