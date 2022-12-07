@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
 
 if (isset($_COOKIE["user_name"])) echo 'Hello:'.$_COOKIE["user_name"];
 else {
-  echo 'Hello: Guest';
+  echo 'Hello: guest';
  // expires after 60 seconds
 }
 
@@ -66,6 +66,11 @@ else {
     <td with="70%"><INPUT TYPE="text" name="username" required></td>
   </tr>
   <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
+
+<?php
+if ([$_COOKIE["user_name"]!="guest"]) echo "<td><INPUT TYPE='submit' name='submit' VALUE='send'></td>";
+?>
+  
   </table>
 </form>
   </body>
