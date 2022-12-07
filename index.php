@@ -3,12 +3,6 @@
 $username=$_POST['username'];
 if(isset($_POST['login']))
 {
-
-
-
-
-
-
   setcookie("user_name", $username, time()+ 60,'/');
   header('Location:index.php');
 }
@@ -66,7 +60,7 @@ else {
   <tr>
   <td>
 
-  <Button TYPE='button' VALUE="Creaza Cont"> <a href='app/creare_cont.php'> </a> </button> 
+   <a href='creare_cont.php'><Button TYPE='submit' VALUE="Creaza Cont"> </button> </a> 
 
   </td></tr>
   </table>
