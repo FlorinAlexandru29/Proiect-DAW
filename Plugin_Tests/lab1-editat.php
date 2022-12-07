@@ -37,7 +37,7 @@ echo $cerere;
   </tr>
   <tr>
     <td><INPUT TYPE="reset" VALUE="reset"></td>
-    <td><INPUT TYPE="send" VALUE="send"></td>
+    <td><INPUT TYPE="submit" NAME="send" VALUE="send"></td>
   </tr>
  </table>
  </form>
