@@ -65,9 +65,9 @@ else {
   </form>
   <tr>
   <td>
-  <FORM action='creare_cont.php' name="creaza_cont">
-  <INPUT TYPE='submit' name="creare" VALUE="Creaza Cont">
-  </form>
+
+ <a href='creare_cont.php'> <Button TYPE='button' VALUE="Creaza Cont"> </button> </a>
+
   </td></tr>
   </table>
 
