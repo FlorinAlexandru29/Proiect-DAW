@@ -3,7 +3,7 @@
 <body>
 <?php
 print_r($_POST);
-if(isset($_POST['nume'])){
+if(isset($_POST['send'])){
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -37,7 +37,7 @@ echo $cerere;
   </tr>
   <tr>
     <td><INPUT TYPE="reset" VALUE="reset"></td>
-    <td><INPUT TYPE="submit" VALUE="submit"></td>
+    <td><INPUT TYPE="send" VALUE="send"></td>
   </tr>
  </table>
  </form>
