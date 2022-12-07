@@ -1,6 +1,10 @@
 <?php
 print_r($_POST);
 
+
+echo $_POST['email'];
+$conditie="select email FROM users where email='".$_POST['email']." ' ";
+
 if(isset($_POST['submit'])){
 if (($_POST['email'])==("select email FROM users where email='".$_POST['email']." ' ")) echo "Contul este deja creat" ;
 else {
