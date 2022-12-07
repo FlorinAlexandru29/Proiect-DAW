@@ -60,7 +60,7 @@ else {
   <tr>
   <td>
 
-   <a href='creare_cont.php'><Button TYPE='submit' VALUE="Creaza Cont"> </button> </a> 
+   <a href='creare_cont.php'> Creaza Cont </button> </a>  
 
   </td></tr>
   </table>
