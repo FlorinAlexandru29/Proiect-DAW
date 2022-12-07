@@ -11,7 +11,6 @@ $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90fedd
 
 $result = $connexiune->query($conditie);
 
-echo $result;
 
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();

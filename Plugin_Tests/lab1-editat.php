@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-$result = mysqli_query($conexiune, $cerere);
+$result = mysqli_query($conexiune, $conditie);
 
 mysqli_close($conexiune);
 
