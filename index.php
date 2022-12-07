@@ -15,6 +15,7 @@ if(isset($_POST['logout'])){
 
 if (isset($_COOKIE["user_name"])) {
   echo 'Hello:'.$_COOKIE["user_name"];
+  if($_COOKIE["user_name"]!="guest")
   echo "
   <FORM method='POST' action='index.php'>
   <INPUT TYPE='submit' name='logout' VALUE='logout'>
