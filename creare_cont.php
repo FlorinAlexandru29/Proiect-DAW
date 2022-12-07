@@ -4,6 +4,7 @@ print_r($_POST);
 
 echo $_POST['email'];
 $conditie="select email FROM users where email='".$_POST['email']." ' ";
+echo $conditie;
 
 if(isset($_POST['submit'])){
 
@@ -12,7 +13,7 @@ if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();
   }
-  
+
 if (($_POST['email'])==("select email FROM users where email='".$_POST['email']." ' ")) echo "Contul este deja creat" ;
 else {
 $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'sadlsadl')." ')";
