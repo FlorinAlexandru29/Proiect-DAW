@@ -11,7 +11,18 @@ if (mysqli_connect_errno()) {
 }
 
 $result = mysqli_query($conexiune, $conditie);
-echo $result;
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+  while($row = mysqli_fetch_assoc($result)) {
+      echo "id: " . $row["email"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+
+
+
 mysqli_close($conexiune);
 
 ?>
