@@ -50,6 +50,10 @@ else {
     <td with="30%">User* :</td>
     <td with="70%"><INPUT TYPE="text" name="username" required></td>
   </tr>
+  <tr>
+    <td with="30%">Password :</td>
+    <td with="70%"><INPUT TYPE="password" name="password" required></td>
+  </tr>
   <td><INPUT TYPE="submit" name="login" VALUE="login"></td>
   </table>
 </form>
