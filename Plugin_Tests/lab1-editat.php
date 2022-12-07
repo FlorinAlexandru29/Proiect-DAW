@@ -3,6 +3,7 @@
 <body>
 <?php
 print_r($_POST);
+if(isset($_POST['submit'])){
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -14,6 +15,7 @@ $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POS
 mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
 echo $cerere;
+}
 ?>
 <FORM method="POST" action="lab1-editat.php">
 <table border=0 width="40%" align="left">
