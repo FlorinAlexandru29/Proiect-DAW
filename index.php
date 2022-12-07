@@ -1,11 +1,15 @@
 <?php
 
 $username=$_POST['username'];
-if(isset($_POST['submit'])){
+if(isset($_POST['login'])){
   setcookie("user_name", $username, time()+ 60,'/');
   header('Location:index.php');
 }
 
+if(isset($_POST['logout'])){
+  setcookie("user_name", "guest", time()+ 60,'/');
+  header('Location:index.php');
+}
 
 
 
@@ -41,7 +45,7 @@ else {
     <td with="30%">User* :</td>
     <td with="70%"><INPUT TYPE="text" name="username" required></td>
   </tr>
-  <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
+  <td><INPUT TYPE="submit" name="login" VALUE="login"></td>
   </table>
 </form>
   </body>
