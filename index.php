@@ -6,7 +6,7 @@ if(isset($_POST['login'])){
   header('Location:index.php');
 }
 
-if(isset($_POST['logout'])){
+if(isset($_GET['logout'])){
   setcookie("user_name", "guest", time()+ 60,'/');
   header('Location:index.php');
 }
