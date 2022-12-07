@@ -63,9 +63,11 @@ else {
   </tr>
   <td><INPUT TYPE="submit" name="login" VALUE="login"></td>
   </form>
+  <tr>
+  <td>
   <FORM method='POST' action='creare_cont.php'>
   <INPUT TYPE='submit' name='creare' VALUE='Creaza Cont'>
-  
+  </td></tr>
   </table>
 </form>
   </body>
