@@ -6,8 +6,8 @@ if(isset($_POST['login'])){
   header('Location:index.php');
 }
 
-if(isset($_POST['logout'])){
-  setcookie("user_name", "guest", time()+ 60,'/');
+if(isset($_POST['logout'])){     //scriptul de logout
+  setcookie("user_name", "guest", time()- 60,'/');
   header('Location:index.php');
 }
 
@@ -15,7 +15,7 @@ if(isset($_POST['logout'])){
 
 if (isset($_COOKIE["user_name"])) {
   echo 'Hello:'.$_COOKIE["user_name"];
-  if($_COOKIE["user_name"]!="guest")
+  
   echo "
   <FORM method='POST' action='index.php'>
   <INPUT TYPE='submit' name='logout' VALUE='logout'>
