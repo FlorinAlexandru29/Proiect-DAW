@@ -2,8 +2,6 @@
 print_r($_POST);
 
 if(isset($_POST['submit'])){
-if (($_POST['email'])==("select email FROM users where email='".$_POST['email']." ' ")) echo "Contul este deja creat" ;
-else {
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 if (mysqli_connect_errno()) {
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -12,7 +10,7 @@ if (mysqli_connect_errno()) {
 $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'sadlsadl')." ')";
 mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
-echo $cerere;}
+echo $cerere;
 }
 ?>
 
