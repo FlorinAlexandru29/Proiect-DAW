@@ -1,7 +1,14 @@
 <?php
 
 $username=$_POST['username'];
-if(isset($_POST['login'])){
+if(isset($_POST['login']))
+{
+
+
+
+
+
+
   setcookie("user_name", $username, time()+ 60,'/');
   header('Location:index.php');
 }
@@ -55,6 +62,7 @@ else {
     <td with="70%"><INPUT TYPE="password" name="password" required></td>
   </tr>
   <td><INPUT TYPE="submit" name="login" VALUE="login"></td>
+  <td> <button type="button" action='creare_cont.php'> Creaza Cont </button> </td>
   </table>
 </form>
   </body>
