@@ -11,7 +11,7 @@ if (mysqli_connect_errno()) {
 }
 
 $result = mysqli_query($conexiune, $conditie);
-
+echo $result;
 mysqli_close($conexiune);
 
 ?>
