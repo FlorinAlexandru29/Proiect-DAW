@@ -10,7 +10,6 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-
 $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'sadlsadl')." ')";
 mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
@@ -38,7 +37,7 @@ echo $cerere;
   </tr>
   <tr>
     <td><INPUT TYPE="reset" VALUE="reset"></td>
-    <td><INPUT TYPE="submit" VALUE="send"></td>
+    <td><INPUT TYPE="submit" VALUE="submit"></td>
   </tr>
  </table>
  </form>
