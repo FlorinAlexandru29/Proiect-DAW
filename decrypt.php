@@ -20,7 +20,7 @@ $decryption_iv = '1234567891011121';
         <body>
         <FORM method="POST" action="decrypt.php">
           Email* :
-          <INPUT TYPE="parola" name="email" required> <br>
+          <INPUT TYPE="text" name="parola" required> <br>
 
           <INPUT TYPE="submit" name="submit" VALUE="send">
        </form>
