@@ -3,8 +3,10 @@ print_r($_POST);
 
 
 echo $_POST['email'];
-$conditie="select email FROM users where email='".$_POST['email']." ' ";
-echo $conditie;
+$conditie_email="select email FROM users where email='".$_POST['email']." ' ";
+$conditie_user="select user_name FROM users where email='".$_POST['user_name']." ' ";
+echo $conditie_email;
+echo $conditie_user;
 
 
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
@@ -17,13 +19,18 @@ if (mysqli_connect_errno()) {
 
 if(isset($_POST['submit'])){
 
+  $result_email = mysqli_query($conexiune, $conditie_email);
+  $result_user = mysqli_query($conexiune, $conditie_user);
 
-
-
-$cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'kalpsdnj')." ')";
-mysqli_query($conexiune, $cerere);
-mysqli_close($conexiune);
-echo $cerere;
+  if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune);}
+  if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune);}
+  else{
+    $cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".crypt($_POST['parola'],'kalpsdnj')." ')";
+    mysqli_query($conexiune, $cerere);
+    mysqli_close($conexiune);
+    echo $cerere;
+    header('Location:creare_cont.php');
+  }
 }
 ?>
 
@@ -33,21 +40,17 @@ echo $cerere;
 <FORM method="POST" action="creare_cont.php">
 <table border=0 width="40%" align="left">
   <tr>
-    <td with="30%">Nume* :</td>
-    <td with="70%"><INPUT TYPE="text" name="nume" required></td>
-  </tr>
-   <tr>
-    <td>Prenume* :</td>
-    <td><INPUT TYPE="text" name="prenume"></td>
+    <td with="30%">User Name:</td>
+    <td with="70%"><INPUT TYPE="text" name="user_name" required></td>
   </tr>
   <tr>
-    <td>Email* :</td>
-    <td><INPUT TYPE="email" name="email"></td>
+    <td>Email :</td>
+    <td><INPUT TYPE="email" name="email" required></td>
   </tr>
   </tr>
     <tr>
     <td>Parola:</td>
-    <td><INPUT TYPE="password" name="parola"></td>
+    <td><INPUT TYPE="password" name="parola" required></td>
   </tr>
   <tr>
     <td><INPUT TYPE="reset" VALUE="reset"></td>
