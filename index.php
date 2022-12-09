@@ -28,7 +28,7 @@ else {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
   </head>
   <body>
@@ -36,8 +36,9 @@ else {
 
 <div>
 
-   <a href='creare_cont.php'> <button> Creaza Cont </button> </a>  
-   <a href='login.php'> <button> Autentifica-te </button> </a>  
+   <a href='creare_cont.php'> <button> Creeaza Cont </button> </a>  
+   <?php
+   if (!(isset($_COOKIE["user_name"]))) echo "<a href='login.php'> <button> Autentifica-te </button> </a> " ?>
 </div>
   </body>
 </html>
