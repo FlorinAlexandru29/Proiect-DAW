@@ -4,7 +4,7 @@ print_r($_POST);
 
 echo $_POST['email'];
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
-$conditie_user="select user_name FROM users where email='".$_POST['user_name']." ' ";
+$conditie_user="select user_name FROM users where user_name='".$_POST['user_name']." ' ";
 echo $conditie_email;
 echo $conditie_user;
 
