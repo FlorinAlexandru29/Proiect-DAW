@@ -1,6 +1,5 @@
 <?php
 
-echo $_POST('parola');
 $ciphering = "AES-128-CTR";
 $encryption_iv = '1234567891011121';
 $decryption_iv = '1234567891011121';
