@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
   if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune);}
   
   else{
-    $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".crypt($_POST['parola'],'kalpsdnj')." ')";
+    $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);

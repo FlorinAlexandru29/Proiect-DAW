@@ -3,7 +3,7 @@
 
 if(isset($_POST['submit'])){
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
-$conditie_password="select email FROM users where password='".crypt($_POST['parola'],'kalpsdnj')." ' ";
+$conditie_password="select email FROM users where password='".openssl_encrypt($_POST['parola'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ' ";
 echo $conditie_email;
 echo $conditie_password;
 
