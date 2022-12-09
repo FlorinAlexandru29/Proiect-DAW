@@ -15,7 +15,7 @@ if (mysqli_connect_errno()) {
 
 $result_email = mysqli_query($conexiune, $conditie_email);
 $result_password = mysqli_query($conexiune, $conditie_password);
-if ((mysqli_num_rows($result) > 0) && (mysqli_num_rows($result) > 0))  {
+if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) > 0))  {
   echo "Login Realizat cu Succes";
   setcookie("user_name", $_POST['email'], time()+ 60,'/');
 } else {
