@@ -29,7 +29,9 @@ if(isset($_POST['submit'])){
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
-    header('Location:creare_cont.php');
+    unset($_POST['user_name']);
+    unset($_POST['email']);
+    unset($_POST['password']);
   }
 }
 ?>
