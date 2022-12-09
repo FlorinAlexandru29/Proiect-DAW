@@ -23,9 +23,10 @@ echo $decryption;}
         <html>
         <body>
         <FORM method="POST" action="decriptare.php">
-          Email* :
-          <INPUT TYPE="text" name="parola" required> <br>
-          <INPUT TYPE="text" name="parola_criptata" required> <br>
+          Parola :
+          <INPUT TYPE="text" name="parola"> <br>
+          Parola Criptata
+          <INPUT TYPE="text" name="parola_criptata"> <br>
           <INPUT TYPE="submit" name="submit" VALUE="send">
        </form>
        </body>
