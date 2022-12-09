@@ -11,11 +11,11 @@ if(isset($_POST['submit'])){
 
   $encryption = openssl_encrypt($_POST['parola'], $ciphering, "kalpsdnj", 0, $encryption_iv);
 
-echo $encryption;}
+  echo $encryption;}
 
 if(isset($_POST['parola_criptata'])){
 
-$decryption=openssl_decrypt ($_POST('parola_criptata'), $ciphering, "kalpsdnj", 0, $encryption_iv);
+$decryption=openssl_decrypt ($_POST['parola_criptata'], $ciphering, "kalpsdnj", 0, $encryption_iv);
 echo $decryption;}
 
 }
