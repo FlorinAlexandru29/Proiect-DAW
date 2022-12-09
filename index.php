@@ -1,12 +1,5 @@
 <?php
 
-$username=$_POST['username'];
-if(isset($_POST['login']))
-{
-  setcookie("user_name", $username, time()+ 60,'/');
-  header('Location:index.php');
-}
-
 if(isset($_POST['logout'])){     //scriptul de logout
   setcookie("user_name", "guest", time()- 60,'/');
   header('Location:index.php');
@@ -43,26 +36,9 @@ else {
 
 <div>
 
-<FORM method="POST" action='index.php'>
-<table border=0 width="40%" align="left">
-  <tr>
-    <td with="30%">User* :</td>
-    <td with="70%"><INPUT TYPE="text" name="username" required></td>
-  </tr>
-  <tr>
-    <td with="30%">Password :</td>
-    <td with="70%"><INPUT TYPE="password" name="password" required></td>
-  </tr>
-  <td><INPUT TYPE="submit" name="login" VALUE="login"></td>
-  </form>
-  <tr>
-  <td>
-
-   <a href='creare_cont.php'> Creaza Cont </button> </a>  
-
-  </td></tr>
-  </table>
-
+   <a href='creare_cont.php'> <button> Creaza Cont </button> </a>  
+   <a href='login.php'> <button> Autentifica-te </button> </a>  
+</div>
   </body>
 </html>
 
