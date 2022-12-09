@@ -37,7 +37,7 @@ mysqli_close($conexiune);
 ?>
 
 <html>
-<title> Creare Cont </title>
+<title> Login </title>
   <body>
   <FORM method="POST" action="login.php">
     Email* :
