@@ -1,12 +1,7 @@
-<?php
 
-echo $_POST('parola');
-
-
-?>
         <html>
         <body>
-        <FORM method="POST" action="decrypt.php">
+        <FORM method="POST" action="decriptare.php">
           Email* :
           <INPUT TYPE="text" name="parola" required> <br>
 
