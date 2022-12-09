@@ -1,5 +1,7 @@
 <?php
 
+
+if(isset($_POST['submit'])){
 $conditie="select email FROM users where email='".$_POST['email']." ' ";
 echo $conditie;
 
@@ -13,25 +15,24 @@ if (mysqli_connect_errno()) {
 $result = mysqli_query($conexiune, $conditie);
 
 if (mysqli_num_rows($result) > 0) {
-  // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
-      echo "id: " . $row["email"]. "<br>";
-  }
+  echo "Login Realizat cu Succes";
+  setcookie("user_name", $_POST['email'], time()+ 60,'/');
 } else {
-  echo "0 results";
+  echo "Nu a fost gasit contul";
 }
 
 
 
 mysqli_close($conexiune);
-
+}
 ?>
 
 <html>
   <body>
   <FORM method="POST" action="lab1-editat.php">
   Email* :
-    <INPUT TYPE="email" name="email"><INPUT TYPE="submit" name="submit" VALUE="send">
+    <INPUT TYPE="email" name="email" required>
+    <INPUT TYPE="submit" name="submit" VALUE="send">
  </form>
  </body>
 </html>
