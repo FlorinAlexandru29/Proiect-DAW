@@ -2,7 +2,8 @@
 
 
 if(isset($_POST['submit'])){
-$conditie="select email FROM users where email='".$_POST['email']." ' ";
+$conditie_email="select email FROM users where email='".$_POST['email']." ' ";
+$conditie_password="select email FROM users where email='".crypt($_POST['parola'],'kalpsdnj')." ' ";
 echo $conditie;
 
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
@@ -12,9 +13,9 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
-$result = mysqli_query($conexiune, $conditie);
-
-if (mysqli_num_rows($result) > 0) {
+$result_email = mysqli_query($conexiune, $conditie_email);
+$result_password = mysqli_query($conexiune, $conditie_password);
+if ((mysqli_num_rows($result) > 0) && (mysqli_num_rows($result) > 0))  {
   echo "Login Realizat cu Succes";
   setcookie("user_name", $_POST['email'], time()+ 60,'/');
 } else {
@@ -30,8 +31,10 @@ mysqli_close($conexiune);
 <html>
   <body>
   <FORM method="POST" action="lab1-editat.php">
-  Email* :
-    <INPUT TYPE="email" name="email" required>
+    Email* :
+    <INPUT TYPE="email" name="email" required> <br>
+    Parola* :
+    <INPUT TYPE="password" name="parola" required>
     <INPUT TYPE="submit" name="submit" VALUE="send">
  </form>
  </body>
