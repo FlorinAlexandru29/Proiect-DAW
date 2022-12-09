@@ -19,11 +19,12 @@ $result_password = mysqli_query($conexiune, $conditie_password);
 
 if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) > 0))  {
   echo "Login Realizat cu Succes";
+
   $cerere_user="SELECT user_name FROM users WHERE email='".$_POST['email']." ' ";
   echo $cerere_user;
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
-  echo $row['username'];
+  echo $row["user_name"];
 
   setcookie("user_name", $_POST['email'], time()+ 60,'/');
 } else {
