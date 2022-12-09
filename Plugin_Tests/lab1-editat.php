@@ -5,7 +5,7 @@ if(isset($_POST['submit'])){
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
 $conditie_password="select email FROM users where password='".crypt($_POST['parola'],'kalpsdnj')." ' ";
 echo $conditie_email;
-echo $conditie_passowrd;
+echo $conditie_password;
 
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
