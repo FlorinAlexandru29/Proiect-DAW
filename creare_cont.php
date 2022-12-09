@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 
 
 
-$cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'sadlsadl')." ')";
+$cerere="Insert into users(last_name,first_name,email,password) values ('".$_POST['nume']. "','".$_POST['prenume']. "','" .$_POST['email'] ."','".crypt($_POST['parola'],'kalpsdnj')." ')";
 mysqli_query($conexiune, $cerere);
 mysqli_close($conexiune);
 echo $cerere;
