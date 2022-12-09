@@ -18,10 +18,10 @@ if (mysqli_connect_errno()) {
   }
 
 if(isset($_POST['submit'])){
-
+echo "OK";
   $result_email = mysqli_query($conexiune, $conditie_email);
   $result_user = mysqli_query($conexiune, $conditie_user);
-
+echo "OK";
   if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune);}
   if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune);}
   else{
