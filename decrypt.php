@@ -6,10 +6,10 @@ $ciphering = "AES-128-CTR";
 $encryption_iv = '1234567891011121';
 $decryption_iv = '1234567891011121';
 
-$encryption = openssl_encrypt($_POST('parola'), $ciphering,
-            "kalpsdnj", 0, $encryption_iv);
+//$encryption = openssl_encrypt($_POST('parola'), $ciphering,
+           // "kalpsdnj", 0, $encryption_iv);
 
-echo $encryption;
+//echo $encryption;
 
 
 
