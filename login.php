@@ -25,14 +25,13 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   $row = mysqli_fetch_assoc($result_user);
 
   setcookie("user_name", $row["user_name"], time()+ 60,'/');
+  mysqli_close($conexiune);
   header('Location:index.php');
-} else {
-  echo "Nu a fost gasit contul";
+} 
+  else {
+    if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune); exit("Parola Gresita!");}
+    else {mysqli_close($conexiune); exit("Nu a fost gasit un cont pentru acest email");}
 }
-
-
-
-mysqli_close($conexiune);
 }
 ?>
 
@@ -46,6 +45,7 @@ mysqli_close($conexiune);
     <INPUT TYPE="password" name="parola" required>
     <INPUT TYPE="submit" name="submit" VALUE="send">
  </form>
+ <a href='creare_cont.php'> <button> Creeaza Cont </button> </a> 
  </body>
 </html>
 

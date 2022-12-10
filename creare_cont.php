@@ -59,5 +59,8 @@ if(isset($_POST['submit'])){
   </tr>
  </table>
  </form>
+ <?php
+   if (!(isset($_COOKIE["user_name"]))) echo "<a href='login.php'> <button> Autentifica-te </button> </a> " ?>
+    <a href='index.php'> <button> Home </button> </a> 
 </body>
 </html>
