@@ -29,8 +29,12 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   header('Location:index.php');
 } 
   else {
-    if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune); exit("Parola Gresita!");}
-    else {mysqli_close($conexiune); exit("Nu a fost gasit un cont pentru acest email");}
+    if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune); header('Location:login.php');
+      exit("Parola Gresita!");}
+    else {mysqli_close($conexiune); 
+      header('Location:login.php');
+      exit("Nu a fost gasit un cont pentru acest email");
+    }
 }
 }
 ?>
