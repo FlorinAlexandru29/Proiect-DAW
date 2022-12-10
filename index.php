@@ -34,11 +34,10 @@ else {
   <body>
   <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
 
-<div>
-
-   <a href='creare_cont.php'> <button> Creeaza Cont </button> </a>  
+<div> 
    <?php
-   if (!(isset($_COOKIE["user_name"]))) echo "<a href='login.php'> <button> Autentifica-te </button> </a> " ?>
+   if (!(isset($_COOKIE["user_name"]))) echo "<a href='creare_cont.php'> <button> Creeaza Cont </button> </a> 
+   <a href='login.php'> <button> Autentifica-te </button> </a> " ?>
 </div>
   </body>
 </html>
