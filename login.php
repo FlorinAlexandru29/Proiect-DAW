@@ -29,9 +29,6 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   if($row["activat"]==0) {
     $_SESSION['activat'] = 0;
   }
-  else {
-    $_SESSION['activat'] = 1 ;
-  }
 
   mysqli_close($conexiune);
 
