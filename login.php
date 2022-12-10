@@ -30,9 +30,9 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
 } 
   else {
     if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
-      exit("Parola Gresita!");}
+      echo "Parola Gresita!";}
     else {mysqli_close($conexiune); 
-      $alert="<p> Nu a fost gasit un utilizator pentru acest email</p>";
+      echo "<p> Nu a fost gasit un utilizator pentru acest email</p>";
     }
 }
 }
