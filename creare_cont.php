@@ -2,6 +2,10 @@
 print_r($_POST);
 
 
+if (isset($_COOKIE["user_name"])) {
+  header('Location:index.php');
+} //redirect pe home page daca este deja autentificat
+
 echo $_POST['email'];
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
 $conditie_user="select user_name FROM users where user_name='".$_POST['user_name']." ' ";
