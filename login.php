@@ -1,5 +1,7 @@
 <?php
-
+if (isset($_COOKIE["user_name"])) {
+  header('Location:index.php');
+}
 
 if(isset($_POST['submit'])){
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
