@@ -33,7 +33,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
       exit("Parola Gresita!");}
     else {mysqli_close($conexiune); 
       header('Location:login.php');
-      echo "Nu a fost gasit un utilizator pentru acest email!";
+      $alert="<p> Nu a fost gasit un utilizator pentru acest email</p>";
     }
 }
 }
@@ -49,6 +49,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
     <INPUT TYPE="password" name="parola" required>
     <INPUT TYPE="submit" name="submit" VALUE="send">
  </form>
+ <alert> <?php $alert?> </alert>
  <a href='creare_cont.php'> <button> Creeaza Cont </button> </a> 
  </body>
 </html>
