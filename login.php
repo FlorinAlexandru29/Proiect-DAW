@@ -50,6 +50,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
  </form>
  <alert> <?php $alert?> </alert>
  <a href='creare_cont.php'> <button> Creeaza Cont </button> </a> 
+ <a href='index.php'> <button> Home </button> </a> 
  </body>
 </html>
 
