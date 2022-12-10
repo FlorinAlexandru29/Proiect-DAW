@@ -29,10 +29,9 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   header('Location:index.php');
 } 
   else {
-    if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune); header('Location:login.php');
+    if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
       exit("Parola Gresita!");}
     else {mysqli_close($conexiune); 
-      header('Location:login.php');
       $alert="<p> Nu a fost gasit un utilizator pentru acest email</p>";
     }
 }
