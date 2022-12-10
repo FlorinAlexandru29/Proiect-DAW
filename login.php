@@ -33,7 +33,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
       exit("Parola Gresita!");}
     else {mysqli_close($conexiune); 
       header('Location:login.php');
-      exit("Nu a fost gasit un cont pentru acest email");
+      echo "Nu a fost gasit un utilizator pentru acest email!";
     }
 }
 }
