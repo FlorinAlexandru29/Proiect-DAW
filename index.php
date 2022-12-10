@@ -20,7 +20,11 @@ else {
   echo 'Hello: guest';
  // expires after 60 seconds
 }
-
+@session_start();
+if(isset($_SESSION['activat'])){
+echo "activeaza-ti contul";
+unset($_SESSION['activat']);
+}
 
 ?>
 <!doctype html>

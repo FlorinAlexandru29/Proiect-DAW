@@ -20,12 +20,21 @@ $result_password = mysqli_query($conexiune, $conditie_password);
 if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) > 0))  {
   echo "Login Realizat cu Succes";
 
-  $cerere_user="SELECT user_name FROM users WHERE email='".$_POST['email']." ' ";
+  $cerere_user="SELECT user_name,activat FROM users WHERE email='".$_POST['email']." ' ";
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
-
   setcookie("user_name", $row["user_name"], time()+ 60,'/');
+  @session_start();
+
+  if($row["activat"]==0) {
+    $_SESSION['activat'] = 0;
+  }
+  else {
+    $_SESSION['activat'] = 1 ;
+  }
+
   mysqli_close($conexiune);
+
   header('Location:index.php');
 } 
   else {
