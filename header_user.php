@@ -27,12 +27,12 @@
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">
+              <li>
                 <?php echo "
           <FORM method='POST' action='index.php'>
-          <INPUT TYPE='submit' name='logout' VALUE='Logout'>
+          <INPUT class='dropdown-item' TYPE='submit' name='logout' VALUE='Logout'>
           </form>"; ?>
-                    </a></li>
+                    </li>
             </ul>
           </div>
       </div>
