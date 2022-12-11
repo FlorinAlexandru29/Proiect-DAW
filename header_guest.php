@@ -17,8 +17,9 @@
          <input type="search" class="form-control rounded-pill text-bg-dark" placeholder="Search..." aria-label="Search">
         </form>
         <div class="text-end">
-          <button type="button" class="btn rounded-pill btn-warning me-2"><a href='login.php'> Autentifica-te </a></button>
-          <button type="button" class="btn rounded-pill btn-warning"><a href='creare_cont.php'> Creeaza Cont </a></button>
+        <a href="login.php" class="btn rounded-pill btn-warning me-2 ">Autentifica-te</a>
+        <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 ">Creeaza Cont</a>
+       
         </div>
       </div>
     </div>
