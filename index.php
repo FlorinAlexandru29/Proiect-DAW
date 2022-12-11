@@ -41,12 +41,6 @@ unset($_SESSION['activat']);
   ?>
   <body>
   <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
-
-<div> 
-   <?php
-   if (!(isset($_COOKIE["user_name"]))) echo "<a href='creare_cont.php'> <button> Creeaza Cont </button> </a> 
-   <a href='login.php'> <button> Autentifica-te </button> </a> " ?>
-</div>
   </body>
 </html>
 
