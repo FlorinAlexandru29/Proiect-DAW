@@ -29,7 +29,7 @@
               <li><hr class="dropdown-divider"></li>
               <li>
                 <?php echo "
-          <FORM class='form-control' method='POST' action='index.php'>
+          <FORM style='height:32px;!important' method='POST' action='index.php'>
           <INPUT class='dropdown-item' TYPE='submit' name='logout' VALUE='Logout'>
           </form>"; ?>
                     </li>
