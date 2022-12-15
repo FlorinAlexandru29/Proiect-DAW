@@ -37,6 +37,11 @@ if(isset($_POST['submit'])){
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
+
+
+
+
+    
     unset($_POST['user_name']);
     unset($_POST['email']);
     unset($_POST['parola_i']);
