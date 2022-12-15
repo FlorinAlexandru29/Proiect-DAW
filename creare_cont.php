@@ -12,6 +12,11 @@ $conditie_user="select user_name FROM users where user_name='".$_POST['user_name
 echo $conditie_email;
 echo $conditie_user;
 
+if(($_POST['parola_i'])!=($_POST['parola_c']))
+{
+  setcookie("confirmare_parola","FALSE", time()+1,"/");
+  header('Location:creare_cont.php');
+}
 
 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
@@ -28,13 +33,14 @@ if(isset($_POST['submit'])){
   if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune);}
   
   else{
-    $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
+    $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
     unset($_POST['user_name']);
     unset($_POST['email']);
-    unset($_POST['password']);
+    unset($_POST['parola_i']);
+    unset($_POST['parola_c']);
   }
 }
 ?>
@@ -52,19 +58,26 @@ if(isset($_POST['submit'])){
     <td>Email :</td>
     <td><INPUT TYPE="email" name="email" required></td>
   </tr>
-  </tr>
     <tr>
     <td>Parola:</td>
-    <td><INPUT TYPE="password" name="parola" required></td>
+    <td><INPUT TYPE="password" name="parola_i" required></td>
+  </tr>
+  <tr>
+    <td>Confirma Parola:</td>
+    <td><INPUT TYPE="password" name="parola_c" required></td>
   </tr>
   <tr>
     <td><INPUT TYPE="reset" VALUE="reset"></td>
     <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
+    <td><a href='index.php'> <button> Home </button> </a> </td>
   </tr>
  </table>
  </form>
- <?php
-   if (!(isset($_COOKIE["user_name"]))) echo "<a href='login.php'> <button> Autentifica-te </button> </a> " ?>
-    <a href='index.php'> <button> Home </button> </a> 
+    <?php
+    if(isset($_COOKIE["confirmare_parola"])){
+      echo "Parolele introduse nu sunt identice!";
+      setcookie("confirmare_parola","FALSE", time()-1,"/");
+    }
+    ?>
 </body>
 </html>
