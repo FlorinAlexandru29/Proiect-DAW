@@ -18,8 +18,8 @@
         </form>
         <div class="dropdown text-end">
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle">
-          <?php echo 'Hello:'.$_COOKIE["user_name"]; ?>
+              <img src="resurse/profile_pics/guest.png" alt="mdo" width="40" height="40" class="rounded-circle">
+          <?php echo 'Hello: '.$_COOKIE["user_name"]; ?>
 
             </a>
             <ul class="dropdown-menu text-small">
