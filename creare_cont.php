@@ -51,12 +51,15 @@ if(isset($_POST['submit'])){
       $mail->Port       = 465;                  
       $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
       $mail->Password   = 'lvupjjdmckeunbal';   
+      $email->From = "lure.production@gmail.com";
+      $email->FromName = "Lure Production";
       $mail->AddReplyTo($_POST['email'], $_POST['user_name']);
       $mail->AddAddress($_POST['email'], $_POST['user_name']);
       $mail->isHTML(true);
       $mail->Subject = 'Confirmare Email';
       $mail->Body = "Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
-      https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."<br> 
+      <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'> </a>
+      <br> 
       O zi buna!";
       $mail->send();
       echo "Message Sent OK</p>\n";}
@@ -67,7 +70,7 @@ if(isset($_POST['submit'])){
 
 
 
-    unset($_POST['user_name']);
+    unset($_POST['user_name']);  // redirect pe creare_cont pentru ca unset nu face nimic ???!?!?!?
     unset($_POST['email']);
     unset($_POST['parola_i']);
     unset($_POST['parola_c']);
