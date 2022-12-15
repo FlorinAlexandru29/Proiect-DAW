@@ -51,7 +51,7 @@ if(isset($_POST['submit'])){
       $mail->Port       = 465;                  
       $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
       $mail->Password   = 'lvupjjdmckeunbal';   
-      
+      $mail->SetFrom('lure.production@gmail.com', 'Lure Production');
       $mail->AddReplyTo($_POST['email'], $_POST['user_name']);
       $mail->AddAddress($_POST['email'], $_POST['user_name']);
       $mail->isHTML(true);
