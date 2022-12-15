@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
       $mail->Subject = 'Confirmare Email';
       $mail->Body = "Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
       <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'>
-      https://lure-prod.herokuapp.com/confirmare.php?email="$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
+      https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
       </a>
       <br> 
       O zi buna!";
