@@ -53,8 +53,7 @@ if(isset($_POST['submit'])){
       $mail->Password   = 'lvupjjdmckeunbal';   
       $email->From = "lure.production@gmail.com";
       $email->FromName = "Lure Production";
-      $mail->AddReplyTo($_POST['email'], $_POST['user_name']);
-      $mail->AddAddress($_POST['email'], $_POST['user_name']);
+     
       $mail->isHTML(true);
       $mail->Subject = 'Confirmare Email';
       $mail->Body = "Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
