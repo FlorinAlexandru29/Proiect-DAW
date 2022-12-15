@@ -26,6 +26,10 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
   setcookie("user_name", $row["user_name"], time()+ 60,'/');
+
+  if($row["profile_pic"]==1) setcookie("profile_pic", $row["user_name"], time()+60,'/');
+
+
   @session_start();
 
   if($row["activat"]==0) {

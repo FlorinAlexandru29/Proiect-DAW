@@ -2,6 +2,7 @@
 
 if(isset($_POST['logout'])){     //scriptul de logout
   setcookie("user_name", "guest", time()- 60,'/');
+  setcookie("profile_pic", '',time()-60,'/');
   header('Location:index.php');
 }
 @session_start();

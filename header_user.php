@@ -18,7 +18,13 @@
         </form>
         <div class="dropdown text-end">
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="resurse/profile_pics/guest.png" alt="mdo" width="40" height="40" class="rounded-circle">
+<?php 
+
+            if(isset($_COOKIE["profile_pic"])){
+              echo "<img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='40' height='40' class='rounded-circle'>";
+            }
+            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
+              ?>
           <?php echo 'Hello: '.$_COOKIE["user_name"]; ?>
 
             </a>
