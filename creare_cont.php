@@ -38,10 +38,35 @@ if(isset($_POST['submit'])){
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
 
+    require_once('resurse/phpmailer/class.phpmailer.php');
+    $mail = new PHPMailer(true); 
+
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 2;
+    try {
+ 
+      $mail->SMTPAuth   = true; 
+      $mail->SMTPSecure = "ssl";                 
+      $mail->Host       = "smtp.gmail.com";    
+      $mail->Port       = 465;                  
+      $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
+      $mail->Password   = 'lvupjjdmckeunbal';   
+      $mail->AddReplyTo($_POST['email'], $_POST['user_name']);
+      $mail->AddAddress($_POST['email'], $_POST['user_name']);
+      $mail->isHTML(true);
+      $mail->Subject = 'Confirmare Email';
+      $mail->Body = "Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
+      https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."<br> 
+      O zi buna!";
+      $mail->send();
+      echo "Message Sent OK</p>\n";}
+
+      catch(Exception $e){
+        echo "eroare trimitere ".$e->getMessage();
+    }
 
 
 
-    
     unset($_POST['user_name']);
     unset($_POST['email']);
     unset($_POST['parola_i']);
