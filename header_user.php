@@ -35,7 +35,7 @@
               <li><hr class="dropdown-divider"></li>
               <li>
                 <?php echo "
-          <FORM style='height:15px;!important' method='POST' action='index.php'>
+          <FORM style='height:20px;!important' method='POST' action='index.php'>
           <INPUT class='dropdown-item' TYPE='submit' name='logout' VALUE='Logout'>
           </form>"; ?>
                     </li>
