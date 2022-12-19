@@ -11,6 +11,8 @@ echo "activeaza-ti contul";
 unset($_SESSION['activat']);
 }
 
+if(isset($_POST['submit'])) include 'login_v2.php';
+
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,11 +1,5 @@
 
-<?php
 
-if (isset($_COOKIE["user_name"])) {
-  header('Location:index.php');
-}
-if(isset($_POST['submit'])) include 'login_v2.php';
-?>
 
 
 <!doctype html>
