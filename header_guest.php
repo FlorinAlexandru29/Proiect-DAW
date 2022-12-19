@@ -18,9 +18,6 @@
         </form>
         <div class="text-end">
         <a href="login.php" class="btn rounded-pill btn-warning me-2 ">Autentifica-te</a>
-	<a href="login.php" class="btn rounded-pill btn-warning me-2 ">Autentifica-te</a>
-	<a href="login.php" class="btn rounded-pill btn-warning me-2 ">Autentifica-te</a>
-	<a href="login.php" class="btn rounded-pill btn-warning me-2 ">Autentifica-te</a>
         <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 ">Creeaza Cont</a>
        
         </div>
