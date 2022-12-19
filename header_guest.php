@@ -42,12 +42,12 @@ if(isset($_POST['submit'])) include 'login_v2.php';
        
         </div>
         <div class="btn-group dropend">
-          <input type="submit" name="submit" value="Autentifica-te" class="btn btn-warning rounded-login-start">
+          <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="btn btn-warning rounded-login-start">
           
           <button type="button" class="btn btn-dark rounded-login-end dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropend</span>
           </button>
-          <form method="POST" action="header_guest.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+          <form id="login-form" method="POST" action="header_guest.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
             <div class="mb-1">
               <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
             </div>
