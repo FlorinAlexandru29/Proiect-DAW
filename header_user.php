@@ -28,7 +28,7 @@
           <?php echo 'Hello: '.$_COOKIE["user_name"]; ?>
 
             </a>
-            <ul class="dropdown-menu text-small">
+            <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">New project...</a></li>
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><a class="dropdown-item" href="#">Profile</a></li>

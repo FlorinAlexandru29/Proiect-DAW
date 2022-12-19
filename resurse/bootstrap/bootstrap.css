@@ -6748,7 +6748,9 @@ textarea.form-control-lg {
   color: #fff !important;
   background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important;
 }
-
+::placeholder{
+  color:white !important;
+}
 .text-bg-header {
   color: #fff !important;
   background: rgb(2,0,36) !important;
@@ -8351,6 +8353,16 @@ textarea.form-control-lg {
   border-radius: var(--bs-border-radius-pill) !important;
 
 }
+
+.rounded-login-start{
+  border-bottom-left-radius: var(--bs-border-radius-pill) !important;
+  border-top-left-radius: var(--bs-border-radius-pill) !important;
+}
+.rounded-login-end{
+  border-top-right-radius: var(--bs-border-radius-pill) !important;
+  border-bottom-right-radius: var(--bs-border-radius-pill) !important;
+}
+
 
 .rounded-left{
   border-bottom-left-radius: var(--bs-border-radius-pill) !important;
