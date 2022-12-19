@@ -23,7 +23,8 @@
        
         </div>
         <div class="btn-group dropend">
-          <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="btn btn-warning rounded-login-start">
+          <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
+  border-top-left-radius: 50rem !important;">
           
           <button type="button" class="btn btn-dark rounded-login-end dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropend</span>
