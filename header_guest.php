@@ -1,17 +1,4 @@
 
-
-
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Page</title>
-    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
-  </head>
-
-  <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
 <header class="mh-25 p-2 text-bg-header">
     <div class="container">
       <div class="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
@@ -41,7 +28,7 @@
           <button type="button" class="btn btn-dark rounded-login-end dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropend</span>
           </button>
-          <form id="login-form" method="POST" action="header_guest.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+          <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
             <div class="mb-1">
               <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
             </div>
