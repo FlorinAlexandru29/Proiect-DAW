@@ -8355,8 +8355,8 @@ textarea.form-control-lg {
 }
 
 .rounded-login-start{
-  border-bottom-left-radius: var(--bs-border-radius-pill) !important;
-  border-top-left-radius: var(--bs-border-radius-pill) !important;
+  border-bottom-left-radius: 50rem !important;
+  border-top-left-radius: 50rem !important;
 }
 .rounded-login-end{
   border-top-right-radius: var(--bs-border-radius-pill) !important;
