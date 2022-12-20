@@ -1,6 +1,9 @@
 <?php
     if(isset($_POST['submit'])){
 
+
+
+      
       $subject="Contact ".$_POST['nume'];
 
       $body="Nume:". $_POST['nume']." <br> Email:". $_POST['email']." <br> Telefon:". $_POST['telefon']." <br> Mesaj:". $_POST['mesaj'];

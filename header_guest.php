@@ -23,10 +23,12 @@ if (mysqli_num_rows($result_user) > 0){
   Este: ".openssl_decrypt($row['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
   $r_email=$_POST['email'];
   $r_user_name=$row['user_name'];
+  mysqli_close($conexiune);
   include 'tools/mailer.php';
 
 }
 else echo "Nu a fost gasit un cont asociat cu acest email";
+mysqli_close($conexiune);
 }
 ?>
 
