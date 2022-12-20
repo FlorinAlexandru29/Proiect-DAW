@@ -20,30 +20,9 @@ $mail->SMTPDebug = 2;
 
       $subject="Contact ".$name;
       $body="Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
-      
-try {
- 
-        $mail->SMTPAuth   = true; 
-        $mail->SMTPSecure = "ssl";                 
-        $mail->Host       = "smtp.gmail.com";    
-        $mail->Port       = 465;                  
-        $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
-        $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
-        $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
-        $mail->AddAddress('lure.production@gmail.com', 'Lure Prod');
-        $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
-        $mail->isHTML(true);
-        $mail->Subject = $subject;
-        $mail->Body = $body;
-        $mail->send();
-
-        echo "Message Sent OK</p>\n";
-}
-
-
-  catch(Exception $e){
-    echo "eroare trimitere ".$e->getMessage();
-}
+      $r_email='lure.production@gmail.com';
+      $r_user_name='Lure Prod';
+      include 'tools/mailer.php';
 }
 
 ?>

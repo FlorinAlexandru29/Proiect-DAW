@@ -38,46 +38,18 @@ if(isset($_POST['submit'])){
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
 
-    $email=$_POST['email'];
-    $user_name=$_POST['username'];
+    $r_email=$_POST['email'];
+    $r_user_name=$_POST['username'];
     $subject= 'Confirmare Email';
     $body="Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
     <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'>
     https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
     </a>
     <br> 
-    O zi buna!";
-
-
-
-
-
-    require_once('resurse/phpmailer/class.phpmailer.php');
-    $mail = new PHPMailer(true); 
-
-    $mail->IsSMTP();
-    $mail->SMTPDebug = 2;
-    try {
- 
-      $mail->SMTPAuth   = true; 
-      $mail->SMTPSecure = "ssl";                 
-      $mail->Host       = "smtp.gmail.com";    
-      $mail->Port       = 465;                  
-      $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
-      $mail->Password   = 'lvupjjdmckeunbal';   
-      $mail->SetFrom('lure.production@gmail.com', 'Lure Production');
-      $mail->AddReplyTo($email, $user_name);
-      $mail->AddAddress($email, $user_name);
-      $mail->isHTML(true);
-      $mail->Subject = $subject;
-      $mail->Body = $body;
-      $mail->send();
-      echo "Message Sent OK</p>\n";}
-
-      catch(Exception $e){
-        echo "eroare trimitere ".$e->getMessage();
-    }
-
+    O zi buna!
+    <br>
+    Va rugam sa nu raspundeti la acest email!";
+    include 'tools/mailer.php';
   }
 }
 ?>
