@@ -1,25 +1,9 @@
 <?php
-
-
-require_once('resurse/phpmailer/class.phpmailer.php');
-
-
-$mail = new PHPMailer(true); 
-
-$mail->IsSMTP();
-
-$mail->SMTPDebug = 2;
-
-
-    $name=$_POST['nume'];
-    $email=$_POST['email'];
-    $telephone=$_POST['telefon'];
-    $message=$_POST['mesaj'];
-
     if(isset($_POST['submit'])){
 
-      $subject="Contact ".$name;
-      $body="Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
+      $subject="Contact ".$_POST['nume'];
+
+      $body="Nume:". $_POST['nume']." <br> Email:". $_POST['email']." <br> Telefon:". $_POST['telefon']." <br> Mesaj:". $_POST['mesaj'];
       $r_email='lure.production@gmail.com';
       $r_user_name='Lure Prod';
       include 'tools/mailer.php';
