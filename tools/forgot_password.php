@@ -10,7 +10,7 @@ if (mysqli_connect_errno()) {
   exit();
 }
 echo "ok1";
-$cerere_user="SELECT user_name,parola FROM users WHERE email='".$_POST['email']." ' ";
+$cerere_user="SELECT user_name,password FROM users WHERE email='".$_POST['email']." ' ";
 echo $cerere_user;
 $result_user= mysqli_query($conexiune, $cerere_user);
 
