@@ -31,7 +31,7 @@ try {
         $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
         $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
         $mail->AddAddress('lure.production@gmail.com', 'Lure Prod');
-        $mail->SetFrom($email, $name);
+        $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
         $mail->isHTML(true);
         $mail->Subject = $subject;
         $mail->Body = $body;
