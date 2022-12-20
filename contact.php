@@ -17,6 +17,10 @@ $mail->SMTPDebug = 2;
     $message=$_POST['mesaj'];
 
     if(isset($_POST['submit'])){
+
+      $subject="Contact ".$name;
+      $body="Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
+      
 try {
  
         $mail->SMTPAuth   = true; 
@@ -27,23 +31,18 @@ try {
         $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
         $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
         $mail->AddAddress('lure.production@gmail.com', 'Lure Prod');
-
+        $mail->SetFrom($email, $name);
         $mail->isHTML(true);
-        $mail->Subject = 'Contact:' .$name;
-        $mail->Body = "Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
-
+        $mail->Subject = $subject;
+        $mail->Body = $body;
         $mail->send();
-        $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>"; //folosit pentru a afisa mesaj de confirmare, se poate folosi bootstrap
-  echo "Message Sent OK</p>\n";
-    unset($name);
-    unset($email);
-    unset($telephone);
-    unset($message);
+
+        echo "Message Sent OK</p>\n";
 }
 
 
   catch(Exception $e){
-    $alert="<div class='alert-error'><span>Eroare Trimitere!'.$e->getMessage().'</span></div>"; 
+    echo "eroare trimitere ".$e->getMessage();
 }
 }
 

@@ -6608,6 +6608,10 @@ textarea.form-control-lg {
   border-top: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
   transform: translateY(100%);
 }
+
+
+
+
 .offcanvas.showing, .offcanvas.show:not(.hiding) {
   transform: none;
 }
