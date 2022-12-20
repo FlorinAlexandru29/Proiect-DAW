@@ -29,8 +29,8 @@ try {
         $mail->Port       = 465;                  
         $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
         $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
-        $mail->AddReplyTo('lure.production@gmail.com', 'Lure Prod');
-        $mail->AddAddress('lure.production@gmail.com', 'Lure Prod');
+        $mail->AddReplyTo($email, $name);
+        $mail->AddAddress($email, $name);
         $mail->SetFrom($email, $name);
         $mail->isHTML(true);
         $mail->Subject = $subject;
@@ -77,10 +77,6 @@ try {
   </tr>
  </table>
  </form>
- <div> <?php 
-echo $alert; //afirsare mesaj confirmare
-
- ?>
  </div>
 </body>
 </html>
