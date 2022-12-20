@@ -13,6 +13,11 @@ unset($_SESSION['activat']);
 
 if(isset($_POST['submit'])) include 'login_v2.php';
 
+
+
+if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
+
+
 ?>
 <!doctype html>
 <html lang="en">
