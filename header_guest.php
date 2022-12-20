@@ -63,7 +63,7 @@
         <input type="email" class="form-control" id="floatingInputValue" id="floatingInput" placeholder="placeholder" required>
         <label for="floatingInput">Adresa de email</label>
       </div>
-      <div class="col">
+      <div class="col-12">
         <input type="submit" class="mt-2 float-start btn btn-primary" name="forgot" value="Trimite">
       </div>
         
