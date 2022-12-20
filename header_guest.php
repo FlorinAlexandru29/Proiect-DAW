@@ -20,7 +20,7 @@ if (mysqli_num_rows($result_user) > 0){
   $subject="Recuperare Parola";
 
   $body="Parola asociata contului ".$row["user_name"]."<br>
-  Este".openssl_decrypt($row['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+  Este: ".openssl_decrypt($row['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
   $r_email=$_POST['email'];
   $r_user_name=$row['user_name'];
   include 'tools/mailer.php';
@@ -89,7 +89,7 @@ else echo "Nu a fost gasit un cont asociat cu acest email";
     <div class="offcanvas-body container" style="margin-left:0 !important;">
       <div class="row">
         <div class="col">
-      <form class="form-floating">
+      <form class="form-floating" method="POST" action="index.php">
         <input type="email" class="form-control" id="floatingInputValue" id="floatingInput" placeholder="placeholder" required>
         <label for="floatingInput">Adresa de email</label>
       </div>
