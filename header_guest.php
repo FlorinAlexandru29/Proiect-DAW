@@ -1,4 +1,6 @@
 
+
+
 <header class="mh-25 p-2 text-bg-header">
     <div class="container">
       <div class="d-flex flex-nowrap align-items-center justify-content-center justify-content-lg-start">
@@ -37,8 +39,36 @@
             <div class="mb-1">
               <input type="password" name="parola" required  class="form-control text-bg-dark" placeholder="Password">
             </div>
+            <div class="mb-1">
+              <a href="#" class="d-block link-danger text-decoration-none dropdown-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvastop" aria-controls="offcanvastop">
+                Ti-ai uitat parola? </a>
+                
+            </div>
+
           </form>
         </div>
       </div>
+
     </div>
   </header>
+  <div class="offcanvas offcanvas-top" style="height:20vh !important;" tabindex="-1" id="offcanvastop" aria-labelledby="offcanvastopLabel">
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title ms-5" id="offcanvastopLabel">Introdu adresa de email aferenta contului tau</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body container text-center">
+      <div class="row">
+        <div class="col">
+      <form class="form-floating">
+        <input type="email" class="form-control" id="floatingInputValue" id="floatingInput" placeholder="placeholder" required>
+        <label for="floatingInput">Adresa de email</label>
+      </div>
+      <div class="col">
+        <input type="submit" class="mt-2 float-start btn btn-primary" name="forgot" value="Trimite">
+      </div>
+        
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
