@@ -58,7 +58,7 @@
       <div class="row">
         <div class="col">
       <form class="form-floating" method="POST" action="index.php">
-        <input type="email" class="form-control" id="floatingInputValue" id="floatingInput" placeholder="placeholder" required>
+        <input type="email" name="email" class="form-control" id="floatingInput" placeholder="placeholder" required>
         <label for="floatingInput">Adresa de email</label>
       </div>
       <div class="col">
