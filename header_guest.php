@@ -56,7 +56,7 @@
       <h4 class="offcanvas-title ms-5" id="offcanvastopLabel">Introdu adresa de email aferenta contului tau</h4>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body container text-start">
+    <div class="offcanvas-body container" style="margin-left:0 !important;">
       <div class="row">
         <div class="col">
       <form class="form-floating">
