@@ -25,7 +25,7 @@ if (mysqli_num_rows($result_user) > 0){
   $r_user_name=$row['user_name'];
   mysqli_close($conexiune);
   include 'tools/mailer.php';
-  echo "Mesajul a fost trimis pe emailul asociat contului tau";
+  header('Location:index.php');
 
 }
 else echo "Nu a fost gasit un cont asociat cu acest email";
