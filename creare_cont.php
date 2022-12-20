@@ -38,6 +38,20 @@ if(isset($_POST['submit'])){
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
 
+    $email=$_POST['email'];
+    $user_name=$_POST['username'];
+    $subject= 'Confirmare Email';
+    $body="Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
+    <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'>
+    https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
+    </a>
+    <br> 
+    O zi buna!";
+
+
+
+
+
     require_once('resurse/phpmailer/class.phpmailer.php');
     $mail = new PHPMailer(true); 
 
@@ -52,16 +66,11 @@ if(isset($_POST['submit'])){
       $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
       $mail->Password   = 'lvupjjdmckeunbal';   
       $mail->SetFrom('lure.production@gmail.com', 'Lure Production');
-      $mail->AddReplyTo($_POST['email'], $_POST['user_name']);
-      $mail->AddAddress($_POST['email'], $_POST['user_name']);
+      $mail->AddReplyTo($email, $user_name);
+      $mail->AddAddress($email, $user_name);
       $mail->isHTML(true);
-      $mail->Subject = 'Confirmare Email';
-      $mail->Body = "Buna <br> Pentru a confirma email-ul te rog intra pe acest link <br>
-      <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'>
-      https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
-      </a>
-      <br> 
-      O zi buna!";
+      $mail->Subject = $subject;
+      $mail->Body = $body;
       $mail->send();
       echo "Message Sent OK</p>\n";}
 
@@ -69,12 +78,6 @@ if(isset($_POST['submit'])){
         echo "eroare trimitere ".$e->getMessage();
     }
 
-
-
-    unset($_POST['user_name']);  // redirect pe creare_cont pentru ca unset nu face nimic ???!?!?!?
-    unset($_POST['email']);
-    unset($_POST['parola_i']);
-    unset($_POST['parola_c']);
   }
 }
 ?>
