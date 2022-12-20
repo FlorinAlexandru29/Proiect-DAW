@@ -17,7 +17,7 @@ if (mysqli_num_rows($result_user) > 0){
 
   $subject="Recuperare Parola";
 
-  $body="Pentru contul cu
+  $body="Pentru contul cu <br>
   username: ".$row["user_name"]."<br>
   email: ".$_POST['email']."<br>
   parola este: ".openssl_decrypt($row['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
