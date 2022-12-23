@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
-    
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </head>
 <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
@@ -29,7 +29,8 @@ mysqli_close($conexiune);
     <ul class='list-group'>
     <li class='list-group-item'>
     <button type="button" class="btn btn-icon btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
-   
+    <i class='bx bx-upload'></i>
+  </button>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
