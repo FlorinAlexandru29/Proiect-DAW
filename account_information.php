@@ -25,6 +25,8 @@ mysqli_close($conexiune);
   <div class="row">
     <div class="col">
     <ul class='list-group'>
+    <button type="button" class="btn btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
+    <img style="width:18px;height:18px;" src="resurse/icons/upload_ico.png"></button>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
@@ -40,9 +42,6 @@ if(isset($_COOKIE["profile_pic"])){
   <li class='list-group-item'> email: ".$row['email']." </li>
   </ul>";
 ?>
-<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
-                 O
-                  </button>
     </div>
     <div class="col">
     <ul class='list-group'>
