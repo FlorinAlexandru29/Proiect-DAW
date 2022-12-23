@@ -35,14 +35,13 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Test</a></li>
               <li><a class="dropdown-item" href="#">Test</a></li>
-              <li><a class="dropdown-item" href="#">Informatii Cont</a></li>
+              <li><a class="dropdown-item" href="account_information.php">Informatii Cont</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
-
           <FORM style='height:25px;!important' method='POST' action='index.php'>
           <INPUT class='dropdown-item' TYPE='submit' name='logout' VALUE='Logout'>
           </form>
-                    </li>
+                </li>
             </ul>
           </div>
       </div>
