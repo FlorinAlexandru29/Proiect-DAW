@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="resurse/bootstrap/bootstrap_button.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -28,9 +29,12 @@ mysqli_close($conexiune);
     <div class="col">
     <ul class='list-group'>
     <li class='list-group-item'>
-    <button type="button" class="btn btn-icon btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
-    <i class='bx bx-upload'></i>
-  </button>
+    <div class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3">
+                  <img src="resurse/profile_pics/guest.png" class="d-block rounded-circle" width="120" alt="John Doe">
+                  <button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 mt-4" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
+                    <i class="bx bx-refresh"></i>
+                  </button>
+                </div>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
