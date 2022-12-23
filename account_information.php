@@ -21,7 +21,7 @@ $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
 ?>
-<div class="container text-center">
+<div class="container text-center mt-3">
   <div class="row">
     <div class="col">
     <ul class='list-group'>
@@ -29,10 +29,10 @@ mysqli_close($conexiune);
 
 if(isset($_COOKIE["profile_pic"])){
     echo "<li class='list-group-item'>
-    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='150' height='150' class='rounded-circle'> </li>";
+    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' height='200' class='rounded-circle'> </li>";
   }
   else echo "<li class='list-group-item'>
-  <img src='resurse/profile_pics/guest.png' width='150' height='150' class='rounded-circle'> </li>";
+  <img src='resurse/profile_pics/guest.png' width='200' height='200' class='rounded-circle'> </li>";
   echo 
   
   "
@@ -43,12 +43,15 @@ if(isset($_COOKIE["profile_pic"])){
 
     </div>
     <div class="col">
+    <ul class='list-group'>
+    <li class='list-group-item'>
       <?php
        echo "status cont: ";
     if ($row['activat']==1) echo "Contul tau este activat!";
     else echo "Contul tau nu este activat";
      
       ?>
+        </li>
     </div>
   </div>
 </div>
