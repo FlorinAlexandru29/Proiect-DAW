@@ -33,15 +33,15 @@
 
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">New project...</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Test</a></li>
+              <li><a class="dropdown-item" href="#">Test</a></li>
+              <li><a class="dropdown-item" href="#">Informatii Cont</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
-                <?php echo "
+
           <FORM style='height:25px;!important' method='POST' action='index.php'>
           <INPUT class='dropdown-item' TYPE='submit' name='logout' VALUE='Logout'>
-          </form>"; ?>
+          </form>
                     </li>
             </ul>
           </div>
