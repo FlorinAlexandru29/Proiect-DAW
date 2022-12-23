@@ -44,10 +44,10 @@ if(isset($_COOKIE["profile_pic"])){
     </div>
     <div class="col">
       <?php
-      /* echo "status cont: ";
-    if ($row['activat']==1) echo "Contul tau este activat!"
+       echo "status cont: ";
+    if ($row['activat']==1) echo "Contul tau este activat!";
     else echo "Contul tau nu este activat";
-     */
+     
       ?>
     </div>
   </div>
