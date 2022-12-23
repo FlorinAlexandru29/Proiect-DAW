@@ -25,15 +25,16 @@ mysqli_close($conexiune);
   <div class="row">
     <div class="col">
     <ul class='list-group'>
-    <button type="button" class="btn btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
+    <li class='list-group-item'>
+    <button type="button" class="btn btn-icon btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
     <img style="width:18px;height:18px;" src="resurse/icons/upload_ico.png"></button>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
-    echo "<li class='list-group-item'>
+    echo "
     <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
   }
-  else echo "<li class='list-group-item'>
+  else echo "
   <img src='resurse/profile_pics/guest.png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
   echo 
   
