@@ -29,10 +29,10 @@ mysqli_close($conexiune);
 
 if(isset($_COOKIE["profile_pic"])){
     echo "<li class='list-group-item'>
-    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' height='200' class='rounded-circle'> </li>";
+    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
   }
   else echo "<li class='list-group-item'>
-  <img src='resurse/profile_pics/guest.png' width='200' height='200' class='rounded-circle'> </li>";
+  <img src='resurse/profile_pics/guest.png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
   echo 
   
   "
@@ -40,7 +40,9 @@ if(isset($_COOKIE["profile_pic"])){
   <li class='list-group-item'> email: ".$row['email']." </li>
   </ul>";
 ?>
-
+<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
+                 O
+                  </button>
     </div>
     <div class="col">
     <ul class='list-group'>
