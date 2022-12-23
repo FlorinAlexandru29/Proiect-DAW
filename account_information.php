@@ -30,19 +30,22 @@ mysqli_close($conexiune);
     <ul class='list-group'>
     <li class='list-group-item'>
     <div class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3">
-                  <img src="resurse/profile_pics/guest.png" class="d-block rounded-circle" width="120" alt="John Doe">
-                  <button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 mt-4" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
-                    <i class="bx bx-refresh"></i>
-                  </button>
-                </div>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
     echo "
-    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
+    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
   }
   else echo "
-  <img src='resurse/profile_pics/guest.png' width='200' height='200' class='img-thumbnail rounded-circle'> </li>";
+  <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";
+
+  ?>
+<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 ms-3" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
+                    <i class="bx bx-refresh bx-md"></i>
+                  </button>
+</div>
+</li>
+  <?php
   echo 
   
   "
