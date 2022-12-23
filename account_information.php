@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    
   </head>
 <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
