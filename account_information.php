@@ -20,23 +20,22 @@ $cerere_user="SELECT email,activat FROM users WHERE user_name='".$_COOKIE['user_
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
-$variabila="Test"
 ?>
 <div class="container text-center">
   <div class="row">
     <div class="col">
 <?php
-echo $variabila;
-  /* if(isset($_COOKIE["profile_pic"])){
+
+if(isset($_COOKIE["profile_pic"])){
     echo "<img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='150' height='150' class='rounded-circle'>";
   }
   else echo "<img src='resurse/profile_pics/guest.png' width='150' height='150' class='rounded-circle'>";
-  echo 
+ /*  echo 
   
   "<ul class='list-group'>
   <li class='list-group-item'> user_name: ".$_COOKIE['user_name']" </li>
   <li class='list-group-item'> email: ".$row['email']" </li>
-  </ul>";  */
+  </ul>"; */
 ?>
 
     </div>
