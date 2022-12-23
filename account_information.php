@@ -24,15 +24,18 @@ mysqli_close($conexiune);
 <div class="container text-center">
   <div class="row">
     <div class="col">
+    <ul class='list-group'>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
-    echo "<img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='150' height='150' class='rounded-circle'>";
+    echo "<li class='list-group-item'>
+    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='150' height='150' class='rounded-circle'> </li>";
   }
-  else echo "<img src='resurse/profile_pics/guest.png' width='150' height='150' class='rounded-circle'>";
+  else echo "<li class='list-group-item'>
+  <img src='resurse/profile_pics/guest.png' width='150' height='150' class='rounded-circle'> </li>";
   echo 
   
-  "<ul class='list-group'>
+  "
   <li class='list-group-item'> user_name: ".$_COOKIE['user_name']." </li>
   <li class='list-group-item'> email: ".$row['email']." </li>
   </ul>";
