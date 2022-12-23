@@ -29,7 +29,7 @@ mysqli_close($conexiune);
     <ul class='list-group'>
     <li class='list-group-item'>
     <button type="button" class="btn btn-icon btn-light bg-white border rounded-circle shadow-sm position-absolute" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture" style="width:36px;height:36px;">
-    <i class='bx bx-upload'></i>
+   
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
