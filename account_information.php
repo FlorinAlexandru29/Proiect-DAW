@@ -9,6 +9,9 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script> const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
   </head>
 <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
@@ -40,7 +43,7 @@ if(isset($_COOKIE["profile_pic"])){
   <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";
 
   ?>
-<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 ms-3" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
+<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Change picture">
                     <i class="bx bx-refresh bx-md"></i>
                   </button>
 </div>
