@@ -8,7 +8,6 @@
     <link href="resurse/bootstrap/bootstrap_button.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
-    
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
@@ -61,8 +60,6 @@ if(isset($_COOKIE["profile_pic"])){
     <div class="col">
     <ul class='list-group'>
     <li class='list-group-item'>
-    <p class="muted">Placeholder text to demonstrate some <a href="#" data-bs-toggle="tooltip" data-bs-title="Default tooltip">inline links</a> with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of <a href="#" data-bs-toggle="tooltip" data-bs-title="Another tooltip">real text</a>. And all that just to give you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how <a href="#" data-bs-toggle="tooltip" data-bs-title="Another one here too">these tooltips on links</a> can work in practice, once you use them on <a href="#" data-bs-toggle="tooltip" data-bs-title="The last tip!">your own</a> site or project.
-</p>
       <?php
        echo "status cont: ";
     if ($row['activat']==1) echo "Contul tau este activat!";
