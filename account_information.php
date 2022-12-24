@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href="resurse/bootstrap/bootstrap_button.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -43,10 +42,13 @@ if(isset($_COOKIE["profile_pic"])){
   <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";
 
   ?>
-<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+    
+<input type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
                     <i class="bx bx-refresh bx-md"></i>
-                  </button>
+</input>
 </div>
+<button type="submit">Salveaza Poza</button>
 </li>
   <?php
   echo 
