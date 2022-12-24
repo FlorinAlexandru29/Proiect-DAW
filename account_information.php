@@ -11,7 +11,11 @@
     <script src="resurse/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     
-    <script type="text/javascript"> const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    <script type="text/javascript">
+        $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 </script>
   </head>
