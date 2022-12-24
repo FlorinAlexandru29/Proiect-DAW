@@ -44,9 +44,9 @@ if(isset($_COOKIE["profile_pic"])){
   ?>
   <form action="upload.php" method="POST" enctype="multipart/form-data">
     
-<input type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
+<button type="button" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
                     <i class="bx bx-refresh bx-md"></i>
-</input>
+</button>
 </div>
 <button type="submit">Salveaza Poza</button>
 </li>
