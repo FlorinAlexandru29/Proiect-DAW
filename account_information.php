@@ -10,13 +10,9 @@
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <script src="resurse/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
-    <script>
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
-</script>
+  
   </head>
 <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
@@ -73,7 +69,14 @@ if(isset($_COOKIE["profile_pic"])){
     else echo "Contul tau nu este activat";
      
       ?>
+      
         </li>
+        <script>
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
     </div>
   </div>
 </div>
