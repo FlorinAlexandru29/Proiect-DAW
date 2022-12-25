@@ -52,7 +52,7 @@
 	// Add it to S3
 	try {
 		// Uploaded:
-		$file = $_FILES["fileToUpload"]['name'];
+		$file = $_FILES["fileToUpload"]['tmp_name'];
 
 		$s3->putObject(
 			array(
