@@ -35,7 +35,7 @@
 					'secret' => $IAM_SECRET
 				),
 				'version' => 'latest',
-				'region'  => 'us-east-2'
+				'region'  => 'eu-west-2'
 			)
 		);
 	} catch (Exception $e) {
