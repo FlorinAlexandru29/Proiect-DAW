@@ -66,7 +66,10 @@ if(isset($_COOKIE["profile_pic"])){
 </script>
 <button type="submit">Salveaza Poza</button>
 </li>
-  <?php
+    </div>
+    <div class="col">
+    <ul class='list-group'>
+    <?php
   echo 
   
   "
@@ -74,9 +77,6 @@ if(isset($_COOKIE["profile_pic"])){
   <li class='list-group-item'> email: ".$row['email']." </li>
   </ul>";
 ?>
-    </div>
-    <div class="col">
-    <ul class='list-group'>
     <li class='list-group-item'>
       <?php
        echo "status cont: ";
