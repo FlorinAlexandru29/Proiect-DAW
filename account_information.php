@@ -91,6 +91,7 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+</script>
 <li class='list-group-item'>
 <form action="upload.php" method="post" enctype="multipart/form-data">
 Select Image to upload:
@@ -100,7 +101,7 @@ Select Image to upload:
 
 </li> 
 </ul>
-</script>
+
     </div>
   </div>
 </div>
