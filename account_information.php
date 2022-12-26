@@ -28,11 +28,13 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();}
 
-$cerere_user="SELECT email,activat FROM users WHERE user_name='".$_COOKIE['user_name']." ' ";
+$cerere_user="SELECT email,activat,user_name FROM users WHERE user_name='".$_COOKIE['user_name']." ' ";
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
 if(isset($_POST['change_password'])) include 'tools/change_password.php';
+if(isset($_POST['save_photo'])) include 'upload.php';
+
 ?>
 <div class="container text-center mt-3">
   <div class="row">
@@ -57,7 +59,7 @@ if(isset($_COOKIE["profile_pic"])){
 <input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
-<input type="submit" value="Salveaza poza" name="submit" form="form1">
+<input type="submit" value="Salveaza poza" name="save_photo" form="form1">
 </form>
 <script type="text/javascript">
     window.onload = function () {

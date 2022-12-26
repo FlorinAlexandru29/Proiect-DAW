@@ -48,8 +48,8 @@
 	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
 	$keyName = 'test_example/' . basename($_FILES["FileUpload1"]['name']);
 	$pathInS3 = 'https://s3.eu-west-2.amazonaws.com/' . $bucketName . '/' . $keyName;
-	echo $pathInS3;
 
+	echo $row['user_name'];
 	// Add it to S3
 	try {
 		// Uploaded:
