@@ -17,7 +17,7 @@ if (mysqli_connect_errno()) {
 $result_password= mysqli_query($conexiune, $cerere_password);
 if (mysqli_num_rows($result_password) > 0){
 
-    $cerere="UPDATE users SET password='".openssl_encrypt($_POST['parola_s'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."' WHERE email='".$_row["email"]."'";
+    $cerere="UPDATE users SET password='".openssl_encrypt($_POST['parola_s'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."' where email ='".$_row["email"]. "'";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
