@@ -32,9 +32,7 @@ $cerere_user="SELECT email,activat FROM users WHERE user_name='".$_COOKIE['user_
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
-if(isset($_POST['change_password'])){
-  echo $row['email'];
- include 'tools/change_password.php';}
+if(isset($_POST['change_password'])) include 'tools/change_password.php';
 ?>
 <div class="container text-center mt-3">
   <div class="row">
