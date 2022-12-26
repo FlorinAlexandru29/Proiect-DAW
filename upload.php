@@ -86,6 +86,7 @@
 	else {
 		
 		$insert_photo = "insert into profile_pic (user_name,location) values('".$row['user_name']."','".$keyName."')";
+		echo $insert_photo;
 		mysqli_query($conexiune, $change_photo);
 		echo "insert pe tabel";
 	}
