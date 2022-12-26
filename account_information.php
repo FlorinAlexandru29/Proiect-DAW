@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,8 +15,13 @@
   
   </head>
 <?php 
+
+  
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
   else header('Location:index.php');
+
+ 
+
    $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
   if (mysqli_connect_errno()) {
@@ -25,6 +32,7 @@ $cerere_user="SELECT email,activat FROM users WHERE user_name='".$_COOKIE['user_
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
+if(isset($_POST['change_password'])) include 'tools/change_password.php';
 ?>
 <div class="container text-center mt-3">
   <div class="row">
@@ -49,9 +57,32 @@ if(isset($_COOKIE["profile_pic"])){
 <input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
-
-<input type="submit" value="Upload Image" name="submit">
+<input type="submit" value="Salveaza poza" name="submit">
+<script type="text/javascript">
+    window.onload = function () {
+        var fileupload = document.getElementById("FileUpload1");
+        var filePath = document.getElementById("spnFilePath");
+        var button = document.getElementById("btnFileUpload");
+        button.onclick = function () {
+            fileupload.click();
+        };
+        fileupload.onchange = function () {
+            var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+            filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+        };
+    };
+</script>
 </li>
+<li class='list-group-item'>
+  <form action='account_information.php' id='change_password'>
+    Parola initiala
+    <input name='password_i' type=password required>
+    Parola schimbata
+    <input name='password_s' type=password required>
+    Confirma parola schimbata
+    <input name='password_c' type=password required>
+    <input type=submit name="change_password" vlue="Schimba Parola" form="change_password">
+  </li>
     </div>
     <div class="col">
     <ul class='list-group'>
@@ -81,26 +112,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 
 <li class='list-group-item'>
-<form action="upload.php" method="post" enctype="multipart/form-data">
-Select Image to upload:
-<button type="file" name="fileToUpload" id="fileToUpload">
-<input type="submit" value="Upload Image" name="submit">
-</form>
-<script type="text/javascript">
-    window.onload = function () {
-        var fileupload = document.getElementById("FileUpload1");
-        var filePath = document.getElementById("spnFilePath");
-        var button = document.getElementById("btnFileUpload");
-        button.onclick = function () {
-            fileupload.click();
-        };
-        fileupload.onchange = function () {
-            var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
-            filePath.innerHTML = "<b>Selected File: </b>" + fileName;
-        };
-    };
-</script>
-
 </li> 
 </ul>
 
