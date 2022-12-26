@@ -81,7 +81,7 @@ if(isset($_COOKIE["profile_pic"])){
     <input name='password_s' type=password required>
     Confirma parola schimbata
     <input name='password_c' type=password required>
-    <input type=submit name="change_password" vlue="Schimba Parola" form="change_password">
+    <input type=submit name="change_password" value="Schimba Parola" form="change_password">
   </li>
     </div>
     <div class="col">
