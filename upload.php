@@ -77,7 +77,7 @@
 	$cerere_photo="select * from profile_pic where user_name='".$row['user_name']."'";
 	echo $cerere_photo;
 	$result_photo=mysqli_query($conexiune, $cerere_photo);
-	if (mysqli_num_rows($result_email) > 0){
+	if (mysqli_num_rows($result_photo) > 0){
 		$change_photo = "update profile_pic set location='".$keyName."',user_name='".$row['user_name']."' WHERE user_name='".$row['user_name']."'";
 		echo $change_photo;
 	}
