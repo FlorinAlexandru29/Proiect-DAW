@@ -76,6 +76,19 @@
 	$conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 	$cerere_photo="select * from profile_pic where user_name='".$row['user_name']."'";
 	echo $cerere_photo;
+	$result_photo=mysqli_query($conexiune, $cerere_photo);
+	if (mysqli_num_rows($result_email) > 0){
+		$change_photo = "update profile_pic set location='".$keyName."',user_name='".$row['user_name']."' WHERE user_name='".$row['user_name']."'";
+		echo $change_photo;
+	}
+
+	else {
+		
+		$insert_photo = "insert into profile_pic (user_name,location) values('".$row['user_name']."','".$keyName."')";
+		echo $insert_photo;
+	}
+
+	mysqli_close($conexiune);
 
 
 	// Now that you have it working, I recommend adding some checks on the files.
