@@ -74,14 +74,14 @@ if(isset($_COOKIE["profile_pic"])){
 </script>
 </li>
 <li class='list-group-item'>
-  <form method="POST" action='account_information.php'>
+  <form method="POST" action='account_information.php' id="form2">
     Parola initiala
     <input name='password_i' type=password required>
     Parola schimbata
     <input name='password_s' type=password required>
     Confirma parola schimbata
     <input name='password_c' type=password required>
-    <input type=submit name="change_password" value="Schimba Parola">
+    <input type=submit name="change_password" value="Schimba Parola" form="form2">
   </form>
   </li>
     </div>
