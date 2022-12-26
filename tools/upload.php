@@ -14,7 +14,7 @@
 	// https://packagist.org/packages/aws/aws-sdk-php 
 	//
 	// Run:$ composer require aws/aws-sdk-php
-	require 'vendor/autoload.php';
+	require './vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
