@@ -44,25 +44,12 @@ if(isset($_COOKIE["profile_pic"])){
   ?>
   <form action="upload.php" method="POST" enctype="multipart/form-data">
     
-  <i class="bx bx-refresh bx-md"> <input type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
-                    </i>
-<input type="file" id="FileUpload1" style="display: none" />
+  <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
+  <i class="bx bx-refresh bx-md">    </i> </button>
+<input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
-<script type="text/javascript">
-    window.onload = function () {
-        var fileupload = document.getElementById("FileUpload1");
-        var filePath = document.getElementById("spnFilePath");
-        var button = document.getElementById("btnFileUpload");
-        button.onclick = function () {
-            fileupload.click();
-        };
-        fileupload.onchange = function () {
-            var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
-            filePath.innerHTML = "<b>Selected File: </b>" + fileName;
-        };
-    };
-</script>
+
 <input type="submit" value="Upload Image" name="submit">
 </li>
     </div>
@@ -91,12 +78,28 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 </script>
+
+
 <li class='list-group-item'>
 <form action="upload.php" method="post" enctype="multipart/form-data">
 Select Image to upload:
-<input type="file" name="fileToUpload" id="fileToUpload">
+<button type="file" name="fileToUpload" id="fileToUpload">
 <input type="submit" value="Upload Image" name="submit">
 </form>
+<script type="text/javascript">
+    window.onload = function () {
+        var fileupload = document.getElementById("FileUpload1");
+        var filePath = document.getElementById("spnFilePath");
+        var button = document.getElementById("btnFileUpload");
+        button.onclick = function () {
+            fileupload.click();
+        };
+        fileupload.onchange = function () {
+            var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
+            filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+        };
+    };
+</script>
 
 </li> 
 </ul>
