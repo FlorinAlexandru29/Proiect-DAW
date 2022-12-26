@@ -19,7 +19,10 @@
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
 
-	include '../aws_credentials.php';	
+//AWS CREDENTIALS
+	$bucketName = 'lureprod';
+	$IAM_KEY = 'AKIAXXYWM3KJBSRAFP4B';
+	$IAM_SECRET = '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';	
 
 	// Connect to AWS
 	try {
