@@ -74,7 +74,7 @@ if(isset($_COOKIE["profile_pic"])){
 </script>
 </li>
 <li class='list-group-item'>
-  <form action='account_information.php' id='change_password'>
+  <form method="POST" action='account_information.php' id='change_password'>
     Parola initiala
     <input name='password_i' type=password required>
     Parola schimbata
