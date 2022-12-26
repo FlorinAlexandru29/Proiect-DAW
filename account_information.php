@@ -50,14 +50,14 @@ if(isset($_COOKIE["profile_pic"])){
   <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";
 
   ?>
-  <form action="upload.php" method="POST" enctype="multipart/form-data">
+  <form action="upload.php" method="POST" enctype="multipart/form-data" id="form1">
     
   <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
   <i class="bx bx-refresh bx-md">    </i> </button>
 <input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
-<input type="submit" value="Salveaza poza" name="submit">
+<input type="submit" value="Salveaza poza" name="submit" form="form1">
 <script type="text/javascript">
     window.onload = function () {
         var fileupload = document.getElementById("FileUpload1");
