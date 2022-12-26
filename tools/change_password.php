@@ -2,7 +2,7 @@
 
     if(isset($_POST['change_password'])){
         if(($_POST['password_s'])!=($_POST['password_c'])) echo "parole nu sunt la fel";
-        echo "ecmail".$row['email'];
+        echo "email".$row['email'];
         
         $cerere_password= "SELECT password from users where email='".$row['email']."'";
         echo $cerere_password;
@@ -17,7 +17,8 @@ if (mysqli_connect_errno()) {
 $result_password= mysqli_query($conexiune, $cerere_password);
 if (mysqli_num_rows($result_password) > 0){
 
-    $cerere="UPDATE users SET password='".openssl_encrypt(['password_s'])."' WHERE email='".$_row["email"]."'";
+    $cerere="UPDATE users SET password='".openssl_encrypt($_POST['parola_s'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."' WHERE email='".$_row["email"]."'";
+    echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
 }
