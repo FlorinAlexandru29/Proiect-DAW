@@ -14,15 +14,12 @@
 	// https://packagist.org/packages/aws/aws-sdk-php 
 	//
 	// Run:$ composer require aws/aws-sdk-php
-	require 'vendor/autoload.php';
+	require './vendor/autoload.php';
 	
 	use Aws\S3\S3Client;
 	use Aws\S3\Exception\S3Exception;
 
-	// AWS Info
-	$bucketName = 'lureprod';
-	$IAM_KEY = 'AKIAXXYWM3KJBSRAFP4B';
-	$IAM_SECRET = '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';
+	include '../aws_credentials.php';	
 
 	// Connect to AWS
 	try {
