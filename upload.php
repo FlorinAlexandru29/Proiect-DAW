@@ -73,6 +73,9 @@
 
 	echo 'Done';
 
+	$conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+	$cerere_photo="select * from profile_pic where user_name='".$row['user_name']."'";
+	echo $cerere_photo;
 
 
 	// Now that you have it working, I recommend adding some checks on the files.
