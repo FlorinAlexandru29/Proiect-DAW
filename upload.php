@@ -59,7 +59,7 @@
 				'Bucket'=>$bucketName,
 				'Key' =>  $keyName,
 				'SourceFile' => $file,
-				'StorageClass' => 'Reduced redundancy'
+				'StorageClass' => 'standard'
 			)
 		);
 
