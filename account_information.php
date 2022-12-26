@@ -75,7 +75,7 @@ if(isset($_COOKIE["profile_pic"])){
   "
   <li class='list-group-item'> user_name: ".$_COOKIE['user_name']." </li>
   <li class='list-group-item'> email: ".$row['email']." </li>
-  </ul>";
+  ";
 ?>
     <li class='list-group-item'>
       <?php
@@ -91,6 +91,15 @@ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggl
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+<li class='list-group-item'>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+Select Image to upload:
+<input type="file" name="fileToUpload" id="fileToUpload">
+<input type="submit" value="Upload Image" name="submit">
+</form>
+
+</li> 
+</ul>
 </script>
     </div>
   </div>
