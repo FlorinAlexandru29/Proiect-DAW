@@ -58,6 +58,7 @@ if(isset($_COOKIE["profile_pic"])){
 </div>
 <span id="spnFilePath"></span>
 <input type="submit" value="Salveaza poza" name="submit" form="form1">
+</form>
 <script type="text/javascript">
     window.onload = function () {
         var fileupload = document.getElementById("FileUpload1");
