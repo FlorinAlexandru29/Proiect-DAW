@@ -18,14 +18,17 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
   $con=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
   // Verify valid access code
-  $result = mysqli_query($con, "SELECT * FROM profile_pic WHERE user_name='$user_name'") or die("Error: Invalid request");
+  $cerere="SELECT * FROM profile_pic WHERE user_name='$user_name'";
+  echo $cerere;
+  /*
+  $result = mysqli_query($con, ) or die("Error: Invalid request");
   if (mysqli_num_rows($result) != 1) {
     die("Error: Invalid access code");
   }
   $row = mysqli_fetch_array($result);
     $keyPath = $row['location'];
   echo $keyPath;
-/*
+
   // Get file
   try {
     $s3 = S3Client::factory(
