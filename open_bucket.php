@@ -14,12 +14,6 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
   // Get the access code
   $accessCode = $_GET['user_name'];
   echo $accessCode;
- 	 $accessCode = strtoupper($accessCode);
-  $accessCode = trim($accessCode);
-  $accessCode = addslashes($accessCode);
-  $accessCode = htmlspecialchars($accessCode);
-  echo $accessCode;
-/*
   // Connect to database
   $con=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
@@ -30,8 +24,8 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
   }
   $row = mysqli_fetch_array($result);
     $keyPath = $row['location'];
-  
-
+  echo $keyPath;
+/*
   // Get file
   try {
     $s3 = S3Client::factory(
