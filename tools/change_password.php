@@ -23,6 +23,14 @@ if (mysqli_num_rows($result_password) > 0){
     mysqli_close($conexiune);
 
     echo "Parola schimbata cu succes";
+    $r_email=$email;
+    $r_user_name=$email;
+    $subject= 'Schimbare Parola';
+    $body="Salut <br> Parola ta a fost schimbata cu success! <br>
+    Noua ta parola este: ".$_POST['password_s']."<br>
+    In cazul in care nu ati schimbat parola, va rugam sa ne contactati in mod direct<br>
+    Va rugam sa nu raspundeti la acest email!";
+    include 'tools/mailer.php';
 }
 
     }
