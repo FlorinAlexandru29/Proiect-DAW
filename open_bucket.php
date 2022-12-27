@@ -12,8 +12,8 @@ $IAM_KEY = 'AKIAXXYWM3KJBSRAFP4B';
 $IAM_SECRET = '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';
 
   // Get the access code
-  $accessCode = $_GET['user_name'];
-  echo $accessCode;
+  $user_name = $_GET['user_name'];
+  echo $user_name;
   // Connect to database
   $con=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
