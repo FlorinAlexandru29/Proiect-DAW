@@ -9,7 +9,8 @@
 
   // Get the access code
   $accessCode = $_GET['user_name'];
-	$accessCode = strtoupper($accessCode);
+  echo $accessCode;
+	/* $accessCode = strtoupper($accessCode);
   $accessCode = trim($accessCode);
   $accessCode = addslashes($accessCode);
   $accessCode = htmlspecialchars($accessCode);
@@ -53,4 +54,4 @@
 
   } catch (Exception $e) {
     die("Error: " . $e->getMessage());
-  }
+  } */
