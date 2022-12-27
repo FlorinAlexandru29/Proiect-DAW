@@ -27,7 +27,7 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
   $row = mysqli_fetch_array($result);
     $keyPath = $row['location'];
   echo $keyPath;
-/*
+
   // Get file
   try {
     $s3 = S3Client::factory(
@@ -55,6 +55,6 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
 
   } catch (Exception $e) {
     die("Error: " . $e->getMessage());
-  } */
+  }
 
   ?>
