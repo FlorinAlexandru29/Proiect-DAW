@@ -1,7 +1,7 @@
 <?php
 
 
-/* require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 	
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
@@ -9,7 +9,7 @@ use Aws\S3\Exception\S3Exception;
   //AWS CREDENTIALS
 $bucketName = 'lureprod';
 $IAM_KEY = 'AKIAXXYWM3KJBSRAFP4B';
-$IAM_SECRET = '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';	 */
+$IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
 
   // Get the access code
   $accessCode = $_GET['user_name'];
