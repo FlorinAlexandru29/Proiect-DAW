@@ -20,7 +20,7 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
   $cerere="SELECT * FROM profile_pic WHERE user_name='$user_name'";
   echo $cerere;
   
-  $result = mysqli_query($con, ) or die("Error: Invalid request");
+  $result = mysqli_query($con,$cerere) or die("Error: Invalid request");
   if (mysqli_num_rows($result) != 1) {
     die("Error: Invalid access code");
   }
