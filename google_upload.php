@@ -3,16 +3,23 @@ require_once "vendor/autoload.php";
  
 use Google\Cloud\Storage\StorageClient;
  
+
+
 try {
     $storage = new StorageClient([
-        'keyFilePath' => 'lure-prod-ee15fe45b34b.json',
+        'keyFilePath' => 'JSON_KEY_FILE_PATH',
     ]);
+ 
     $bucketName = 'lure-prod-bucket';
+    $fileName = '1.jpg';
     $bucket = $storage->bucket($bucketName);
-    if (!$bucket->exists()) {
-        $response = $storage->createBucket($bucketName);
-        echo "Your Bucket $bucketName is created successfully.";
-    }
+    $object = $bucket->upload(
+        fopen($fileName, 'r'),
+        [
+            'predefinedAcl' => 'publicRead'
+        ]
+    );
+    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$fileName";
 } catch(Exception $e) {
     echo $e->getMessage();
 }
