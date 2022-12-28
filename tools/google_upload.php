@@ -9,11 +9,6 @@ try {
     ]);
 
     $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
-     $extension  = pathinfo( $_FILES["FileUpload1"]["name"], PATHINFO_EXTENSION );
-     echo $extension;
-
-    
-   
     $cloudPath = 'uploads/' . $row['user_name'].".jpg";
 
 
@@ -30,6 +25,20 @@ try {
 );
 
     echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
+    $directory = 'uploads/';
+    if ($directory == null) {
+        // list all files
+        $objects = $bucket->objects();
+    } else {
+        // list all files within a directory (sub-directory)
+        $options = array('prefix' => $directory);
+        $objects = $bucket->objects($options);
+    }
+
+    foreach ($objects as $object) {
+        print $object->name() . PHP_EOL;
+        // NOTE: if $object->name() ends with '/' then it is a 'folder'
+    }
 }
 catch(Exception $e) {
     echo $e->getMessage();
