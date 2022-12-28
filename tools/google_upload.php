@@ -37,6 +37,7 @@ try {
 
     foreach ($objects as $object) {
         print $object->name() . PHP_EOL;
+        echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
 }
