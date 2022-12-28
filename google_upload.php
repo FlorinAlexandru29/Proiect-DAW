@@ -5,7 +5,7 @@ use Google\Cloud\Storage\StorageClient;
 
 try {
     $storage = new StorageClient([
-        'keyFilePath' => 'JSON_KEY_FILE_PATH',
+        'keyFilePath' => 'lure-prod-ee15fe45b34b.json',
     ]);
     $file = $_FILES["FileUpload1"]['tmp_name'];
 
