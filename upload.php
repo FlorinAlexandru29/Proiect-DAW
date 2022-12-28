@@ -60,7 +60,7 @@
 				'Bucket'=>$BUCKET_NAME,
 				'Key' =>  $keyName,
 				'SourceFile' => $file,
-				'StorageClass' => 'REDUCED_REDUNDANCY'
+				'StorageClass' => 'STANDARD'
 			)
 		);
 
