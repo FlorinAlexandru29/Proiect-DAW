@@ -7,8 +7,12 @@ try {
     $storage = new StorageClient([
         'keyFilePath' => 'lure-prod-ee15fe45b34b.json',
     ]);
+    echo $storage;
+}
+    
 
-    $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
+
+/*     $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
     $cloudPath = 'uploads/' . $row['user_name'].".jpg";
 
 
@@ -40,7 +44,7 @@ try {
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
-}
+} */
 catch(Exception $e) {
     echo $e->getMessage();
 }
