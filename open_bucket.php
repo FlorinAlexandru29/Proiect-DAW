@@ -49,8 +49,8 @@ $IAM_SECRET = 'WS3hRhHJeBleOA20RX/SuzH2vB+FW+LMUvA4lqK3';
 
 
     // Display it in the browser
-
     header("Content-Type: {$result['ContentType']}");
+    header('Content-Disposition: filename="' . basename($keyPath) . '"');
     echo $result['Body'];
 
     /* $imageFileType = pathinfo($keyPath,PATHINFO_EXTENSION);
