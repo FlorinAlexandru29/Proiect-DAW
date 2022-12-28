@@ -13,8 +13,7 @@ try {
 
 
     $bucketName = 'lure-prod-bucket';
-    $fileName = '1.jpg';
-
+    
     $bucket = $storage->bucket($bucketName);
     $storageObject = $bucket->upload(
         $fileContent,

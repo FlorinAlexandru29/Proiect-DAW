@@ -58,7 +58,7 @@ function uploadFile($bucketName, $fileContent, $cloudPath) {
     return $storageObject != null;
 }
 
-function getFileInfo($bucketName, $cloudPath) {
+/* function getFileInfo($bucketName, $cloudPath) {
     $privateKeyFileContent = $GLOBALS['privateKeyFileContent'];
     // connect to Google Cloud Storage using private key as authentication
     try {
@@ -93,3 +93,5 @@ function listFiles($bucket, $directory = null) {
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
 }
+ */
+?>
