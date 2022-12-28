@@ -8,12 +8,12 @@ try {
         'keyFilePath' => 'lure-prod-ee15fe45b34b.json',
     ]);
 
-    $fileContent = file_get_contents($_FILES["file"]["tmp_name"]);
-    $cloudPath = 'uploads/' . $_FILES["file"]["name"];
+    $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
+    $cloudPath = 'uploads/' . $_FILES["FileUpload1"]["name"];
 
 
     $bucketName = 'lure-prod-bucket';
-    
+
     $bucket = $storage->bucket($bucketName);
     $storageObject = $bucket->upload(
         $fileContent,
