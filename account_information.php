@@ -36,12 +36,14 @@ if(isset($_POST['change_password'])) include 'tools/change_password.php';
 if(isset($_POST['save_photo'])) include 'google_upload.php';
 
 ?>
+
 <div class="container text-center mt-3">
   <div class="row">
     <div class="col">
     <ul class='list-group'>
     <li class='list-group-item'>
     <div class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3">
+      <img src='https://storage.googleapis.com/lure-prod-bucket/uploads/DSC_0154-1-2.jpg' width='200' class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
