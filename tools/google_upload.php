@@ -11,12 +11,10 @@ try {
     $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
      $extension  = pathinfo( $_FILES["FileUpload1"]["name"], PATHINFO_EXTENSION );
      echo $extension;
-} catch(Exception $e) {
-    echo $e->getMessage();
-}
+
     
- /*    
-    $cloudPath = 'uploads/' . $row['user_name'];
+   
+    $cloudPath = 'uploads/' . $row['user_name'].".jpg";
 
 
     $bucketName = 'lure-prod-bucket';
@@ -32,6 +30,9 @@ try {
 );
 
     echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
- */
+}
+catch(Exception $e) {
+    echo $e->getMessage();
+}
 
 ?>
