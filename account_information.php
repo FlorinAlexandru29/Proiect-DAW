@@ -33,7 +33,7 @@ $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
 if(isset($_POST['change_password'])) include 'tools/change_password.php';
-if(isset($_POST['save_photo'])) include 'upload.php';
+if(isset($_POST['save_photo'])) include 'google_upload.php';
 
 ?>
 <div class="container text-center mt-3">
