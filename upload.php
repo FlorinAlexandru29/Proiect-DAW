@@ -20,7 +20,7 @@
 	use Aws\S3\Exception\S3Exception;
 
 		//AWS CREDENTIALS
-	$bucketName = 'lureprod';
+	$BUCKET_NAME = 'lureprod';
 	$IAM_KEY = 'AKIAXXYWM3KJBSRAFP4B';
 	$IAM_SECRET = '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';	
 
@@ -47,7 +47,7 @@
 	
 	// For this, I would generate a unqiue random string for the key name. But you can do whatever.
 	$keyName = 'test_example/' . basename($_FILES["FileUpload1"]['name']);
-	$pathInS3 = 'https://s3.eu-west-2.amazonaws.com/' . $bucketName . '/' . $keyName;
+	$pathInS3 = 'https://s3.eu-west-2.amazonaws.com/' . $BUCKET_NAME . '/' . $keyName;
 
 	echo $row['user_name'];
 	// Add it to S3
@@ -57,7 +57,7 @@
 
 		$s3->putObject(
 			array(
-				'Bucket'=>$bucketName,
+				'Bucket'=>$BUCKET_NAME,
 				'Key' =>  $keyName,
 				'SourceFile' => $file,
 				'StorageClass' => 'REDUCED_REDUNDANCY'
