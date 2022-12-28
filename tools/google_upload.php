@@ -9,7 +9,8 @@ try {
     ]);
 
     $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
-    echo $_FILES['FileUpload1']['type'];
+     $extension  = pathinfo( $_FILES["FileUpload1"]["name"], PATHINFO_EXTENSION );
+     echo $extension;
 } catch(Exception $e) {
     echo $e->getMessage();
 }
