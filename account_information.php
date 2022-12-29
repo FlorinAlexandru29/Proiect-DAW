@@ -47,7 +47,7 @@ if(isset($_POST['save_photo'])) include 'tools/google_upload.php';
 
 if(isset($_COOKIE["profile_pic"])){
     echo "
-    <img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row['user_name'].".png' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
+    <img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row['user_name'].".jpg' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
   }
   else echo "
   <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";

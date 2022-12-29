@@ -64,6 +64,8 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".$row['user_name']."'";
     mysqli_query($conexiune,$cerere);
     mysqli_close($conexiune);
+    setcookie("profile_pic", '',time()-60,'/');
+    setcookie("profile_pic", $row["user_name"],time()+60,'/');
     }
     
 } 
