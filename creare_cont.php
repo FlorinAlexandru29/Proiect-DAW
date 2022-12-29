@@ -3,7 +3,7 @@
 if (isset($_COOKIE["user_name"])) {
   header('Location:index.php');
 } //redirect pe home page daca este deja autentificat
-
+include 'header_guest.php';
 
 
 
@@ -94,7 +94,7 @@ if(isset($_POST['creeaza_cont'])){
     </div>
   </div>
     <?php
-    include 'header_guest.php';
+    
     if(isset($_COOKIE["confirmare_parola"])){
       echo "Parolele introduse nu sunt identice!";
       setcookie("confirmare_parola","FALSE", time()-1,"/");
