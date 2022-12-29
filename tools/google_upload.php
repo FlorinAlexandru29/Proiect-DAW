@@ -23,7 +23,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $bucket = $storage->bucket($bucketName);
 
 
-    $directory = 'profile_pic/';
+ /*    $directory = 'profile_pic/';
     if ($directory == null) {
         // list all files
         $objects = $bucket->objects();
@@ -43,7 +43,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         }
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
-    }
+    } */
 
      $storageObject = $bucket->upload(
         $fileContent,
@@ -55,7 +55,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 );
 
     echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
-    if ($_row['profile_pic']==0){
+    /* if ($_row['profile_pic']==0){
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -67,7 +67,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     setcookie("profile_pic", '',time()-60,'/');
     setcookie("profile_pic", $row["user_name"],time()+60,'/');
     }
-    header('Location:account_information.php');
+    header('Location:account_information.php'); */ // alert pt upload succes
     
 } 
 catch(Exception $e) {
