@@ -48,7 +48,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }  */
-     $storageObject = $bucket->upload(
+     $this->$bucket->upload(
         $fileContent,
   [
     ['name' => $cloudPath],
