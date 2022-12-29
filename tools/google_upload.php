@@ -15,7 +15,8 @@ $auth_provider_x509_cert_url=openssl_decrypt ($auth_provider_x509_cert_url, "AES
 $client_x509_cert_url=openssl_decrypt ($client_x509_cert_url, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
 
 try {
-    $storage = new StorageClient([
+    $storage = [
+        
         "type"=> "service_account",
         "project_id"=>"lure-prod",
         "private_key_id"=>"da79b1b59e799a70e1d2cf4875ae42ceb681f229",
@@ -25,7 +26,7 @@ try {
         "auth_uri"=>"https://accounts.google.com/o/oauth2/auth",
         "token_uri"=>"https://oauth2.googleapis.com/token",
         "auth_provider_x509_cert_url"=> "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url"=> "https://www.googleapis.com/robot/v1/metadata/x509/lure-production%40lure-prod.iam.gserviceaccount.com",
+        "client_x509_cert_url"=> "https://www.googleapis.com/robot/v1/metadata/x509/lure-production%40lure-prod.iam.gserviceaccount.com"];
     /* $type,
     $project_id,
     $private_key_id,
@@ -37,7 +38,6 @@ try {
     $auth_provider_x509_cert_url,
     $client_x509_cert_url */
         
-    ]);
 
     
 
