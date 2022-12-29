@@ -42,8 +42,8 @@
                 Ti-ai uitat parola? </a>
                 
             </div>
-
-          </form>
+            </form>
+          
         </div>
       </div>
 

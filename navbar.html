@@ -8,7 +8,7 @@
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
     <style>
-      @media screen and (max-width: 992px) {
+      @media screen and (max-width: 1200px) {
 
         nav>div.container{max-width: 100%;
           margin-left: 0px;
@@ -63,7 +63,8 @@
     
   </div>
 </nav>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasstart" aria-labelledby="offcanvasstartLabel">
+<!-- Pop-up pentru bara de navigare -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasstart" aria-labelledby="offcanvasstartLabel" style="width:40%;">
   <div class="offcanvas-header border-bottom">
     <h5 class="offcanvas-title">Menu</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -76,15 +77,37 @@
       <li class="nav-item">
         <a href="docs/getting-started.html" class="nav-link">Docs</a>
       </li>
+      <li class="nav-item">
+        <li class="nav-item">
+          <a href="docs/getting-started.html" class="nav-link">Docs</a>
+        </li>
+      </li>
     </ul>
+  <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
+    
+    <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+      <div class="mb-1">
+        <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
+      </div>
+      <div class="mb-1">
+        <input type="password" name="parola" required  class="form-control text-bg-dark" placeholder="Password">
+      </div>
+      <div class="mb-1">
+        <a href="#" class="d-block link-danger text-decoration-none dropdown-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvastop" aria-controls="offcanvastop">
+          Ti-ai uitat parola? </a>
+          
+      </div>
+      <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="w-100 rounded-pill btn btn-warning ">
+      </form>
+    </div>
   </div>
   <div class="offcanvas-header border-top">
-    <a href="https://themes.getbootstrap.com/product/silicon-business-technology-template-ui-kit/" class="btn btn-primary w-100" target="_blank" rel="noopener">
-      <i class="bx bx-cart fs-4 lh-1 me-1"></i>
-      &nbsp;Buy now
-    </a>
+          
+      <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 w-100">Creeaza Cont</a>
+        
   </div>      
 </div>
+<!-- Pop-up pentru pierdere parola -->
 <div class="offcanvas offcanvas-top" style="height:20vh !important;" tabindex="-1" id="offcanvastop" aria-labelledby="offcanvastopLabel">
   <div class="offcanvas-header">
     <h4 class="offcanvas-title ms-5" id="offcanvastopLabel">Introdu adresa de email aferenta contului tau</h4>
