@@ -39,6 +39,11 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         $poza_profil=$object->name();
         if ($poza_profil==$row['user_name'].".jpg"){
             $object = $bucket->object($cloudPath);
+            $object->update([
+        'metadata' => [
+            'CacheControl' => "private,max-age=0,no-store",
+        ]
+    ]);
             $object->delete();
         }
         echo "<BR>";
