@@ -1,31 +1,31 @@
 <?php
-print_r($_POST);
-
 
 if (isset($_COOKIE["user_name"])) {
   header('Location:index.php');
 } //redirect pe home page daca este deja autentificat
 
-echo $_POST['email'];
-$conditie_email="select email FROM users where email='".$_POST['email']." ' ";
-$conditie_user="select user_name FROM users where user_name='".$_POST['user_name']." ' ";
-echo $conditie_email;
-echo $conditie_user;
 
-if(($_POST['parola_i'])!=($_POST['parola_c']))
-{
-  setcookie("confirmare_parola","FALSE", time()+1,"/");
-  header('Location:creare_cont.php');
-}
 
-$conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
+
+
+
+if(isset($_POST['creeaza_cont'])){
+  if(($_POST['parola_i'])!=($_POST['parola_c']))
+  {
+    setcookie("confirmare_parola","FALSE", time()+1,"/");
+    header('Location:creare_cont.php');
   }
 
-if(isset($_POST['submit'])){
+  $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
+  $conditie_user="select user_name FROM users where user_name='".$_POST['user_name']." ' ";
+
+  $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+
+  if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      exit();
+    }
   $result_email = mysqli_query($conexiune, $conditie_email);
   $result_user = mysqli_query($conexiune, $conditie_user);
 
@@ -57,31 +57,32 @@ if(isset($_POST['submit'])){
 <html>
 <title> Creare Cont </title>
 <body>
-<FORM method="POST" action="creare_cont.php">
-<table border=0 width="40%" align="left">
-  <tr>
-    <td with="30%">User Name:</td>
-    <td with="70%"><INPUT TYPE="text" name="user_name" required></td>
-  </tr>
-  <tr>
-    <td>Email :</td>
-    <td><INPUT TYPE="email" name="email" required></td>
-  </tr>
-    <tr>
-    <td>Parola:</td>
-    <td><INPUT TYPE="password" name="parola_i" required></td>
-  </tr>
-  <tr>
-    <td>Confirma Parola:</td>
-    <td><INPUT TYPE="password" name="parola_c" required></td>
-  </tr>
-  <tr>
-    <td><INPUT TYPE="reset" VALUE="reset"></td>
-    <td><INPUT TYPE="submit" name="submit" VALUE="send"></td>
-    <td><a href='index.php'> <button> Home </button> </a> </td>
-  </tr>
- </table>
- </form>
+<main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 2.1vh !important;">
+  <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start h-100 pt-5 mt-5" >
+    <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4" style="width:35%;">
+      <hr class="my-4">
+      <form method="POST" id="creare_cont" action="creare_cont.php">
+      <div class="mb-3 input-group-lg">
+        <label for="user_name" class="form-label">Nume de utilizator</label>
+        <input type="text" id="user_name" class="form-control" name="user_name" required>
+      </div>
+      <div class="mb-3 input-group-lg">
+        <label for="email" class="form-label" >Email</label>
+        <input type="email" id="email" class="form-control" name="email" required>
+      </div>
+      <div class="mb-3 input-group-lg">
+        <label for="password_1" class="form-label">Parola</label>
+        <input type="password" id="password_1" class="form-control" name="parola_i" required>
+      </div>
+      <div class="mb-3 input-group-lg">
+        <label for="password_2" class="form-label" >Confirma Parola</label>
+        <input type="password" id="password_2" class="form-control" name="parola_c" required>
+      </div><hr class="my-4">
+        <input type="submit" value="Creeaza cont" name="creeaza_cont" form="creare_cont" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 2.1vh !important;">
+      </form>
+      
+    </div>
+  </div>
     <?php
     if(isset($_COOKIE["confirmare_parola"])){
       echo "Parolele introduse nu sunt identice!";

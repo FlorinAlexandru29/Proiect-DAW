@@ -27,6 +27,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
     <title>Home Page</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
   </head>
   <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
