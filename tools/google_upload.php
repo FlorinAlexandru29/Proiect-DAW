@@ -50,11 +50,12 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     } 
      $storageObject = $bucket->upload(
         $fileContent,
-        ['name' => $cloudPath],
-        // if $cloudPath is existed then will be overwrite without confirmation
-        // NOTE: 
-        // a. do not put prefix '/', '/' is a separate folder name  !!
-        // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
+  [
+    ['name' => $cloudPath],
+    'metadata' => [
+      'cacheControl' => "public, max-age=0"
+    ]
+  ]
 );
 
     echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
