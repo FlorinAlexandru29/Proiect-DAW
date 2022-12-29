@@ -51,7 +51,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
      $this->$bucket->upload(
         $fileContent,
   [
-    ['name' => $cloudPath],
+    'name' => $cloudPath,
     'metadata' => [
       'cacheControl' => "public, max-age=0"
     ]
