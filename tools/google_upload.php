@@ -19,20 +19,9 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 
 
     $bucketName = 'lure-prod-bucket';
-
+    
     $bucket = $storage->bucket($bucketName);
-    $object = $bucket->object($cloudPath);
-    $object->delete();
-     $storageObject = $bucket->upload(
-        $fileContent,
-        ['name' => $cloudPath]
-        // if $cloudPath is existed then will be overwrite without confirmation
-        // NOTE: 
-        // a. do not put prefix '/', '/' is a separate folder name  !!
-        // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
-);
 
-    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath"; 
     $directory = 'uploads/';
     if ($directory == null) {
         // list all files
@@ -45,9 +34,25 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 
     foreach ($objects as $object) {
         print $object->name() . PHP_EOL;
+        if ($object->name()==$row['user_name'].".jpg"){
+            $object = $bucket->object($cloudPath);
+            $object->delete();
+        }
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
+
+     $storageObject = $bucket->upload(
+        $fileContent,
+        ['name' => $cloudPath]
+        // if $cloudPath is existed then will be overwrite without confirmation
+        // NOTE: 
+        // a. do not put prefix '/', '/' is a separate folder name  !!
+        // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
+);
+
+    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath"; 
+    
 } 
 catch(Exception $e) {
     echo $e->getMessage();
