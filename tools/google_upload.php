@@ -23,7 +23,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $bucket = $storage->bucket($bucketName);
 
 
-     $directory = 'profile_pic/';
+     /* $directory = 'profile_pic/';
     if ($directory == null) {
         // list all files
         $objects = $bucket->objects();
@@ -38,7 +38,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         print $object->name() . PHP_EOL;
         $poza_profil=$object->name();
         if ($poza_profil==$row['user_name'].".jpg"){
-            $object->update([
+           $object->update([
         'metadata' => [
             'CacheControl' => "private,max-age=0,no-store",
         ]
@@ -47,7 +47,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         }
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
-    } 
+    }  */
      $storageObject = $bucket->upload(
         $fileContent,
   [
