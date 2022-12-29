@@ -94,6 +94,7 @@ if(isset($_POST['creeaza_cont'])){
     </div>
   </div>
     <?php
+    include 'header_guest.php';
     if(isset($_COOKIE["confirmare_parola"])){
       echo "Parolele introduse nu sunt identice!";
       setcookie("confirmare_parola","FALSE", time()-1,"/");
