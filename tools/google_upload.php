@@ -16,7 +16,16 @@ $client_x509_cert_url=openssl_decrypt ($client_x509_cert_url, "AES-128-CTR", "ka
 
 try {
     $storage = new StorageClient([
-        'keyFilePath' => 'lure-prod-da79b1b59e79.json',
+        "type"=> $type,
+        "project_id"=> $project_id,
+        "private_key_id"=> $private_key_id,
+        "private_key"=> $private_key,
+        "client_email"=>$client_email,
+        "client_id"=> $client_id,
+        "auth_uri"=>$auth_uri,
+        "token_uri"=>$token_uri,
+        "auth_provider_x509_cert_url"=> $auth_provider_x509_cert_url,
+        "client_x509_cert_url"=>$client_x509_cert_url,
     /* $type,
     $project_id,
     $private_key_id,
