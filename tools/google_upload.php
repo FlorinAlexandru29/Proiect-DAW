@@ -67,6 +67,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     setcookie("profile_pic", '',time()-60,'/');
     setcookie("profile_pic", $row["user_name"],time()+60,'/');
     }
+    header('Location:account_information.php');
     
 } 
 catch(Exception $e) {
