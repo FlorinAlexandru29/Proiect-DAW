@@ -28,7 +28,7 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();}
 
-$cerere_user="SELECT email,activat,user_name FROM users WHERE user_name='".$_COOKIE['user_name']." ' ";
+$cerere_user="SELECT email,activat,user_name,profile_pic FROM users WHERE user_name='".$_COOKIE['user_name']." ' ";
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
@@ -43,12 +43,11 @@ if(isset($_POST['save_photo'])) include 'tools/google_upload.php';
     <ul class='list-group'>
     <li class='list-group-item'>
     <div class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3">
-      <img src='https://storage.googleapis.com/lure-prod-bucket/uploads/DSC_0154-1-2.jpg' width='200' class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>
 <?php
 
 if(isset($_COOKIE["profile_pic"])){
     echo "
-    <img src='resurse/profile_pics/".$_COOKIE["profile_pic"].".png' width='200' class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
+    <img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row['user_name'].".png' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
   }
   else echo "
   <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";

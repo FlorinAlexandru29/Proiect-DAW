@@ -15,7 +15,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 
 
      $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
-    $cloudPath = 'uploads/' . $row['user_name'].".jpg";
+    $cloudPath = 'profile_pic/' . $row['user_name'].".jpg";
 
 
     $bucketName = 'lure-prod-bucket';
@@ -23,7 +23,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $bucket = $storage->bucket($bucketName);
 
 
-    $directory = 'uploads/';
+    $directory = 'profile_pic/';
     if ($directory == null) {
         // list all files
         $objects = $bucket->objects();
@@ -44,11 +44,6 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
-    $object = $bucket->object($cloudPath);
-
-    if ($object->exists()) {
-     echo 'Object exists!';
-}
 
      $storageObject = $bucket->upload(
         $fileContent,
@@ -59,7 +54,17 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
 );
 
-    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath"; 
+    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
+    if ($_row['profile_pic']==0){
+    $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+    if (mysqli_connect_errno()) {
+        echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        exit();
+      }
+    $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".$row['user_name']."'";
+    mysqli_query($conexiune,$cerere);
+    mysqli_close($conexiune);
+    }
     
 } 
 catch(Exception $e) {
