@@ -44,10 +44,10 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     } */
-
      $storageObject = $bucket->upload(
         $fileContent,
-        ['name' => $cloudPath]
+        ['name' => $cloudPath],
+        ['CacheControl' => "private,max-age=0,no-store"],
         // if $cloudPath is existed then will be overwrite without confirmation
         // NOTE: 
         // a. do not put prefix '/', '/' is a separate folder name  !!
