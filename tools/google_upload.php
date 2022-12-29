@@ -3,41 +3,13 @@ require_once "vendor/autoload.php";
 include 'google_drive_key.php';
 
 use Google\Cloud\Storage\StorageClient;
-$type=openssl_decrypt ($type, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$project_id=openssl_decrypt ($project_id, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$private_key_id=openssl_decrypt ($private_key_id, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$private_key=openssl_decrypt ($private_key, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$client_email=openssl_decrypt ($client_email, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$client_id=openssl_decrypt ($client_id, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$auth_uri=openssl_decrypt ($auth_uri, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$token_uri=openssl_decrypt ($token_uri, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$auth_provider_x509_cert_url=openssl_decrypt ($auth_provider_x509_cert_url, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-$client_x509_cert_url=openssl_decrypt ($client_x509_cert_url, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+$key="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";
+$key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+echo $key;
+/* try {
+    $storage = new StorageClient([
 
-try {
-    $storage = [
-        
-        "type"=> "service_account",
-        "project_id"=>"lure-prod",
-        "private_key_id"=>"da79b1b59e799a70e1d2cf4875ae42ceb681f229",
-        "private_key"=>"-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCuhLVKB5du7/Jl\nsezWGtYSjKWzdfqG6Q4mCKdBVLzosgmJfCTfaZO7seDzqKIGhJ6yFLhi+KEARFld\njkQ33K+8KYWZ1/inbaDhhEtWmWVgdJPT8V+uQ8tCMGsgFkpMs/os5LiVhX9Wx3RA\nTR7Eoa7eHBd1pES018Psx/uyQkpbFaNdbUi6FL4X2YdZZVqGaIYmStqjPzoQS3Cp\ncRBnFLVUiTypFkk0ock5V4E6uePQwqvB9AdvNBIBAitop754azs9o2Zceftj3TNj\n+p7Kex9FTLZRj2IpibHGCvM6bsb1F+UbnnR6scw/ZazGNEjscWVwrrWJWhN7+NhH\nzke4qcHLAgMBAAECggEATyAYWjJK9J+SFY2wRfrw6IQgdNee+SAdrBzsSHC1HgPq\n0w0YYrspokYqKg9hNvdWRIOkfisgRFC4+/QO9gz3GKbyziffs3m/IcCrr93o2uzA\nQa4EpaxTMfVl/Kxej5xiZ4xkLFbUv3G7QZQ1yQ1NjaLK+Cm8hQn26RpbAh2QPO84\n8VIrY7mGiKcFtLUzjNUWvoa33PJf1wVFb0LQ0L/P8VOlLiqvc0b26MLhmhZd658o\nEO9W6bCSuWziO+2wWV7HUXU9FVzBgd6JDkD1+EyGB3ZySiatSX838J/teJjsIv2Z\nkmkYjyujMoWbFuTaf+OjnVtMe1jjY23ahWnqfqzf4QKBgQDTlb3skshduFCXMqkf\nhvChLwKQjTQPvr52h0Vs0KrpmrcBgOsdHSfxJ0PDQdolYYC63w13XCHIIH75OStT\n8vcHVtTEQzNF50jAm3jViDDZIRtWjz6/YOfMu4tFMKTcdzh2Uw18bHqGh154wrS0\nfDHIJcoZahz3k3LEvJFLHw8YowKBgQDTJxDdHFlMJH0C3c5fVnHQxkypptmwQoQH\nwjEm+ihhlzmcwSnMC/q2a8QUkQX/GjaxHSV0/u7S4VNiFJs9Zs6+0LrC4k+XtMls\n72WlaGIro+vz580Zia716VSRNNQGMyT9O0RRQf5Ag4TASVGPrSQ0S78mtHJhd4M3\naGS9QQZ8uQKBgCDyV0GoVZTqZ3ozxEwJehzPMioKIso03HmedLwN/h8kHU0ZowLE\nkHynrZCRB4P8m8v9gZ5NdWExVjQ+p7WJxteYuMba4/gFnLmJPBab/2dAFX60DYRF\ndbLWnUgn2/QMiHk8U4RFbArYt2g8gWD9Wc8du0ubz2jpx9xEtKcq7fHbAoGAe/i9\nz/QrAaeStjIgTp1kaZ1juV+7A9+pwRxk22uYdePh8YT/00tdQel30FNtX9+2KLri\nGRTsh2fAGx/aHWzVCfdnD7Dr5jhA4vKTjVACA3lUuXlpVAsgbEU4X6DSs2kn2H4J\nmGPUsXAGaxchCegwD3xBmKntVghjRA7Ixsz80BECgYBKBsF3uDyGgKwv/54XWJ9X\nO+QNpw1+r9YauoyDQ08XcBagIv02R2iQGzM9kFfNGDShQokfvDty4R0sKwZiIRWH\nQBNSWFXE9wQYy9i7vmw65Yd0qlwYy0pZuzqZoRMVcL2WJNVzFwdUDcHB7J89GmFp\nuZfvIWUqD/ljmiKWhPjGgQ==\n-----END PRIVATE KEY-----\n",
-        "client_email"=>"lure-production@lure-prod.iam.gserviceaccount.com",
-        "client_id"=>"102610446273213051205",
-        "auth_uri"=>"https://accounts.google.com/o/oauth2/auth",
-        "token_uri"=>"https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url"=> "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url"=> "https://www.googleapis.com/robot/v1/metadata/x509/lure-production%40lure-prod.iam.gserviceaccount.com"];
-    /* $type,
-    $project_id,
-    $private_key_id,
-    $private_key,
-    $client_email,
-    $client_id,
-    $auth_uri,
-    $token_uri,
-    $auth_provider_x509_cert_url,
-    $client_x509_cert_url */
-        
+    ]);
 
     
 
@@ -77,6 +49,6 @@ try {
 } 
 catch(Exception $e) {
     echo $e->getMessage();
-}
+} */
 
 ?>
