@@ -38,7 +38,6 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         print $object->name() . PHP_EOL;
         $poza_profil=$object->name();
         if ($poza_profil==$row['user_name'].".jpg"){
-            $object = $bucket->object($cloudPath);
             $object->update([
         'metadata' => [
             'CacheControl' => "private,max-age=0,no-store",
@@ -52,7 +51,6 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
      $storageObject = $bucket->upload(
         $fileContent,
         ['name' => $cloudPath],
-        ['CacheControl' => "private,max-age=0,no-store"],
         // if $cloudPath is existed then will be overwrite without confirmation
         // NOTE: 
         // a. do not put prefix '/', '/' is a separate folder name  !!
