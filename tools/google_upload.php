@@ -22,6 +22,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     
     $bucket = $storage->bucket($bucketName);
 
+
     $directory = 'uploads/';
     if ($directory == null) {
         // list all files
@@ -31,16 +32,23 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         $options = array('prefix' => $directory);
         $objects = $bucket->objects($options);
     }
+    
 
     foreach ($objects as $object) {
         print $object->name() . PHP_EOL;
-        if ($object->name()==$row['user_name'].".jpg"){
+        $poza_profil=$object->name();
+        if ($poza_profil==$row['user_name'].".jpg"){
             $object = $bucket->object($cloudPath);
             $object->delete();
         }
         echo "<BR>";
         // NOTE: if $object->name() ends with '/' then it is a 'folder'
     }
+    $object = $bucket->object($cloudPath);
+
+    if ($object->exists()) {
+     echo 'Object exists!';
+}
 
      $storageObject = $bucket->upload(
         $fileContent,
