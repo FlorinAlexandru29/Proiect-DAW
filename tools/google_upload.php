@@ -21,7 +21,9 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $bucketName = 'lure-prod-bucket';
 
     $bucket = $storage->bucket($bucketName);
-    $storageObject = $bucket->upload(
+    $object = $bucket->object($cloudPath);
+    $object->delete();
+    /* $storageObject = $bucket->upload(
         $fileContent,
         ['name' => $cloudPath]
         // if $cloudPath is existed then will be overwrite without confirmation
@@ -30,7 +32,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
         // b. private key MUST have 'storage.objects.delete' permission if want to replace file !
 );
 
-    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
+    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath"; */
     $directory = 'uploads/';
     if ($directory == null) {
         // list all files
