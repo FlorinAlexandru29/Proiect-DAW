@@ -55,7 +55,17 @@ if(isset($_POST['creeaza_cont'])){
 ?>
 
 <html>
-<title> Creare Cont </title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Creare Cont </title>
+    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
+  </head>
+
 <body>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 2.1vh !important;">
   <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start h-100 pt-5 mt-5" >
