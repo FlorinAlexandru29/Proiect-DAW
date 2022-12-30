@@ -3,7 +3,7 @@
 if (isset($_COOKIE["user_name"])) {
   header('Location:index.php');
 } //redirect pe home page daca este deja autentificat
-include 'header_guest.php';
+include 'fragmente/navbar_guest.php';
 
 
 
