@@ -24,7 +24,7 @@
                             }
                             else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
                             
-                          php echo 'Hello: '.$_COOKIE["user_name"]; ?>
+                           echo 'Hello: '.$_COOKIE["user_name"]; ?>
                 
                             </a>
             <ul class="dropdown-menu">
