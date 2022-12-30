@@ -74,6 +74,20 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+@media screen and (max-width: 1200px) {
+
+  nav>div.container{max-width: 100%;
+    
+
+  }
+}
+@media screen and (max-width: 450px) {
+
+#offcanvasstart{
+width:100% !important;
+
+}
+}
 *,
 *::before,
 *::after {
