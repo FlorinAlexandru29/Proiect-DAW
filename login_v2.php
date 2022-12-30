@@ -1,7 +1,7 @@
 <?php
 if((isset($_POST['login-expanded']))OR(isset($_POST['login-mobile']))){
-$conditie_email="select email FROM users where email='".$_POST['email']." ' ";
-$conditie_password="select email FROM users where password='".openssl_encrypt($_POST['parola'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ' ";
+$conditie_email="select email FROM users where email='".$email." ' ";
+$conditie_password="select email FROM users where password='".openssl_encrypt($password, 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ' ";
 echo $conditie_email;
 echo $conditie_password;
 
@@ -18,7 +18,7 @@ $result_password = mysqli_query($conexiune, $conditie_password);
 if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) > 0))  {
   echo "Login Realizat cu Succes";
 
-  $cerere_user="SELECT user_name,activat,profile_pic FROM users WHERE email='".$_POST['email']." ' ";
+  $cerere_user="SELECT user_name,activat,profile_pic FROM users WHERE email='".$email." ' ";
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
   setcookie("user_name", $row["user_name"], time()+ 60,'/');
