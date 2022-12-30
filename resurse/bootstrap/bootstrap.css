@@ -73,6 +73,13 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
+@media screen and (max-height: 470px) {
+
+  #div-login-mobile{position:relative !important;
+    
+
+  }
+}
 
 @media screen and (max-width: 1200px) {
 
@@ -81,7 +88,7 @@
 
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
 
 #offcanvasstart{
 width:100% !important;
