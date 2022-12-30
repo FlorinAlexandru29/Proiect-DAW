@@ -43,7 +43,7 @@
   </div>
 </nav>
 <!-- Pop-up pentru bara de navigare -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasstart" aria-labelledby="offcanvasstartLabel" style="width:40%;">
+<div class="fs-5 offcanvas offcanvas-start" tabindex="-1" id="offcanvasstart" aria-labelledby="offcanvasstartLabel" style="width:40%;">
   <div class="offcanvas-header border-bottom">
     <h5 class="offcanvas-title">Menu</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -62,7 +62,7 @@
         </li>
       </li>
     </ul>
-  <div id="div-login-mobile" class="container ms-0 position-absolute pe-5">
+  <div id="div-login-mobile" class="container ms-0 position-absolute">
     
     <form id="login-form-mobile" method="POST" action="index.php" class="p-2">
       <div class="mb-1">
