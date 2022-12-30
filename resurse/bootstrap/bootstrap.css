@@ -82,7 +82,7 @@
 @media screen and (max-width: 1200px) {
   nav>div.container{max-width: 100%;}
   #div-login-mobile{
-    bottom:1000px !important;
+    bottom:100px !important;
   }
 }
 
