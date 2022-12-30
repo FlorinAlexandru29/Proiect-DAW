@@ -73,6 +73,7 @@
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
 }
+/* Setari pentru navbar */
 @media screen and (max-height: 470px) {
   #div-login-mobile{position:relative !important;
                     bottom:0px !important;}
@@ -80,6 +81,9 @@
 
 @media screen and (max-width: 1200px) {
   nav>div.container{max-width: 100%;}
+  #div-login-mobile{
+    bottom:1000px !important;
+  }
 }
 
 @media screen and (max-width: 500px) {
