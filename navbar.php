@@ -26,12 +26,12 @@
     border-bottom-right-radius: 50rem !important;">
               <span class="visually-hidden">Toggle Dropend</span>
             </button>
-            <form id="login-form-expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+            <form form="login-form-expanded" id="login-form-expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
               <div class="mb-1">
-                <input type="email" name="email_expanded" required class="form-control text-bg-dark"  placeholder="Email">
+                <input form="login-form-expanded" type="email" name="email_expanded" required class="form-control text-bg-dark"  placeholder="Email">
               </div>
               <div class="mb-1">
-                <input type="password" name="password_expanded" required  class="form-control text-bg-dark" placeholder="Password">
+                <input form="login-form-expanded" type="password" name="password_expanded" required  class="form-control text-bg-dark" placeholder="Password">
               </div>
               <div class="mb-1">
                 <a href="#" class="d-block link-danger text-decoration-none dropdown-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvastop" aria-controls="offcanvastop">
@@ -66,10 +66,10 @@
     
     <form id="login-form-mobile" method="POST" action="index.php" class="p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
       <div class="mb-1">
-        <input type="email" name="email_mobile" required class="form-control text-bg-dark"  placeholder="Email">
+        <input form="login-form-mobile" type="email" name="email_mobile" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
       <div class="mb-1">
-        <input type="password" name="password_mobile" required  class="form-control text-bg-dark" placeholder="Password">
+        <input form="login-form-mobile" type="password" name="password_mobile" required  class="form-control text-bg-dark" placeholder="Password">
       </div>
       <div class="mb-1">
         <a href="#" class="d-block link-danger text-decoration-none dropdown-toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvastop" aria-controls="offcanvastop">
