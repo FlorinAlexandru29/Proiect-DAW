@@ -81,7 +81,7 @@
 
   }
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 450px) {
 
 #offcanvasstart{
 width:100% !important;
