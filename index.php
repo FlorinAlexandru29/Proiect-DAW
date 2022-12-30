@@ -11,8 +11,9 @@ echo "activeaza-ti contul";
 unset($_SESSION['activat']);
 }
 
-if(isset($_POST['login'])) include 'login_v2.php';
 if(isset($_POST['login_expanded'])) include 'login_v2.php';
+/* if(isset($_POST['login'])) include 'login_v2.php'; */
+
 
 
 

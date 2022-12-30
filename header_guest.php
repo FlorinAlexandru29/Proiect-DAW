@@ -11,9 +11,9 @@
         <li><a href="#" class="btn px-3 rounded-pill btn-outline-header me-2 ">Trupe</a></li>
         <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
       </ul>
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
         <input type="search" class="form-control rounded-pill text-bg-dark" placeholder="Search..." aria-label="Search">
-       </form>
+       </form> -->
       <div class="text-center">
           
         <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 ">Creeaza Cont</a>

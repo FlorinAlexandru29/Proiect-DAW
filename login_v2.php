@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['submit'])){
+if((isset($_POST['login_expanded']))OR(isset($_POST['login']))){
 $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
 $conditie_password="select email FROM users where password='".openssl_encrypt($_POST['parola'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ' ";
 echo $conditie_email;
