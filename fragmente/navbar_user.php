@@ -20,9 +20,9 @@
                 <?php 
                 
                             if(isset($_COOKIE["profile_pic"])){
-                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='40' height='40' class='rounded-circle'>";
+                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='40' height='40' class='rounded-circle me-2'>";
                             }
-                            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
+                            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle me-2'>";
                             
                            echo 'Hello: '.$_COOKIE["user_name"]; ?>
                 
@@ -65,8 +65,8 @@
                 <?php 
                 
                 if(isset($_COOKIE["profile_pic"]))
-                    echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='50' height='50' class='rounded-circle'>";
-                    else echo"<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
+                    echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='50' height='50' class='rounded-circle me-2'>";
+                    else echo"<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle me-2'>";
 
                      echo 'Hello: '.$_COOKIE["user_name"];
                      ?>
