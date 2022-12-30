@@ -39,7 +39,7 @@
                   
               </div>
     </div>
-    
+</form>
   </div>
 </nav>
 <!-- Pop-up pentru bara de navigare -->
