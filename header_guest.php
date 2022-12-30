@@ -39,6 +39,7 @@
                   Ti-ai uitat parola? </a>
                   
               </div>
+          </form>
     </div>
     
   </div>
