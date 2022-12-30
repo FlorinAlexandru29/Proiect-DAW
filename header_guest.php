@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Page</title>
+    <title>Guest Navbar</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
@@ -25,7 +25,8 @@
 }
 
     </style>
-<nav class="navbar navbar-expand-lg p-2 text-bg-header">
+
+<nav class="navbar navbar-expand-lg p-2 text-bg-header position-sticky top-0">
   <div class="container">
 
     <button style="background-color:white;" type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasstart" aria-controls="offcanvasstart" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,25 +36,25 @@
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="btn px-3 btn-primary me-2">Home</a></li>
         <li><a href="#" class="btn px-3 rounded-pill btn-outline-header me-2 ">Trupe</a></li>
-        <li><a href="contact" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
+        <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
       </ul>
-      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
         <input type="search" class="form-control rounded-pill text-bg-dark" placeholder="Search..." aria-label="Search">
-       </form>
+       </form> -->
       <div class="text-center">
           
         <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 ">Creeaza Cont</a>
          
           </div>
           <div class="btn-group dropend">
-            <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
+            <input type="submit" form="login_form_expanded" name="login_expanded" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
     border-top-left-radius: 50rem !important;">
             
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style=" border-top-right-radius: 50rem !important;
     border-bottom-right-radius: 50rem !important;">
               <span class="visually-hidden">Toggle Dropend</span>
             </button>
-            <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+            <form id="login_form_expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
               <div class="mb-1">
                 <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
               </div>
@@ -65,6 +66,7 @@
                   Ti-ai uitat parola? </a>
                   
               </div>
+          </form>
     </div>
     
   </div>
@@ -91,7 +93,7 @@
     </ul>
   <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
     
-    <form id="login-form" method="POST" action="index.php" class="p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+    <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
       <div class="mb-1">
         <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
@@ -122,12 +124,12 @@
   <div class="offcanvas-body container" style="margin-left:0 !important;">
     <div class="row">
       <div class="col">
-    <form class="form-floating" method="POST" action="index.php">
+    <form id="form_forgot_password" class="form-floating" method="POST" action="index.php">
       <input type="email" name="email" class="form-control" id="floatingInput" placeholder="placeholder" required>
       <label for="floatingInput">Adresa de email</label>
     </div>
     <div class="col">
-      <input type="submit" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
+      <input type="submit" form="form_forgot_password" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
     </div>
       
       </div>

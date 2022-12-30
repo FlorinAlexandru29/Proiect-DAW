@@ -30,7 +30,25 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
-  </head>
+    <style>
+      @media screen and (max-width: 1200px) {
+
+        nav>div.container{max-width: 100%;
+          
+
+        }
+}
+@media screen and (max-width: 450px) {
+
+#offcanvasstart{
+  width:100% !important;
+
+}
+
+}
+
+    </style>
+    </head>
   <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
   else include 'header_guest.php'
