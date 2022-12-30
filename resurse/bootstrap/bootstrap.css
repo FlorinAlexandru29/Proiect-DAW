@@ -91,7 +91,7 @@
   nav>div.container{max-width: 100%;}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 485px) {
 #offcanvasstart{
 width:100% !important;}
 }
