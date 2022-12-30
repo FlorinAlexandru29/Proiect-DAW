@@ -77,7 +77,7 @@
           Ti-ai uitat parola? </a>
           
       </div>
-      <input type="submit" form="login-form" name="submit" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
+      <input type="submit" form="login-form" name="login" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
       </form>
     </div>
   </div>
