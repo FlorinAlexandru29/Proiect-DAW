@@ -19,14 +19,14 @@
          
           </div>
           <div class="btn-group dropend">
-            <input type="submit" form="login-form" name="submit" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
+            <input type="submit" form="login-form-expanded" name="login-expanded" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
     border-top-left-radius: 50rem !important;">
             
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style=" border-top-right-radius: 50rem !important;
     border-bottom-right-radius: 50rem !important;">
               <span class="visually-hidden">Toggle Dropend</span>
             </button>
-            <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+            <form id="login-form-expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
               <div class="mb-1">
                 <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
               </div>
@@ -64,7 +64,7 @@
     </ul>
   <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
     
-    <form id="login-form" method="POST" action="index.php" class="p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+    <form id="login-form-mobile" method="POST" action="index.php" class="p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
       <div class="mb-1">
         <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
@@ -76,7 +76,7 @@
           Ti-ai uitat parola? </a>
           
       </div>
-      <input type="submit" form="login-form" name="submit" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
+      <input type="submit" form="login-form-mobile" name="login-mobile" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
       </form>
     </div>
   </div>
@@ -95,12 +95,12 @@
   <div class="offcanvas-body container" style="margin-left:0 !important;">
     <div class="row">
       <div class="col">
-    <form class="form-floating" method="POST" action="index.php">
+    <form id="form-forgot-password" class="form-floating" method="POST" action="index.php">
       <input type="email" name="email" class="form-control" id="floatingInput" placeholder="placeholder" required>
       <label for="floatingInput">Adresa de email</label>
     </div>
     <div class="col">
-      <input type="submit" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
+      <input type="submit" form="form-forgot-password" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
     </div>
       
       </div>
