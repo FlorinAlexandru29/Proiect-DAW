@@ -64,9 +64,9 @@
         </li>
       </li>
     </ul>
-  <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
+    <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
     
-     <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+    <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
       <div class="mb-1">
         <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
@@ -78,10 +78,9 @@
           Ti-ai uitat parola? </a>
           
       </div>
-      <input type="submit" form="login-form" name="login" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
+      <input type="submit" form="login-form" name="submit" value="Autentifica-te" id="butonautentificare" class="w-100 rounded-pill btn btn-warning ">
       </form>
     </div>
-  </div>
   <div class="offcanvas-header border-top">
           
       <a href="creare_cont.php" class="btn rounded-pill btn-warning me-2 w-100" id="butoncreeaza">Creeaza Cont</a>
