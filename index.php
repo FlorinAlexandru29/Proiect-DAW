@@ -59,7 +59,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
   <body>
   <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
-  else include 'fragmente/navbar_header.php'
+  else include 'fragmente/navbar_guest.php'
   ?>
   </body>
 </html>
