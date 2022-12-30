@@ -49,12 +49,12 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
 
     </style>
     </head>
+ 
+  <body>
   <?php 
   if (isset($_COOKIE["user_name"])) include 'header_user.php';
   else include 'navbar.php'
   ?>
-  <body>
-  
   </body>
 </html>
 
