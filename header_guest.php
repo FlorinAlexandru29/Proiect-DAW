@@ -20,14 +20,14 @@
          
           </div>
           <div class="btn-group dropend">
-            <input type="submit" form="login-form_expanded" name="submit" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
+            <input type="submit" form="login_form_expanded" name="login_expanded" value="Autentifica-te" class="btn btn-warning " style=" border-bottom-left-radius: 50rem !important;
     border-top-left-radius: 50rem !important;">
             
             <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style=" border-top-right-radius: 50rem !important;
     border-bottom-right-radius: 50rem !important;">
               <span class="visually-hidden">Toggle Dropend</span>
             </button>
-            <form id="login-form_expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+            <form id="login_form_expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
               <div class="mb-1">
                 <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
               </div>
