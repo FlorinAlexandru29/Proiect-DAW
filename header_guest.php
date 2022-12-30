@@ -1,3 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guest Navbar</title>
+    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
+    <style>
+      @media screen and (max-width: 1200px) {
+
+        nav>div.container{max-width: 100%;
+          
+
+        }
+}
+@media screen and (max-width: 450px) {
+
+#offcanvasstart{
+  width:100% !important;
+
+}
+
+}
+
+    </style>
 
 <nav class="navbar navbar-expand-lg p-2 text-bg-header position-sticky top-0">
   <div class="container">

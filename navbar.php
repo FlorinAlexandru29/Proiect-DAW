@@ -91,7 +91,7 @@
     </ul>
   <div class="container ms-0 bottom-0 position-absolute pe-5" style="bottom: 100px !important;" >
     
-    <form id="login-form" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+    <form id="login-form" method="POST" action="index.php" class="p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
       <div class="mb-1">
         <input type="email" name="email" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
