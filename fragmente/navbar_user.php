@@ -61,17 +61,6 @@
       </ul>
     <div id="div-login-mobile" class="container ms-0 position-absolute pe-5">
         <div class="mb-3">
-            <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php 
-                
-                            if(isset($_COOKIE["profile_pic"])){
-                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='40' height='40' class='rounded-circle'>";
-                            }
-                            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
-                              ?>
-                          <?php echo 'Hello: '.$_COOKIE["user_name"]; ?>
-                
-                            </a>
             <p class="fs-5 d-block link-username text-dark text-decoration-none">
                 <?php 
                 
@@ -84,7 +73,7 @@
             </p>
         </div>
         <div class="mb-0">
-          <a href="#" class="btn w-100 rounded-pill btn-primary ">Informatii Cont</a>
+          <a href="account_information.php" class="btn w-100 rounded-pill btn-primary ">Informatii Cont</a>
         </div>
         
       </div>
