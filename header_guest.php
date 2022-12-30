@@ -97,12 +97,12 @@
   <div class="offcanvas-body container" style="margin-left:0 !important;">
     <div class="row">
       <div class="col">
-    <form class="form-floating" method="POST" action="index.php">
+    <form id="form_forgot_password" class="form-floating" method="POST" action="index.php">
       <input type="email" name="email" class="form-control" id="floatingInput" placeholder="placeholder" required>
       <label for="floatingInput">Adresa de email</label>
     </div>
     <div class="col">
-      <input type="submit" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
+      <input type="submit" form="form_forgot_password" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
     </div>
       
       </div>
