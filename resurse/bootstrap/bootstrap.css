@@ -78,12 +78,12 @@
   #div-login-mobile{position:relative !important;
                     bottom:0px !important;}
 }
+#div-login-mobile{
+  bottom:100px !important;
+}
 
 @media screen and (max-width: 1200px) {
   nav>div.container{max-width: 100%;}
-  #div-login-mobile{
-    bottom:100px !important;
-  }
 }
 
 @media screen and (max-width: 500px) {
