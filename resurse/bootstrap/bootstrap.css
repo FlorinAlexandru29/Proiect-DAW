@@ -74,27 +74,19 @@
   --bs-highlight-bg: #fff3cd;
 }
 @media screen and (max-height: 470px) {
-
   #div-login-mobile{position:relative !important;
-    
-
-  }
+                    bottom:0px !important;}
 }
 
 @media screen and (max-width: 1200px) {
-
-  nav>div.container{max-width: 100%;
-    
-
-  }
+  nav>div.container{max-width: 100%;}
 }
+
 @media screen and (max-width: 500px) {
-
 #offcanvasstart{
-width:100% !important;
+width:100% !important;}
+}
 
-}
-}
 *,
 *::before,
 *::after {
