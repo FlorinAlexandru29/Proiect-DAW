@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home Page</title>
+    <title>Informatii Cont</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
@@ -17,7 +17,7 @@
 <?php 
 
   
-  if (isset($_COOKIE["user_name"])) include 'header_user.php';
+  if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
   else header('Location:index.php');
 
  
