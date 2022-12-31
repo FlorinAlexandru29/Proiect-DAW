@@ -15,6 +15,7 @@ if(isset($_POST['creeaza_cont'])){
   {
     setcookie("confirmare_parola","FALSE", time()+1,"/");
     header('Location:creare_cont.php');
+    //afisare notificare
   }
 
   $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
@@ -29,8 +30,8 @@ if(isset($_POST['creeaza_cont'])){
   $result_email = mysqli_query($conexiune, $conditie_email);
   $result_user = mysqli_query($conexiune, $conditie_user);
 
-  if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune);}
-  if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune);}
+  if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune); } //afisare notificare,neaparat redirectionare altfel imi baga conturi aiurea
+  if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune); } //header('Location:creare_cont.php');
   
   else{
     $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
@@ -50,6 +51,7 @@ if(isset($_POST['creeaza_cont'])){
     <br>
     Va rugam sa nu raspundeti la acest email!";
     include 'tools/mailer.php';
+    //afisare notificare (posibil in mailer.php?)
   }
 }
 ?>

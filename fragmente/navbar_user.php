@@ -1,6 +1,6 @@
 
 
-<nav class="navbar navbar-expand-lg p-2 text-bg-header">
+<nav class="navbar navbar-expand-lg p-2 text-bg-header sticky-top">
     <div class="container">
   
       <button style="background-color:white;" type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasstart" aria-controls="offcanvasstart" aria-expanded="false" aria-label="Toggle navigation">

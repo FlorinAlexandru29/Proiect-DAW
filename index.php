@@ -15,7 +15,7 @@ if(isset($_POST['login-expanded'])) {
   $email=$_POST['email_expanded'];
   $password=$_POST['password_expanded'];
   include 'tools/login.php';}
-  
+
 if(isset($_POST['login-mobile'])){ 
   $email=$_POST['email_mobile'];
   $password=$_POST['password_mobile'];
@@ -34,6 +34,8 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
  
   <body>
