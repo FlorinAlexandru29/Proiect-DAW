@@ -40,18 +40,16 @@
   if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
   else include 'fragmente/navbar_guest.php';
 
+//trimitere contact
+  if(isset($_POST['trimite_contact'])){
 
-  if(isset($_POST['submit'])){
-
-
-
-      
-    $subject="Contact ".$_POST['trimite_contact'];
+    $subject="Contact ".$_POST['nume_contact'];
 
     $body="Nume:". $_POST['nume_contact']." <br> Email:". $_POST['email_contact']." <br> Telefon:". $_POST['telefon_contact']." <br> Mesaj:". $_POST['mesaj_contact'];
     $r_email='lure.production@gmail.com';
     $r_user_name='Lure Prod';
     include 'tools/mailer.php';
+
 }
   ?>
 
