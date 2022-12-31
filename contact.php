@@ -45,10 +45,12 @@
 
     $subject="Contact ".$_POST['nume_contact'];
 
-    $body="Nume:". $_POST['nume_contact']." <br> Email:". $_POST['email_contact']." <br> Telefon:". $_POST['telefon_contact']." <br> Mesaj:". $_POST['mesaj_contact'];
+    $body="Nume: ". $_POST['nume_contact']." <br> Email: ". $_POST['email_contact']." <br> Telefon: ". $_POST['telefon_contact']." <br> Mesaj: ". $_POST['mesaj_contact'];
     $r_email='lure.production@gmail.com';
     $r_user_name='Lure Prod';
     include 'tools/mailer.php';
+    header('Location:contact.php');
+    //redirect pe pagina pentru a opri userul din a spama mesaje + alert TO DO
 
 }
   ?>
