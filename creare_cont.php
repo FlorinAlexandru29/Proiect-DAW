@@ -11,7 +11,9 @@ if(isset($_POST['creeaza_cont'])){
   if(($_POST['parola_i'])!=($_POST['parola_c']))
   {
     setcookie("confirmare_parola","FALSE", time()+30,"/");
-    header('Location:creare_cont.php');
+    echo $_COOKIE('confirmare_parola');
+
+    //header('Location:creare_cont.php');
     //afisare notificare
   }
   else{
@@ -93,6 +95,7 @@ if(isset($_POST['creeaza_cont'])){
     if(isset($_COOKIE["confirmare_parola"])){
       echo "<input type='password' id='password_2' class='form-control is-invalid' name='parola_c' required>
       <div class='invalid-feedback'>Te rugam sa te asiguri ca parolele introduse sunt la fel!</div>";
+      unset($_COOKIE['confirmare_parola']);
       setcookie("confirmare_parola","FALSE", time()-30,"/");
     }
     else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>";
