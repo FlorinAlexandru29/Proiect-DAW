@@ -13,9 +13,9 @@ if(isset($_POST['creeaza_cont'])){
     echo "conditie ok";
     setcookie("confirmare_parola","FALSE", time()+1,"/");
     header('Location:creare_cont.php');
-    exit();
     //afisare notificare
   }
+  else{
 
   $conditie_email="select email FROM users where email='".$_POST['email']." ' ";
   $conditie_user="select user_name FROM users where user_name='".$_POST['user_name']." ' ";
@@ -51,6 +51,7 @@ if(isset($_POST['creeaza_cont'])){
     Va rugam sa nu raspundeti la acest email!";
     include 'tools/mailer.php';
     //afisare notificare (posibil in mailer.php?)
+  }
   }
 }
 ?>
