@@ -6,15 +6,14 @@ if (isset($_COOKIE["user_name"])) {
 include 'fragmente/navbar_guest.php';
 
 
-
-
-
-
 if(isset($_POST['creeaza_cont'])){
+
   if(($_POST['parola_i'])!=($_POST['parola_c']))
   {
+    echo "conditie ok";
     setcookie("confirmare_parola","FALSE", time()+1,"/");
     header('Location:creare_cont.php');
+    exit();
     //afisare notificare
   }
 
