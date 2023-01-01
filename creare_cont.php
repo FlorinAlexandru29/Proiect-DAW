@@ -10,6 +10,7 @@ if(isset($_POST['creeaza_cont'])){
     
     $_SESSION['eroare_confirmare_parola'] = 0;
     header('Location:creare_cont.php');
+    exit();
     //afisare notificare
   }
   else{
@@ -92,8 +93,9 @@ include 'fragmente/navbar_guest.php';
 
         <label for="password_2" class="form-label" >Confirma Parola</label>
         <?php  
+        
       
-   if(isset($_SESSION["eroare_confirmare_parola"])){
+    if(isset($_SESSION["eroare_confirmare_parola"])){
       echo "<input type='password' id='password_2' class='form-control is-invalid' name='parola_c' required>
       <div class='invalid-feedback'>Te rugam sa te asiguri ca parolele introduse sunt la fel!</div>";
       unset($_SESSION['eroare_confirmare_parola']);
