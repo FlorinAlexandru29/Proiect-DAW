@@ -27,7 +27,12 @@ if(isset($_POST['creeaza_cont'])){
   $result_email = mysqli_query($conexiune, $conditie_email);
   $result_user = mysqli_query($conexiune, $conditie_user);
 
-  if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune); } //afisare notificare,neaparat redirectionare altfel imi baga conturi aiurea
+  if (mysqli_num_rows($result_email) > 0) {
+    mysqli_close($conexiune);
+    $_SESSION['eroare_email'] = 0;
+    header('Location:creare_cont.php');
+    exit();
+  } //afisare notificare,neaparat redirectionare altfel imi baga conturi aiurea
   if (mysqli_num_rows($result_user) > 0) {
     mysqli_close($conexiune);
     $_SESSION['eroare_user_name'] = 0;
@@ -98,10 +103,21 @@ include 'fragmente/navbar_guest.php';
       </div>
       <div class="mb-3 input-group-lg">
         <label for="email" class="form-label" >Email</label>
-        <input type="email" id="email" class="form-control" name="email" required>
+        <?php  
+        
+      
+        if(isset($_SESSION["eroare_email"])){
+          echo " <input type='email' id='email' class='form-control is-invalid' name='email' required>
+          <div class='invalid-feedback'>Exista deja un utilizator cu acest email!</div>";
+          unset($_SESSION['eroare_email']);
+        }
+        else echo" <input type='email' id='email' class='form-control' name='email' required>"; 
+        ?>
+        
       </div>
       <div class="mb-3 input-group-lg">
         <label for="password_1" class="form-label">Parola</label>
+
         <input type="password" id="password_1" class="form-control" name="parola_i" required>
       </div>
       <div class="mb-3 input-group-lg">
