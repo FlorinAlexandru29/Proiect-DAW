@@ -95,7 +95,7 @@ if(isset($_POST['creeaza_cont'])){
       <div class='invalid-feedback'>Te rugam sa te asiguri ca parolele introduse sunt la fel!</div>";
       setcookie("confirmare_parola","FALSE", time()-30,"/");
     }
-    else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>"
+    else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>";
     ?>
       </div><hr class="my-4">
         <input type="submit" value="Creeaza cont" name="creeaza_cont" form="creare_cont" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
