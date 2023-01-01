@@ -91,7 +91,6 @@ include 'fragmente/navbar_guest.php';
       <div class="mb-3 input-group-lg">
 
         <label for="password_2" class="form-label" >Confirma Parola</label>
-        <input type='password' id='password_2' class='form-control' name='parola_c' required>
         <?php  
       
    if(isset($_SESSION["eroare_confirmare_parola"])){
