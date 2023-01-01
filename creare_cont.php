@@ -1,9 +1,6 @@
 <?php
 
-if (isset($_COOKIE["user_name"])) {
-  header('Location:index.php');
-} //redirect pe home page daca este deja autentificat
-include 'fragmente/navbar_guest.php';
+
 
 
 if(isset($_POST['creeaza_cont'])){
@@ -56,6 +53,11 @@ if(isset($_POST['creeaza_cont'])){
   }
   }
 }
+
+if (isset($_COOKIE["user_name"])) {
+  header('Location:index.php');
+} //redirect pe home page daca este deja autentificat
+include 'fragmente/navbar_guest.php';
 ?>
 
 <html>
