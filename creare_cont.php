@@ -10,6 +10,8 @@ if(isset($_POST['creeaza_cont'])){
 
   if(($_POST['parola_i'])!=($_POST['parola_c']))
   {
+    echo "conditie indeplinita";
+
     setcookie("confirmare_parola","FALSE", time()+30,"/");
 
     header('Location:creare_cont.php');
@@ -89,7 +91,8 @@ if(isset($_POST['creeaza_cont'])){
       <div class="mb-3 input-group-lg">
 
         <label for="password_2" class="form-label" >Confirma Parola</label>
-        <?php  if(isset($_COOKIE["confirmare_parola"])){echo $_COOKIE('confirmare_parola');}
+        <?php  
+        if(isset($_COOKIE["confirmare_parola"]))echo $_COOKIE('confirmare_parola');
         else echo"nu e setat";
    /*  
     if(isset($_COOKIE["confirmare_parola"])){
