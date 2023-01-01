@@ -62,26 +62,29 @@ if(isset($_POST['creeaza_cont'])){
   }
   }
 }
-
-if (isset($_COOKIE["user_name"])) {
-  header('Location:index.php');
-} //redirect pe home page daca este deja autentificat
-include 'fragmente/navbar_guest.php';
 ?>
 
-<html>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Creare Cont </title>
+    <title>Creare Cont</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
-  </head>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
 
 <body>
+<?php
+    if (isset($_COOKIE["user_name"])) {
+  header('Location:index.php');
+} //redirect pe home page daca este deja autentificat
+include 'fragmente/navbar_guest.php';
+?>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
   <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
     <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4" id="div-creare-cont" style="width:40%;">
