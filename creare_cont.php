@@ -28,7 +28,12 @@ if(isset($_POST['creeaza_cont'])){
   $result_user = mysqli_query($conexiune, $conditie_user);
 
   if (mysqli_num_rows($result_email) > 0) {echo "Acest email este deja asociat unui cont";mysqli_close($conexiune); } //afisare notificare,neaparat redirectionare altfel imi baga conturi aiurea
-  if (mysqli_num_rows($result_user) > 0) {echo "Acest username este deja asociat unui cont";mysqli_close($conexiune); } //header('Location:creare_cont.php');
+  if (mysqli_num_rows($result_user) > 0) {
+    mysqli_close($conexiune);
+    $_SESSION['eroare_user_name'] = 0;
+    header('Location:creare_cont.php');
+    exit();
+   } //eroare pentru user-name existent
   
   else{
     $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
@@ -79,7 +84,17 @@ include 'fragmente/navbar_guest.php';
       <form method="POST" id="creare_cont" action="creare_cont.php">
       <div class="mb-3 input-group-lg">
         <label for="user_name" class="form-label">Nume de utilizator</label>
-        <input type="text" id="user_name" class="form-control" name="user_name" required>
+        <?php  
+        
+      
+        if(isset($_SESSION["eroare_user_name"])){
+          echo " <input type='text' id='user_name' class='form-control is-invalid' name='user_name' required>
+          <div class='invalid-feedback'>Exista deja un utilizator cu acest user-name!</div>";
+          unset($_SESSION['eroare_user_name']);
+        }
+        else echo" <input type='text' id='user_name' class='form-control' name='user_name' required>"; 
+        ?>
+       
       </div>
       <div class="mb-3 input-group-lg">
         <label for="email" class="form-label" >Email</label>
