@@ -86,9 +86,12 @@
   padding-right: 2rem;
   padding-left: 0;
 }
+#div-creare-cont{
+  width:40%;
+}
 
 @media screen and (max-width: 1200px) {
-  nav>div.container{max-width: 100%;}
+  nav>div.container{max-width: 100%;};
   #div-creare-cont{width: 80% !important;}
 }
 
