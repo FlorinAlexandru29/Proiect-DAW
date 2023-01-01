@@ -93,6 +93,9 @@
   nav>div.container{max-width: 100%;}
   #div-creare-cont{max-width: 80% !important;}
 }
+@media screen and (max-width: 1200px) {
+  #div-creare-cont{max-width: 80% !important;}
+}
 
 @media screen and (max-width: 485px) {
 #offcanvasstart{
