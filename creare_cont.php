@@ -10,8 +10,8 @@ if(isset($_POST['creeaza_cont'])){
     echo "conditie indeplinita";
     @session_start();
     $_SESSION['eroare_confirmare_parola'] = 0;
-
-    header('Location:creare_cont.php');
+echo $_SESSION['eroare_confirmare_parola'];
+    //header('Location:creare_cont.php');
     //afisare notificare
   }
   else{
