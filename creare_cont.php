@@ -69,7 +69,7 @@ if(isset($_POST['creeaza_cont'])){
   </head>
 
 <body>
-<main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.3rem !important;">
+<main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
   <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
     <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4" id="div-creare-cont">
       <hr class="my-4">
@@ -87,20 +87,22 @@ if(isset($_POST['creeaza_cont'])){
         <input type="password" id="password_1" class="form-control" name="parola_i" required>
       </div>
       <div class="mb-3 input-group-lg">
+
         <label for="password_2" class="form-label" >Confirma Parola</label>
-        <input type="password" id="password_2" class="form-control" name="parola_c" required>
+        <?php
+    
+    if(isset($_COOKIE["confirmare_parola"])){
+      echo "<input type='password' id='password_2' class='form-control is-invalid' name='parola_c' required>
+      <div class='invalid-feedback'>Te rugam sa te asiguri ca parolele introduse sunt la fel!</div>";
+      setcookie("confirmare_parola","FALSE", time()-1,"/");
+    }
+    else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>"
+    ?>
       </div><hr class="my-4">
-        <input type="submit" value="Creeaza cont" name="creeaza_cont" form="creare_cont" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 2.1vh !important;">
+        <input type="submit" value="Creeaza cont" name="creeaza_cont" form="creare_cont" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       </form>
       
     </div>
   </div>
-    <?php
-    
-    if(isset($_COOKIE["confirmare_parola"])){
-      echo "Parolele introduse nu sunt identice!";
-      setcookie("confirmare_parola","FALSE", time()-1,"/");
-    }
-    ?>
 </body>
 </html>
