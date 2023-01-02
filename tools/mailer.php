@@ -24,8 +24,8 @@
         $_SESSION[$pagina_request] = 0;
       $header="Location".$pagina_request;
       echo $header;
-        header($header);
-        exit();
+       /*  header($header);
+        exit(); */
 }
 
 
