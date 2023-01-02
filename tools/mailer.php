@@ -20,7 +20,9 @@
         $mail->Body = $body;
         $mail->send();
 
-        echo "Message Sent OK</p>\n";
+        @session_start();
+        $_SESSION[$pagina_request] = 0;
+        header("'Location:'".$pagina_request."'");
 }
 
 

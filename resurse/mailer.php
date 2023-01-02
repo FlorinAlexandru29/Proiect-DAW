@@ -33,6 +33,8 @@ try {
         $mail->Body = "Nume: $name <br> Email: $email <br> Telefon: $telephone <br> Mesaj: $message";
 
         $mail->send();
+        header("'Location:'".$pagina_request."'");
+
         $alert="<div class='alert-success'><span>Mesaj Trimis</span></div>"; //folosit pentru a afisa mesaj de confirmare, se poate folosi bootstrap
   echo "Message Sent OK</p>\n";
 

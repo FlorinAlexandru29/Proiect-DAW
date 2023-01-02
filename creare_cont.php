@@ -46,6 +46,8 @@ if(isset($_POST['creeaza_cont'])){
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
 
+    $pagina_request="creare_cont.php";
+
     $r_email=$_POST['email'];
     $r_user_name=$_POST['username'];
     $subject= 'Confirmare Email';
@@ -142,5 +144,20 @@ include 'fragmente/navbar_guest.php';
       
     </div>
   </div>
+  <!-- notificare ca a fost creat contul -->
+  <?php
+ if(isset($_SESSION["creare_cont.php"])){
+      echo "
+  <div class='toast show align-items-center text-bg-success border-0 mx-auto mt-5 toast-creare-cont' style='width:80%;' role='alert' aria-live='assertive' aria-atomic='true'>
+  <div class='d-flex'>
+    <div class='toast-body'>
+      Cont creat cu succes! Va rugam sa va verificati adresa de email pentru confirmare!
+    </div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+      unset($_SESSION['creare_cont.php']);
+ }
+?>
 </body>
 </html>
