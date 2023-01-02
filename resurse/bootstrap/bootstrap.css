@@ -91,10 +91,7 @@
 
 @media screen and (max-width: 1200px) {
   nav>div.container{max-width: 100%;}
-  #div-creare-cont{width: 80% !important;}
-}
-@media screen and (max-width: 1200px) {
-  #div-creare-cont{width: 80% !important;}
+  .div-creare-cont{width: 80% !important;}
 }
 
 @media screen and (max-width: 485px) {

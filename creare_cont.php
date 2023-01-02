@@ -87,7 +87,7 @@ include 'fragmente/navbar_guest.php';
 ?>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
   <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
-    <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4" id="div-creare-cont" style="width:40%;">
+    <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
       <hr class="my-4">
       <form method="POST" id="creare_cont" action="creare_cont.php">
       <div class="mb-3 input-group-lg">
