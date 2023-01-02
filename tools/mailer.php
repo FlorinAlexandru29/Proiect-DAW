@@ -23,6 +23,7 @@
         @session_start();
         $_SESSION[$pagina_request] = 0;
         header("'Location:'".$pagina_request."'");
+        exit();
 }
 
 
