@@ -19,7 +19,6 @@
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->send();
-echo "ok";
         $_SESSION[$pagina_request] = 0;
         $header="Location:".$pagina_request;
         header("$header");
@@ -28,8 +27,8 @@ echo "ok";
 
 
   catch(Exception $e){
-    echo "eroare ok";
         $_SESSION['eroare_trimitere']="Eroare trimitere: ".$e->getMessage();
+        echo "eroare ok";
         $header="Location:".$pagina_request;
         header("$header");
         exit(); 
