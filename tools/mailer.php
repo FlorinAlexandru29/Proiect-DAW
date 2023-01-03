@@ -28,7 +28,10 @@
 
 
   catch(Exception $e){
-    echo "eroare trimitere ".$e->getMessage();
+        $_SESSION['eroare_trimitere']="Eroare trimitere: ".$e->getMessage();
+        $header="Location:".$pagina_request;
+        header("$header");
+        exit(); 
 }
 
     ?>
