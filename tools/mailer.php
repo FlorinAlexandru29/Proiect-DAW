@@ -5,13 +5,13 @@
     $mail->IsSMTP();
     $mail->SMTPDebug = 2;
     try {
- 
+      $gmail_password="VIVyEmc7P62HU4vlW7HVqQ==";
         $mail->SMTPAuth   = true; 
         $mail->SMTPSecure = "ssl";                 
         $mail->Host       = "smtp.gmail.com";    
         $mail->Port       = 465;                  
         $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
-        $mail->Password   = 'lvupjjdmckeunbal';           // GMAIL password
+        $mail->Password   = openssl_decrypt ($gmail_password, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');           // GMAIL password
         $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
         $mail->AddReplyTo($r_email, $r_user_name);
         $mail->AddAddress($r_email, $r_user_name);
