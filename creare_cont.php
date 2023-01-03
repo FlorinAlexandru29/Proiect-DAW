@@ -81,7 +81,9 @@ if(isset($_POST['creeaza_cont'])){
 
 
 <body>
+  
 <?php
+  //INAINTE DE A INCARCA ORICE HTML TREBUIE SA MA ASIGUR CA NU AM DUPA EL HEADER(LOCATION:PAGINA)!!! EXEMPLU: HEADERUL DE USER
     if (isset($_COOKIE["user_name"])) {
   header('Location:index.php');
 } //redirect pe home page daca este deja autentificat

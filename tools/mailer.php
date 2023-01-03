@@ -21,6 +21,7 @@
         $mail->send();
         $_SESSION[$pagina_request] = 0;
         $header="Location:".$pagina_request;
+          //INAINTE DE A INCARCA ORICE HTML TREBUIE SA MA ASIGUR CA NU AM DUPA EL HEADER(LOCATION:PAGINA)!!! EXEMPLU: HEADERUL DE USER
         header("$header");
         exit(); 
 }
@@ -28,6 +29,7 @@
 
   catch(Exception $e){
         $_SESSION['eroare_trimitere']="Eroare trimitere: ".$e->getMessage();
+          //INAINTE DE A INCARCA ORICE HTML TREBUIE SA MA ASIGUR CA NU AM DUPA EL HEADER(LOCATION:PAGINA)!!! EXEMPLU: HEADERUL DE USER
         $header="Location:".$pagina_request;
         header($header);
         exit(); 
