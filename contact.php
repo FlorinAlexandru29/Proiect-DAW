@@ -1,6 +1,6 @@
     <?php
 @session_start();
-    if(isset($_POST['logout'])){     //scriptul de logout
+/*     if(isset($_POST['logout'])){     //scriptul de logout
       setcookie("user_name", "guest", time()- 60,'/');
       setcookie("profile_pic", '',time()-60,'/');
       header('Location:index.php');
@@ -26,7 +26,7 @@
     
     
   if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
-  else include 'fragmente/navbar_guest.php';
+  else include 'fragmente/navbar_guest.php'; */
 
 //trimitere contact
   if(isset($_POST['trimite_contact'])){
