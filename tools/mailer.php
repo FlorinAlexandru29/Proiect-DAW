@@ -11,7 +11,7 @@
         $mail->Host       = "smtp.gmail.com";    
         $mail->Port       = 465;                  
         $mail->Username   = 'lure.production@gmail.com'; 			// GMAIL username
-        $mail->Password   = 'vlwvnqsljsjxtunx';           // GMAIL password
+        $mail->Password   = openssl_decrypt ($gmail_password, "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');           // GMAIL password
         $mail->SetFrom('lure.production@gmail.com', 'Lure Prod');
         $mail->AddReplyTo($r_email, $r_user_name);
         $mail->AddAddress($r_email, $r_user_name);
@@ -19,7 +19,7 @@
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->send();
-
+echo "ok";
         $_SESSION[$pagina_request] = 0;
         $header="Location:".$pagina_request;
         header("$header");
@@ -28,6 +28,7 @@
 
 
   catch(Exception $e){
+    echo "eroare ok";
         $_SESSION['eroare_trimitere']="Eroare trimitere: ".$e->getMessage();
         $header="Location:".$pagina_request;
         header("$header");

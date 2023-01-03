@@ -133,7 +133,7 @@
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
           </div>";
-          unset($_SESSION['creare_cont.php']);
+          unset($_SESSION['contact.php']);
      }
     
     if(isset($_SESSION["eroare_trimitere"])){
