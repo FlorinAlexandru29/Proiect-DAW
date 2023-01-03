@@ -49,9 +49,11 @@
     $r_email='lure.production@gmail.com';
     $r_user_name='Lure Prod';
     //trimit o variabila cu numele paginii si dupa aia fac un header cu locatie la pagina respectiva
+
+    $pagina_request="contact.php";
     include 'tools/mailer.php';
     
-    header('Location:contact.php');
+    
     //redirect pe pagina pentru a opri userul din a spama mesaje + alert TO DO
 
 }
@@ -96,7 +98,6 @@
                     <div class="col-12">
                       <label for="fn" class="form-label fs-base">Nume</label>
                       <input type="text" class="form-control form-control-lg is-invalid" name="nume_contact" id="fn" required>
-                      <div class="invalid-feedback">Please enter your full name!</div>
                     </div>
                     <div class="col-12">
                       <label for="em" class="form-label fs-base">Adresa de email</label>
