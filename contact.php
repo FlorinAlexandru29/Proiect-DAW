@@ -131,23 +131,22 @@
               Mesajul a fost trimis cu success!
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
-          </div>;
-          unset($_SESSION['creare_cont.php'])";
+          </div>";
+          unset($_SESSION['creare_cont.php']);
      }
     
     if(isset($_SESSION["eroare_trimitere"])){
-  echo "
+     echo "
           <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='width:100%;height:10%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>"
             .$_SESSION["eroare_trimitere"]."
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
-          </div>
-          ";
-  unset($_SESSION['eroare_trimitere']);
+          </div>";
+    unset($_SESSION['eroare_trimitere']);
  } ?>
- 
+
 </div>
         </div>
       </section>
