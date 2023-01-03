@@ -97,7 +97,7 @@
                   <form class="row g-4" method="POST" id="form-contact" action="contact.php">
                     <div class="col-12">
                       <label for="fn" class="form-label fs-base">Nume</label>
-                      <input type="text" class="form-control form-control-lg is-invalid" name="nume_contact" id="fn" required>
+                      <input type="text" class="form-control form-control-lg" name="nume_contact" id="fn" required>
                     </div>
                     <div class="col-12">
                       <label for="em" class="form-label fs-base">Adresa de email</label>
