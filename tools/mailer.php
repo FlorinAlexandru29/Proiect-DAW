@@ -31,7 +31,7 @@
         $header="Location:".$pagina_request;
         echo "eroare ok";
         echo $header;
-        header("$header");
+        header('Location:contact.php');
         exit(); 
 }
 
