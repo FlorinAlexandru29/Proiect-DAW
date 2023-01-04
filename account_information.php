@@ -72,7 +72,7 @@ if(isset($_COOKIE["profile_pic"])){
 <input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
-<input type="submit" value="Salveaza poza" name="save_photo" form="form1">
+<input class="btn rounded-pill btn-success mb-2" type="submit" value="Salveaza poza" name="save_photo" form="form1">
 </form>
 <script type="text/javascript">
     window.onload = function () {
