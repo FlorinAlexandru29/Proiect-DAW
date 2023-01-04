@@ -103,14 +103,23 @@ if(isset($_COOKIE["profile_pic"])){
 
       
       <form method="POST" id="form-schimbare-parola" action="account_information.php" class="mb-0">
-    <div class="form-floating mb-3">
+      <div class="form-floating mb-3">
   <input type="password" class="form-control" name="password_i" id="floatingInput_password_i" placeholder="password" required>
   <label for="floatingInput_password_i">Parola initiala</label>
-  <script>
-window.onload = function() {
-  document.getElementById('collapseTwo').className = 'accordion-collapse collapse show';
-};
-</script>
+      <?php
+      //parola initiala
+    if(isset($_SESSION["eroare_parola_gresita"])){
+      echo "<script>
+      window.onload = function() {
+        document.getElementById('floatingInput_password_i').className = 'form-control is-invalid';
+        document.getElementById('collapseTwo').className = 'accordion-collapse collapse show';
+      };
+      </script>
+      <div class='invalid-feedback'>Te rugam sa te asiguri ca parola schimbata difera fata de parola ta</div>";
+
+      unset($_SESSION['eroare_parola_gresita']);
+    }
+    ?>
     </div>
     <div class="form-floating mb-3">
   <input type="password" class="form-control" name="password_s" id="floatingInput_password_s" placeholder="password" required>
