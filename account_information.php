@@ -146,6 +146,7 @@ if(isset($_COOKIE["profile_pic"])){
     echo "<script>
     window.onload = function() {
       document.getElementById('floatingInput_password_c').className = 'form-control is-invalid';
+      document.getElementById('floatingInput_password_s').className = 'form-control is-invalid';
       document.getElementById('collapseTwo').className = 'accordion-collapse collapse show';
     };
     </script>
