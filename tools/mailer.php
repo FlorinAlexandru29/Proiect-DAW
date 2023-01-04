@@ -28,7 +28,7 @@
 
 
   catch(Exception $e){
-        $_SESSION['eroare_trimitere']="Eroare trimitere: ".$e->getMessage();
+        $_SESSION['eroare_trimitere']="Eroare trimitere email. Este posibil ca schimbarile sa fie efectuate. Cod Eroare: ".$e->getMessage();
           //INAINTE DE A INCARCA ORICE HTML TREBUIE SA MA ASIGUR CA NU AM DUPA EL HEADER(LOCATION:PAGINA)!!! EXEMPLU: HEADERUL DE USER
         $header="Location:".$pagina_request;
         header($header);
