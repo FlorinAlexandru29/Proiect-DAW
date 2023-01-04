@@ -13,7 +13,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 
     
 
-
+    
      $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
     $cloudPath = 'profile_pic/' . $row['user_name'].".jpg";
 
@@ -69,8 +69,8 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".$row['user_name']."'";
     mysqli_query($conexiune,$cerere);
     mysqli_close($conexiune);
-    setcookie("profile_pic", '',time()-60,'/');
-    setcookie("profile_pic", $row["user_name"],time()+60,'/');
+    setcookie("profile_pic", '',time()-120,'/'); //nu stiu de ce opresc si pornesc cookie-ul iar?
+    setcookie("profile_pic", openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'),time()+120,'/');
     }
     header('Location:account_information.php');  // alert pt upload succes
     

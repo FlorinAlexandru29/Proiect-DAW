@@ -21,9 +21,10 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   $cerere_user="SELECT user_name,activat,profile_pic FROM users WHERE email='".$email." ' ";
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
-  setcookie("user_name", $row["user_name"], time()+ 60,'/');
+  
+  setcookie("user_name", openssl_encrypt($row["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'), time()+ 120,'/');
 
-  if($row["profile_pic"]==1) setcookie("profile_pic", $row["user_name"], time()+60,'/');
+  if($row["profile_pic"]==1) setcookie("profile_pic", openssl_encrypt($row["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'), time()+120,'/');
 
 
   @session_start();

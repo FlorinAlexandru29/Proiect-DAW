@@ -20,11 +20,11 @@
                 <?php 
                 
                             if(isset($_COOKIE["profile_pic"])){
-                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='40' height='40' class='rounded-circle me-2'>";
+                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' width='40' height='40' class='rounded-circle me-2'>";
                             }
                             else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle me-2'>";
                             
-                           echo 'Hello: '.$_COOKIE["user_name"]; ?>
+                           echo 'Hello: '.openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'); ?>
                 
                             </a>
             <ul class="dropdown-menu">
@@ -63,12 +63,11 @@
         <div class="mb-3">
             <p class="fs-5 d-block link-username text-dark text-decoration-none">
                 <?php 
-                
                 if(isset($_COOKIE["profile_pic"]))
-                    echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='50' height='50' class='rounded-circle me-2'>";
+                    echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' width='50' height='50' class='rounded-circle me-2'>";
                     else echo"<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle me-2'>";
 
-                     echo 'Hello: '.$_COOKIE["user_name"];
+                    echo 'Hello: '.openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
                      ?>
             </p>
         </div>

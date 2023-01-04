@@ -1,8 +1,8 @@
 <?php
 
 if(isset($_POST['logout'])){     //scriptul de logout
-  setcookie("user_name", "guest", time()- 60,'/');
-  setcookie("profile_pic", '',time()-60,'/');
+  setcookie("user_name", "guest", time()- 120,'/');
+  setcookie("profile_pic", '',time()-120,'/');
   header('Location:index.php');
 }
 @session_start();

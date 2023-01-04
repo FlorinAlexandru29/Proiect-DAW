@@ -1,24 +1,8 @@
 
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Informatii Cont</title>
-    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    
-  
-  </head>
 <?php 
 
-  
-  if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
-  else header('Location:index.php');
+
 
  
 
@@ -35,8 +19,30 @@ mysqli_close($conexiune);
 if(isset($_POST['change_password'])) include 'tools/change_password.php';
 if(isset($_POST['save_photo'])) include 'tools/google_upload.php';
 
-?>
 
+if(isset($_POST['logout'])){     //scriptul de logout
+  setcookie("user_name", "guest", time()- 120,'/');
+  setcookie("profile_pic", '',time()-120,'/');
+  header('Location:index.php');
+}
+if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
+else header('Location:index.php');
+
+
+?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Informatii Cont</title>
+    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  
+  </head>
 <div class="container text-center mt-3">
   <div class="row">
     <div class="col">
@@ -95,7 +101,7 @@ if(isset($_COOKIE["profile_pic"])){
   echo 
   
   "
-  <li class='list-group-item'> user_name: ".$_COOKIE['user_name']." </li>
+  <li class='list-group-item'> user_name: ".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')." </li>
   <li class='list-group-item'> email: ".$row['email']." </li>
   ";
 ?>
