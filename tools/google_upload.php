@@ -70,7 +70,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     mysqli_query($conexiune,$cerere);
     mysqli_close($conexiune);
     setcookie("profile_pic", '',time()-120,'/'); //nu stiu de ce opresc si pornesc cookie-ul iar?
-    setcookie("profile_pic", openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'),time()+120,'/');
+    setcookie("profile_pic", $_COOKIE["user_name"],time()+120,'/');
     }
     header('Location:account_information.php');  // alert pt upload succes
     
