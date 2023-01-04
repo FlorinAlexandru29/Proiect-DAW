@@ -84,14 +84,16 @@ if(isset($_COOKIE["profile_pic"])){
 </script>
 </li>
 <li class='list-group-item'>
-<div class="accordion" id="open_schimbare_parola">
-   <div class="accordion-item">
-    <h2 class="accordion-header" id="heading_schimbare_parola">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_schimbare_parola" aria-expanded="true" aria-controls="collapse_schimbare_parola">Schimbare Parola</button>
+<div class="accordion" id="accordionExample">
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Accordion Item #2
+      </button>
     </h2>
-    <div id="collapse__schimbare_parola" class="accordion-collapse collapse show" aria-labelledby="heading_schimbare_parola" data-bs-parent="#open_schimbare_parola" style="">
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
       <div class="accordion-body">
-        <form method="POST" action="account_information.php" id="form2">
+      <form method="POST" action="account_information.php" id="form2">
     Parola initiala
     <input name="password_i" type="password" required="">
     Parola schimbata
@@ -103,7 +105,7 @@ if(isset($_COOKIE["profile_pic"])){
       </div>
     </div>
   </div>
-    </div>
+  </div>
   </li>
     </div>
     <div class="col">
@@ -115,6 +117,7 @@ if(isset($_COOKIE["profile_pic"])){
   <li class='list-group-item'> user_name: ".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')." </li>
   <li class='list-group-item'> email: ".$row['email']." </li>
   ";
+
 ?>
     <li class='list-group-item'>
       <?php
