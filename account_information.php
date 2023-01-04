@@ -98,11 +98,10 @@ if(isset($_COOKIE["profile_pic"])){
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
-      <div class="accordion-body">
+      <div class="accordion-body p-2">
 
-      <div class="align-self-center div-creare-cont">
       
-      <form method="POST" id="form-schimbare-parola" action="account_information.php">
+      <form method="POST" id="form-schimbare-parola" action="account_information.php" class="mb-0">
     <div class="form-floating mb-3">
   <input type="password" class="form-control" name="password_i" id="floatingInput_password_i" placeholder="password" required>
   <label for="floatingInput_password_i">Parola initiala</label>
@@ -120,7 +119,6 @@ if(isset($_COOKIE["profile_pic"])){
         <input type="submit" value="Schimba Parola" name="change_password" form="form2" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       </form>
       
-       </div>
       </div>
     </div>
   </div>
