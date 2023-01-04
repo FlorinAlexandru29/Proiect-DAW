@@ -12,7 +12,7 @@
     echo "Failed to connect to MySQL: " . mysqli_connect_error();
     exit();}
 
-$cerere_user="SELECT email,activat,user_name,profile_pic FROM users WHERE user_name='".$_COOKIE['user_name']." ' ";
+$cerere_user="SELECT email,activat,user_name,profile_pic FROM users WHERE user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')." ' ";
 $result_user= mysqli_query($conexiune, $cerere_user);
 $row = mysqli_fetch_assoc($result_user); 
 mysqli_close($conexiune);
