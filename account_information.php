@@ -84,15 +84,26 @@ if(isset($_COOKIE["profile_pic"])){
 </script>
 </li>
 <li class='list-group-item'>
-  <form method="POST" action='account_information.php' id="form2">
+<div class="accordion" id="open_schimbare_parola">
+   <div class="accordion-item">
+    <h2 class="accordion-header" id="heading_schimbare_parola">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_schimbare_parola" aria-expanded="true" aria-controls="collapse_schimbare_parola">Schimbare Parola</button>
+    </h2>
+    <div id="collapse__schimbare_parola" class="accordion-collapse collapse show" aria-labelledby="heading_schimbare_parola" data-bs-parent="#open_schimbare_parola" style="">
+      <div class="accordion-body">
+        <form method="POST" action="account_information.php" id="form2">
     Parola initiala
-    <input name='password_i' type=password required>
+    <input name="password_i" type="password" required="">
     Parola schimbata
-    <input name='password_s' type=password required>
+    <input name="password_s" type="password" required="">
     Confirma parola schimbata
-    <input name='password_c' type=password required>
-    <input type=submit name="change_password" value="Schimba Parola" form="form2">
+    <input name="password_c" type="password" required="">
+    <input type="submit" name="change_password" value="Schimba Parola" form="form2">
   </form>
+      </div>
+    </div>
+  </div>
+    </div>
   </li>
     </div>
     <div class="col">
