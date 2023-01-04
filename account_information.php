@@ -116,7 +116,7 @@ if(isset($_COOKIE["profile_pic"])){
     </div>
 
 
-        <input type="submit" value="Schimba Parola" name="change_password" form="form2" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+        <input type="submit" value="Schimba Parola" name="change_password" form="form-schimbare-parola" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       </form>
       
       </div>
