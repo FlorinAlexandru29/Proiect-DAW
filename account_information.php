@@ -1,7 +1,7 @@
 
 
 <?php 
-
+@session_start();
 
 
  
@@ -49,6 +49,7 @@ else header('Location:index.php');
 }
     </style>
   </head>
+  <main>
 <div class="container text-center mt-3">
   <div class="row">
     <div class="col">
@@ -160,3 +161,26 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     </div>
   </div>
 </div>
+<?php
+ if(isset($_SESSION["account_information.php"])){
+  echo "
+<div class='toast show align-items-center text-bg-success border-0 mx-auto mt-2 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='width:90% !important;'>
+  <div class='d-flex'>
+    <div class='toast-body text-center' style='width:100% !important;'>Parola a fost schimbata cu success</div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+unset($_SESSION['account_information.php']);}
+
+
+if(isset($_SESSION["eroare_trimitere"])){
+  echo "<div class='toast show align-items-center text-bg-success border-0 mx-auto mt-2 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='width:90% !important;'>
+  <div class='d-flex'>
+    <div class='toast-body text-center' style='width:100% !important;'>".$_SESSION["eroare_trimitere"]."</div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+unset($_SESSION['eroare_trimitere']);
+ }
+
+?>
