@@ -41,7 +41,13 @@ else header('Location:index.php');
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  
+    <style>
+        @media screen and (max-width: 1000px) {
+  .row{display:block !important;
+        }
+    .container{max-width:90% !important;}
+}
+    </style>
   </head>
 <div class="container text-center mt-3">
   <div class="row">
@@ -83,25 +89,38 @@ if(isset($_COOKIE["profile_pic"])){
     };
 </script>
 </li>
-<li class='list-group-item'>
+<li class='list-group-item p-0'>
 <div class="accordion" id="accordionExample">
 <div class="accordion-item">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
+        Schimbare parola
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
       <div class="accordion-body">
-      <form method="POST" action="account_information.php" id="form2">
-    Parola initiala
-    <input name="password_i" type="password" required="">
-    Parola schimbata
-    <input name="password_s" type="password" required="">
-    Confirma parola schimbata
-    <input name="password_c" type="password" required="">
-    <input type="submit" name="change_password" value="Schimba Parola" form="form2">
-  </form>
+
+      <div class="align-self-center div-creare-cont">
+      
+      <form method="POST" id="form-schimbare-parola" action="account_information.php">
+    <div class="form-floating mb-3">
+  <input type="password" class="form-control" name="password_i" id="floatingInput_password_i" placeholder="password" required>
+  <label for="floatingInput_password_i">Parola initiala</label>
+    </div>
+    <div class="form-floating mb-3">
+  <input type="password" class="form-control" name="password_s" id="floatingInput_password_s" placeholder="password" required>
+  <label for="floatingInput_password_s">Parola schimbata</label>
+    </div>
+    <div class="form-floating mb-3">
+  <input type="password" class="form-control" name="password_c" id="floatingInput_password_c" placeholder="password" required>
+  <label for="floatingInput_password_c">Confirma parola schimbata</label>
+    </div>
+
+
+        <input type="submit" value="Schimba Parola" name="change_password" form="form2" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+      </form>
+      
+       </div>
       </div>
     </div>
   </div>
