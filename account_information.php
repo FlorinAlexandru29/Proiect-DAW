@@ -119,6 +119,18 @@ if(isset($_COOKIE["profile_pic"])){
 
       unset($_SESSION['eroare_parola_gresita']);
     }
+    if(isset($_SESSION["eroare_parola_initiala"])){
+      echo "<script>
+      window.onload = function() {
+        document.getElementById('floatingInput_password_i').className = 'form-control is-invalid';
+        document.getElementById('collapseTwo').className = 'accordion-collapse collapse show';
+      };
+      </script>
+      <div class='invalid-feedback'>Te rugam sa te asiguri ca parola initiala este corecta!</div>";
+
+      unset($_SESSION['eroare_parola_initiala']);
+    }
+
     ?>
     </div>
     <div class="form-floating mb-3">
@@ -128,9 +140,21 @@ if(isset($_COOKIE["profile_pic"])){
     <div class="form-floating mb-3">
   <input type="password" class="form-control" name="password_c" id="floatingInput_password_c" placeholder="password" required>
   <label for="floatingInput_password_c">Confirma parola schimbata</label>
+
+  <?php
+  if(isset($_SESSION["eroare_parola_confirmare"])){
+    echo "<script>
+    window.onload = function() {
+      document.getElementById('floatingInput_password_c').className = 'form-control is-invalid';
+      document.getElementById('collapseTwo').className = 'accordion-collapse collapse show';
+    };
+    </script>
+    <div class='invalid-feedback'>Te rugam sa te asiguri ca parolele introduse sunt la fel!</div>";
+
+    unset($_SESSION['eroare_parola_confirmare']);
+  }
+  ?>
     </div>
-
-
         <input type="submit" value="Schimba Parola" name="change_password" form="form-schimbare-parola" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       </form>
       
