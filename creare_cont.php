@@ -174,5 +174,6 @@ include 'fragmente/navbar_guest.php';
   unset($_SESSION['eroare_trimitere']);
  }
 ?>
+
 </body>
 </html>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creare Cont</title>
+    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+            <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
+              <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
+                <hr class="my-4">
+
+                <form method="POST" id="form-setari" action="creare_pagina.php">
+                <div class="mb-3 input-group-lg">
+                    <label class="form-label" >Selecteaza numarul de poze</label>
+                    <select id="numar_poze" class="form-select" aria-label="Default select example">
+                        <option selected>1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                      </select>
+                      
+                </div>
+                <div class="mb-3 input-group-lg">
+                    <label class="form-label" >Selecteaza numarul de paragrafe</label>
+                    <select id="numar_paragrafe" class="form-select" aria-label="Default select example">
+                        <option selected>1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                      </select>
+                  
+                </div>
+                <div class="mb-3 input-group-lg">
+                    <label class="form-label" >Selecteaza numarul de videoclipuri</label>
+                    <select id="numar_paragrafe" class="form-select" aria-label="Default select example">
+                        <option selected>0</option>
+                        <option value="1">1</option>
+                      </select>
+                </div>
+                
+                  <input type="submit" value="Aplica setari" name="aplica_setari" form="form-setari" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                </form>
+                <hr class="my-4">
+                <form method="POST" id="creare_cont" action="creare_cont.php">
+                    
+                      <div class="mb-3 input-group-lg">
+                        <!-- scoatere din baza de date optiunile -->
+                        <label class="form-label" >Selecteaza trupa</label>
+                        <select id="numar_paragrafe" class="form-select" aria-label="Default select example">
+                            <option value="1">Subcarpati</option>
+                            <option value="2">Smiley</option>
+                            <option value="3">Accent</option>
+                            <option value="4">Trooper</option>
+                          </select>
+
+                        </div>
+                        <div class="mb-3 input-group-lg">
+                           
+                            <label for="user_name" class="form-label">Titlu postare</label>
+                            <input type='text' id='user_name' class='form-control' name='user_name' required>
+                            </div>
+                
+              <!--   <div class="input-group mb-3">
+                    <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm mx-auto">
+                    <i class='bx bx-up-arrow-alt bx-sm'></i>
+                </button>
+                  </div> -->
+
+                <div class="input-group mb-3">
+                    <span id="inputgrup1"></span>
+                    <input type="text" id="input2" value="Input1">
+                  <!--   <input id="input1"  type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload1</label> -->
+                  </div>
+
+                  <!-- <div class="input-group mb-3" id="input">
+                    <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm mx-auto">
+                    <i class='bx bx-down-arrow-alt bx-sm'></i>
+                </button>
+                </div> -->
+
+
+
+                <div class="input-group mb-3">
+                    <span id="inputgrup2"></span>
+                    <input type="text" id="input" value="Input2">
+                   <!--  <input id="input2" type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupFile02">Upload2</label> -->
+                  </div>
+
+
+                </form>
+                
+              </div>
+            </div>
+
+            <button onclick="terog()"> id </button>
+            <button onclick="moveup(2)"> moveup </button>
+            <button onclick="movedown(1)"> movedwn </button>
+<script>
+// Get the DOM nodes
+function terog(){
+    idelement=  document.getElementById('input1').id;
+    console.log(idelement);
+
+    document.getElementById('input1').id='input2';
+
+    var elms = document.getElementsByClassName("[id='input2']");
+ 
+    for(var i = 0; i < elms.length; i++) 
+    console.log(elms[i].id);
+}
+
+
+function movedown(index) {
+let input1 = document.querySelector('#input'+index);
+let grup2 = document.querySelector('#inputgrup'+(index+1));
+// Move stuff
+grup2.after(input1);
+
+let grup1 = document.querySelector('#inputgrup'+index);
+let input2 = document.querySelector('#input'+(index+1));
+
+grup1.after(input2);
+
+
+}
+
+
+function moveup(index) {
+    let input1 = document.querySelector('#input'+index);
+let grup2 = document.querySelector('#inputgrup'+(index-1));
+// Move stuff
+grup2.after(input1);
+
+let grup1 = document.querySelector('#inputgrup'+index);
+let input2 = document.querySelector('#input'+(index-1));
+
+grup1.after(input2);
+
+}
+
+</script>
+          </body>
+          </html>

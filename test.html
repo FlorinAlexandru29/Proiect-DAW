@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  <input type="text" id="input1" value="Input 1"> <br>
+  <input type="file" id="input2" value="Input 2"> <br>
+  <input type="text" id="input3" value="Input 3"> <br>
+  <input type="file" id="input4" value="Input 4"> <br>
+</form> 
+
+<ul id="wizards">
+	<li id="gandalf">Gandalf</li>
+	<li id="Radagast">Radagast</li>
+	<li>Merlin</li>
+</ul>
+
+<ul id="witches">
+	<li>Ursula</li>
+	<li>Morgana</li>
+	<li>Hermione</li>
+</ul>
+
+<p id="msg">These are some magical folks</p>
+
+
+<button onclick="move(2)"> move </button>
+<button onclick="movedown(2)"> move </button>
+<script>
+// Get the DOM nodes
+function move(index) {
+let msg = document.querySelector('#input'+(index+1));
+let list = document.querySelector('#input'+index);
+
+// Move stuff
+list.before(msg);
+}
+function movedown(index) {
+let msg = document.querySelector('#input'+index);
+let list = document.querySelector('#input'+(index+1));
+
+// Move stuff
+list.after(msg);
+
+}
+</script>
+
+</body>
+</html>
