@@ -26,7 +26,7 @@
     border-bottom-right-radius: 50rem !important;">
               <span class="visually-hidden">Toggle Dropend</span>
             </button>
-            <form form="login-form-expanded" id="login-form-expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;">
+            <form form="login-form-expanded" id="login-form-expanded" method="POST" action="index.php" class="dropdown-menu p-2" style="min-width:15rem !important;background-color:#eeeeee;border-width: 3px;top:100% !important;left:0px !important;">
               <div class="mb-1">
                 <input form="login-form-expanded" type="email" name="email_expanded" required class="form-control text-bg-dark"  placeholder="Email">
               </div>
