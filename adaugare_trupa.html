@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Adaugare Trupa</title>
+    <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
+    <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+
+    <body>
+        <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+            <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
+              <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
+                <hr class="my-4">
+
+                <form method="POST" id="form-adaugrare-trupa" action="adaugare_trupa.php" enctype='multipart/form-data'>
+                    <div class="mb-3 input-group-lg">
+                           
+                        <label for="band_name" class="form-label">Nume Trupa</label>
+                        <input type='text' id='band_name' class='form-control' name='band_name' required>
+                        </div>
+
+                <div class="mb-3 input-group-lg">
+                    <label class="form-label">Selecteaza genul</label>
+                    <select id="numar_poze" class="form-select" aria-label="Default select example">
+                        <option value="1">rock</option>
+                        <option value="2">pop</option>
+                        <option value="3">folk</option>
+                        <option value="4">rap/hip-hop</option>
+                        <option value="4">muzica electronica</option>
+                      </select> 
+                </div>
+
+                    <div class="mb-3 input-group-lg">
+                           
+                        <label for="an_infiintare" class="form-label">An infiintare</label>
+                        <input type="number" class='form-control' id="an_infiintare" name="year" minlength="4" required>
+                    </div>
+                    <div class="mb-3 input-group-lg">
+                           
+                        <label for="an_infiintare" class="form-label">An infiintare</label>
+                        <input type="number" class='form-control' id="an_infiintare" name="year" minlength="4" required>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        
+                        <input type="file" name="file[]" class="form-control" id="file" multiple>
+                        <label class="input-group-text" for="file">Upload</label>
+                      </div>
+                
+                    <hr class="my-4">
+                  <input type="submit" value="Adauga Trupa" name="add_band" form="form-adaugrare-trupa" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                </form>
+               
+                
+          </body>
+          </html>
