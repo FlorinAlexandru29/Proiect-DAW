@@ -100,6 +100,18 @@
 width:100% !important;}
 }
 
+.card-hover{
+  transition:ease-in 0.25s;
+}
+
+.card-hover:hover{
+  box-shadow: 5px 5px 5px black;
+  transform:translateY(-0.25rem);
+  transition-property: box-shadow, transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.25s;
+}
+
 *,
 *::before,
 *::after {
@@ -722,6 +734,12 @@ progress {
 .row-cols-1 > * {
   flex: 0 0 auto;
   width: 100%;
+}
+@media screen and (min-width: 650px){
+  .row-cols-1 > * {
+    flex: 0 0 auto;
+    width: 50%;
+  }
 }
 
 .row-cols-2 > * {
