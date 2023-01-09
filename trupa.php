@@ -10,8 +10,8 @@ if(isset($_GET["id"]))
   $trupa=str_replace("+"," ",$_GET["id"]);
   
  
-  $cerere_trupa="SELECT * FROM trupe WHERE nume='".$trupa." ' ";
- 
+  $cerere_trupa="SELECT * FROM trupe WHERE nume='".$trupa."' ";
+ echo $cerere_trupa;
  
   $result_trupa= mysqli_query($conexiune, $cerere_trupa);
   $row_trupa = mysqli_fetch_assoc($result_trupa);
@@ -106,7 +106,7 @@ else include 'fragmente/navbar_guest.php'
         <div class='d-flex justify-content-between'>
         <p> Oras: ".$result_trupa['oras']."</p>
         <p> Gen: ".$result_trupa['gen']."</p>
-        <p> An Infiintare: ".$result_trupa['year']."</p>
+        <p> An Infiintare: ".$result_trupa['an_infiintare']."</p>
         </div>
         " 
         ?>
