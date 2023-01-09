@@ -17,10 +17,6 @@ if(isset($_GET["id"]))
   $row_trupa = mysqli_fetch_assoc($result_trupa);
   mysqli_close($conexiune);
   
-  echo $result_trupa["nume"];
-  echo $result_trupa["oras"];
-  echo $result_trupa["gen"];
-  echo $result_trupa["an_infiintare"];
 }
 else {header('Location:index.php');exit();}
 
@@ -105,11 +101,11 @@ else include 'fragmente/navbar_guest.php'
                 </button>
                 </div>
         <?php 
-       echo "<p>".$result_trupa["nume"]."</p>
+       echo "<p>".$row_trupa["nume"]."</p>
         <div class='d-flex justify-content-between'>
-        <p> Oras: ".$result_trupa['oras']."</p>
-        <p> Gen: ".$result_trupa['gen']."</p>
-        <p> An Infiintare: ".$result_trupa['an_infiintare']."</p>
+        <p> Oras: ".$row_trupa['oras']."</p>
+        <p> Gen: ".$row_trupa['gen']."</p>
+        <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
         </div>
         " 
         ?>
