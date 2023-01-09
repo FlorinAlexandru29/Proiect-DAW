@@ -9,8 +9,10 @@ if(isset($_GET["id"]))
   }
   $trupa=str_replace("+"," ",$_GET["id"]);
   echo $trupa;
- /*  
+ 
   $cerere_trupa="SELECT * FROM trupa WHERE nume='".$trupa." ' ";
+  echo $cerere_trupa;
+  /*
   $result_trupa= mysqli_query($conexiune, $cerere_trupa);
   $row_trupa = mysqli_fetch_assoc($result_trupa);
   mysqli_close($conexiune); */
