@@ -1,3 +1,31 @@
+<? 
+   if (isset($_POST["add_band"])) {
+    $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+    if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      exit();
+    }
+    $cerere="Insert into trupe(nume,gen,an_infiintare,oras) values ('".$_POST['band_name']."','" .$_POST['gen'] ."','".$_POST['year']."','".$_POST['oras'] ." ')";
+    echo $cerere;
+    
+
+
+
+   }
+
+?>
+
+
+
+
+
+
+
+<?php
+   if (isset($_COOKIE["user_name"])) {
+    header('Location:index.php');
+  } //redirect pe home page daca este deja autentificat
+  include 'fragmente/navbar_guest.php'; ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,19 +54,19 @@
 
                 <div class="mb-3 input-group-lg">
                     <label class="form-label">Selecteaza genul</label>
-                    <select id="numar_poze" class="form-select" aria-label="Default select example">
-                        <option value="1">rock</option>
-                        <option value="2">pop</option>
-                        <option value="3">folk</option>
-                        <option value="4">rap/hip-hop</option>
-                        <option value="4">muzica electronica</option>
+                    <select id="gen" name="gen" class="form-select" aria-label="Default select example">
+                        <option value="rock">rock</option>
+                        <option value="pop">pop</option>
+                        <option value="folk">folk</option>
+                        <option value="rap/hip-hop">rap/hip-hop</option>
+                        <option value="muzica electronica">muzica electronica</option>
                       </select> 
                 </div>
 
                     <div class="mb-3 input-group-lg">
                            
-                        <label for="an_infiintare" class="form-label">An infiintare</label>
-                        <input type="number" class='form-control' id="an_infiintare" name="year" minlength="4" required>
+                        <label for="oras" class="form-label">Oras</label>
+                        <input type="text" class='form-control' id="oras" name="oras" required>
                     </div>
                     <div class="mb-3 input-group-lg">
                            
