@@ -17,6 +17,8 @@ if(isset($_GET["id"]))
   $row_trupa = mysqli_fetch_assoc($result_trupa);
   mysqli_close($conexiune);
   
+  
+
 }
 else {header('Location:index.php');exit();}
 
