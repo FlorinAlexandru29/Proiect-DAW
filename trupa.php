@@ -39,10 +39,12 @@ try {
     $options = array('prefix' => $directory);
     $objects = $bucket->objects($options);
 }
-
+$i=0;
 foreach ($objects as $object) {
-  print $object->name() . PHP_EOL; 
+  $poza[$i]= $object->name(); 
+  echo $poza[$i];
   echo "<BR>";
+  $i=$i+1;
   // NOTE: if $object->name() ends with '/' then it is a 'folder'
 } 
 
