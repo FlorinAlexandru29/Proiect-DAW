@@ -26,9 +26,9 @@ try {
     
   $bucket = $storage->bucket($bucketName);
 
-  $countfiles = count($_FILES['file']['name']);
+  $countfiles = count($_FILES['file']['tmp_name']);
   for($i=0;$i<$countfiles;$i++){
-    $fileContent = file_get_contents($_FILES["file"]["name"][$i]);
+    $fileContent = file_get_contents($_FILES["file"]["tmp_name"][$i]);
     $cloudPath = 'bands/'.$_POST['band_name']."/".$_POST['band_name']."_Poza".($i+1).".jpg";
     $storageObject = $bucket->upload(
       $fileContent,
