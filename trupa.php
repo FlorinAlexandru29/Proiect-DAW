@@ -8,6 +8,7 @@ if(isset($_GET["id"]))
     exit();
   }
   $trupa=str_replace("+"," ",$_GET["id"]);
+  echo $trupa;
  /*  
   $cerere_trupa="SELECT * FROM trupa WHERE nume='".$trupa." ' ";
   $result_trupa= mysqli_query($conexiune, $cerere_trupa);
