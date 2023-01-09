@@ -39,7 +39,7 @@ try {
     $options = array('prefix' => $directory);
     $objects = $bucket->objects($options);
 }
-$i=0;
+$i=1;
 foreach ($objects as $object) {
   $poza[$i]= $object->name(); 
   echo $poza[$i];
@@ -47,7 +47,7 @@ foreach ($objects as $object) {
   $i=$i+1;
   // NOTE: if $object->name() ends with '/' then it is a 'folder'
 } 
-
+$n=$i;
 
 
 
@@ -131,15 +131,22 @@ else include 'fragmente/navbar_guest.php'
           <div class="align-self-center mx-auto my-auto pt-md-4 pb-4" style="width:70%;">
             <div id="carouselExampleControls" class="carousel slide pb-3" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="https://storage.googleapis.com/lure-prod-bucket/bands/Implant/Implant_Poza2.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://storage.googleapis.com/lure-prod-bucket/bands/Implant/Implant_Poza1.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://storage.googleapis.com/lure-prod-bucket/bands/Implant/Implant_Poza2.jpg" class="d-block w-100" alt="...">
-                  </div>
+                  
+               <?php 
+               echo"
+               <div class='carousel-item active'>
+               <img src='https://storage.googleapis.com/lure-prod-bucket/".$poza[1]."' class='d-block w-100' alt='...'>
+             </div>";
+             for($i=2;$i<=$n;$i++){
+              echo"
+               <div class='carousel-item'>
+               <img src='https://storage.googleapis.com/lure-prod-bucket/".$poza[$i]."' class='d-block w-100' alt='...'>
+             </div>";
+             }
+               
+               
+               ?>
+
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
