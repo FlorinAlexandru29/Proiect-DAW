@@ -17,7 +17,10 @@ if(isset($_GET["id"]))
   $row_trupa = mysqli_fetch_assoc($result_trupa);
   mysqli_close($conexiune);
   
-
+  echo $result_trupa["nume"];
+  echo $result_trupa["oras"];
+  echo $result_trupa["gen"];
+  echo $result_trupa["an_infiintare"];
 }
 else {header('Location:index.php');exit();}
 
