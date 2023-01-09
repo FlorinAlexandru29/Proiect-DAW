@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg p-2 text-bg-header">
     <div class="container">
   
@@ -17,14 +15,7 @@
          </form> -->
          <div class="dropdown text-end">
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php 
-                
-                            if(isset($_COOKIE["profile_pic"])){
-                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='40' height='40' class='rounded-circle'>";
-                            }
-                            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
-                            
-                          php echo 'Hello: '.$_COOKIE["user_name"]; ?>
+           
                 
                             </a>
             <ul class="dropdown-menu">
@@ -62,14 +53,7 @@
     <div id="div-login-mobile" class="container ms-0 position-absolute pe-5">
         <div class="mb-3">
             <p class="fs-5 d-block link-username text-dark text-decoration-none">
-                <?php 
-                
-                if(isset($_COOKIE["profile_pic"]))
-                    echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$_COOKIE["profile_pic"].".jpg' width='50' height='50' class='rounded-circle'>";
-                    else echo"<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle'>";
-
-                     echo 'Hello: '.$_COOKIE["user_name"];
-                     ?>
+            
             </p>
         </div>
         <div class="mb-0">
