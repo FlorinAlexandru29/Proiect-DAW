@@ -81,7 +81,7 @@ if(isset($_POST['logout'])){     //scriptul de logout
                 <div class="mb-3 input-group-lg">
                      
                   <label for="link_videoclip" class="form-label">Link Youtube</label>
-                  <input type='text' id='link_videoclip' class='form-control' name='link_videoclip'value="0">
+                  <input type='text' id='link_videoclip' class='form-control' name='link_videoclip' value="0">
                   </div>
                   <div class="input-group mb-3">
                   
