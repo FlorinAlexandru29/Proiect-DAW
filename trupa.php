@@ -47,7 +47,7 @@ foreach ($objects as $object) {
   $i=$i+1;
   // NOTE: if $object->name() ends with '/' then it is a 'folder'
 } 
-$n=$i;
+$n=$i-1; //din cauza ultimului i=i+1 trebuie sa scad ultima adaugare ex pt 3 poze i-ul devine 4
 
 
 
