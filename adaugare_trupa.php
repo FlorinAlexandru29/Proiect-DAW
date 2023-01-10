@@ -64,9 +64,9 @@ catch(Exception $e) {
 
 <?php
    if (isset($_COOKIE["user_name"])) {
-    header('Location:index.php');
+    include 'fragmente/navbar_user.php';
   } //redirect pe home page daca este deja autentificat
-  include 'fragmente/navbar_guest.php'; ?>
+  else  header('Location:index.php'); ?>
 <!doctype html>
 <html lang="en">
   <head>

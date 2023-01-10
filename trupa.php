@@ -186,6 +186,7 @@ else include 'fragmente/navbar_guest.php'
         <p>".$row_trupa["descriere"]."</p>
         " 
         ?>
+        <hr class="my-4">
       </div>
       </div>
       </main>

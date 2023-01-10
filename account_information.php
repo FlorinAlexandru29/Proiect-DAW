@@ -98,7 +98,7 @@ if(isset($_COOKIE["profile_pic"])){
         Schimbare parola
       </button>
     </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="">
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body p-2">
 
       
