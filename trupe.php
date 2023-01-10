@@ -55,7 +55,7 @@ else include 'fragmente/navbar_guest.php'
       <a href='trupa.php?id=".str_replace(" ","+",$row_trupe['nume'])."' class='stretched-link text-decoration-none link-dark'>
       <div class='card-body'>
       <h5 class='card-title'>".$row_trupe['nume']."</h5>
-      <p class='card-text'>".$descriere_cut[0]."</p>
+      <p class='card-text'>".$descriere_cut[0]."...</p>
       </a>
       </div>
       </div>
