@@ -90,6 +90,15 @@ object-position:center;
 overflow:hidden;
 }
 
+@media (max-width:1000px){
+  .carousel-inner .carousel-item img{
+max-height:250px;
+min-height:250px;
+object-position:center;
+overflow:hidden;
+}
+}
+
 @media(max-width:768px){
 .carousel .carousel-inner{
 
