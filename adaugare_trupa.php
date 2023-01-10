@@ -82,7 +82,7 @@ catch(Exception $e) {
 
     <body>
         <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
-            <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
+            <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start" >
               <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
                 <hr class="my-4">
 

@@ -113,10 +113,10 @@ overflow:hidden;
 height:auto
  }
 }
-@media (min-width: 200px)
+@media (max-width: 2000px){
 .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 100%;
-}
+}}
     </style>
 <?php
 
