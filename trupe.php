@@ -50,7 +50,7 @@ else include 'fragmente/navbar_guest.php'
 		while ($row_trupe = mysqli_fetch_assoc($result_trupe)) {
     	echo "<div class='col'>
       <div class='card px-0 h-100 card-hover'>
-      <img src='https://storage.googleapis.com/lure-prod-bucket/".$row_trupe['nume']."/".$row_trupe['nume']."_Poza1.jpg' class='card-img-top' alt='".$row_trupe['nume']."'>
+      <img src='https://storage.googleapis.com/lure-prod-bucket/bands/".$row_trupe['nume']."/".$row_trupe['nume']."_Poza1.jpg' class='card-img-top' alt='".$row_trupe['nume']."'>
       <a href='#' class='text-decoration-none link-dark'>
       <div class='card-body'>
       <h5 class='card-title'>".$row_trupe['nume']."</h5>
