@@ -24,7 +24,7 @@ if(isset($_GET["id"]))
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trupa</title>
+    <title>Postare</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
@@ -73,9 +73,9 @@ if(isset($_GET["id"]))
             ?>
             </p>
             <?php
-            if ($row_postare['link_video']!=0) echo "
+            if ($row_postare['link_videoclip']!=0) echo "
             <iframe class='pb-5' style='width:100%;max-height:500px;' height='500px' 
-            src='".$row_postare['link_video']."?rel=0' title='YouTube video player' frameborder='0' 
+            src='".$row_postare['link_videoclip']."?rel=0' title='YouTube video player' frameborder='0' 
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' 
             allowfullscreen></iframe>
             "
