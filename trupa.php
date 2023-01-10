@@ -164,6 +164,7 @@ else include 'fragmente/navbar_guest.php'
         <p> Gen: ".$row_trupa['gen']."</p>
         <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
         </div>
+        <p>".$row_trupa["descriere"]."</p>
         " 
         ?>
       </div>

@@ -9,7 +9,7 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-    $cerere="Insert into trupe(nume,gen,an_infiintare,oras) values ('".$_POST['band_name']."','" .$_POST['gen'] ."','".$_POST['year']."','".$_POST['oras']."')";
+    $cerere="Insert into trupe(nume,gen,an_infiintare,oras,descriere) values ('".$_POST['band_name']."','" .$_POST['gen'] ."','".$_POST['year']."','".$_POST['oras']."','".$_POST['descriere']."')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);  
@@ -113,6 +113,11 @@ catch(Exception $e) {
                            
                         <label for="an_infiintare" class="form-label">An infiintare</label>
                         <input type="number" class='form-control' id="an_infiintare" name="year" minlength="4" required>
+                    </div>
+                    <div class="mb-3 input-group-lg">
+                           
+                        <label for="descriere" class="form-label">Descriere</label>
+                        <textarea class='form-control' id="descriere" name="descriere" rows="5" style="resize: none;" required> </textarea>
                     </div>
 
                     <div class="input-group mb-3">
