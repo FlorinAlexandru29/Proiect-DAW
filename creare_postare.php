@@ -7,7 +7,8 @@ if (isset($_POST["add_post"])) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-  if ((isset($_POST['link_videoclip']))==FALSE) $_POST['link_videoclip']=0; 
+  if (isset($_POST['link_videoclip'])) echo "setat";
+  else  $_POST['link_videoclip']=0;
   $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".uniqid()."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$_POST['continut_postare']."', '".date("Y-m-d")."','".$_POST['link_videoclip']."')";
   echo $cerere;
 
