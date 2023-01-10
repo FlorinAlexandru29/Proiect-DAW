@@ -88,8 +88,12 @@
   padding-left: 0;
 }
 
+.container-trupa{
+  width: 60%;
+}
 
 @media screen and (max-width: 1200px) {
+  .container-trupa{width: 80%;}
   nav>div.container{max-width: 100%;}
   .div-creare-cont{width: 80% !important;}
   .toast-creare-cont{width: 70% !important;}
@@ -4372,7 +4376,7 @@ textarea.form-control-lg {
 .card-img-top,
 .card-img-bottom {
   width: 100%;
-  max-width: 160px;
+  max-height: 160px;
   min-height: 160px;
 }
 

@@ -146,8 +146,8 @@ if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
 else include 'fragmente/navbar_guest.php'
 ?>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
-        <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start mt-5" >
-          <div class="align-self-center mx-auto my-auto pt-md-4 pb-4" style="width:70%;">
+        <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start mt-1" >
+          <div class="align-self-center mx-auto my-auto pt-md-4 pb-4 container-trupa">
             <div id="carouselExampleControls" class="carousel slide pb-3" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   
