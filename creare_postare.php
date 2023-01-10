@@ -7,8 +7,7 @@ if (isset($_POST["add_post"])) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-  if (isset($_POST['link_videoclip'])) echo "setat";
-  else  $_POST['link_videoclip']=0;
+    
   $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".uniqid()."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$_POST['continut_postare']."', '".date("Y-m-d")."','".$_POST['link_videoclip']."')";
   echo $cerere;
 
@@ -82,7 +81,7 @@ if(isset($_POST['logout'])){     //scriptul de logout
                 <div class="mb-3 input-group-lg">
                      
                   <label for="link_videoclip" class="form-label">Link Youtube</label>
-                  <input type='text' id='link_videoclip' class='form-control' name='link_videoclip'>
+                  <input type='text' id='link_videoclip' class='form-control' name='link_videoclip'value="0">
                   </div>
                   <div class="input-group mb-3">
                   
