@@ -49,7 +49,7 @@ if(isset($_GET["id"]))
                 <?php
 
              echo"   <img class='d-block w-100 h-auto' style='max-height:500px;' 
-                src='https://storage.googleapis.com/lure-prod-bucket/postari/'".$row_postare['nume_trupa']."/".$row_postare['id'].".jpg'>
+                src='https://storage.googleapis.com/lure-prod-bucket/postari/".$row_postare['nume_trupa']."/".$row_postare['id'].".jpg'>
                 ";
                 ?>
                 
