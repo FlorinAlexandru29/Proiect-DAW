@@ -50,7 +50,7 @@ if(isset($_POST['logout'])){     //scriptul de logout
    if (isset($_COOKIE["user_name"])) {
     include 'fragmente/navbar_user.php';
   } //redirect pe home page daca este deja autentificat
-  else  header('Location:index.php'); ?>
+  else  include 'fragmente/navbar_guest.php'; ?>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start" >
         <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
