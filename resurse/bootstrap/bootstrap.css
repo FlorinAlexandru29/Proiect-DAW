@@ -109,7 +109,7 @@ width:100% !important;}
 }
 
 .card-hover:hover{
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px black !important;
   transform:translateY(-0.25rem);
   transition-property: box-shadow, transform;
   transition-timing-function: ease-in-out;

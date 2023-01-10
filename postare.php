@@ -73,12 +73,14 @@ if(isset($_GET["id"]))
             ?>
             </p>
             <?php
-            if ($row_postare['link_videoclip']!=0) echo "
+            if ($row_postare['link_videoclip']!=0){
+                $link_videoclip=str_replace("watch?v=","embed/",$row_postare['link_videoclip']);
+                echo "
             <iframe class='pb-5' style='width:100%;max-height:500px;' height='500px' 
-            src='".$row_postare['link_videoclip']."?rel=0' title='YouTube video player' frameborder='0' 
+            src='".$link_videoclip."?rel=0' title='YouTube video player' frameborder='0' 
             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' 
             allowfullscreen></iframe>
-            "
+            ";}
             ?>
             
             </div>
