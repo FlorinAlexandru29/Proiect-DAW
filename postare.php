@@ -46,8 +46,13 @@ if(isset($_GET["id"]))
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
         <div class="pt-5 mx-auto row row-cols-1 row-cols-lg-2 g-4" style="width:60%;">
             <div class="col">
-                <img class="d-block w-100 h-auto" style="max-height:500px;" 
-                src="https://storage.googleapis.com/lure-prod-bucket/postari/".$row_postare['nume_trupa']."/".$row_postare['id'].".jpg">
+                <?php
+
+             echo"   <img class='d-block w-100 h-auto' style='max-height:500px;' 
+                src='https://storage.googleapis.com/lure-prod-bucket/postari/'".$row_postare['nume_trupa']."/".$row_postare['id'].".jpg'>
+                ";
+                ?>
+                
             </div>
             <div class="col mt-auto mb-0 flex-column d-flex align-items-start">
                 <?php 
