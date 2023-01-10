@@ -45,6 +45,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
   ?>
    <div class="py-5 mx-auto row row-cols-1 row-cols-lg-3 g-4" style="width:80%;">
    <?php 
+   //afisare trupe
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -68,11 +69,10 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
       </div>
       ";
 }
-
     }
-
     ?>
     </div>
+<!-- sfarsit afisare trupe -->
   </body>
 </html>
 
