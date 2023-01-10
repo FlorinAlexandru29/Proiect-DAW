@@ -11,8 +11,8 @@ if (isset($_POST["add_post"])) {
     $_POST['link_videoclip']=0;
     echo $_POST['link_videoclip'];
     echo "<br>";
-  $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".uniqid()."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$_POST['continut_postare']."', '".date("Y-m-d")."','".$_POST['link_videoclip']."')";
-  echo $cerere;
+    $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".uniqid()."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$_POST['continut_postare']."', '".date("Y-m-d")."','".$_POST['link_videoclip']."')";
+    echo $cerere;
 
 
 
@@ -68,8 +68,20 @@ if(isset($_POST['logout'])){     //scriptul de logout
           <div class="mb-3 input-group-lg">
               <label class="form-label">Selecteaza Trupa</label>
               <select id="nume_trupa" name="nume_trupa" class="form-select" aria-label="Default select example">
-                  <option value="placeholder">placeholder</option>
-                  <option value="placeholder">placeholder</option>
+                <?php
+                $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+                if (mysqli_connect_errno()) {
+                  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                  exit();
+                }
+                $cerere_nume_trupa="SELECT nume from trupe";
+                $result_nume_trupa=mysqli_query($conexiune, $cerere_nume_trupa);
+                if (mysqli_num_rows($result_nume_trupa) > 0){
+                  while ($row_nume_trupe = mysqli_fetch_assoc($result_nume_trupa)) {
+                    echo "<option value='".$row_nume_trupe['nume']."'>".$row_nume_trupe['nume']."</option>";
+                }}
+                
+                ?>
                   </select> 
           </div>
 
