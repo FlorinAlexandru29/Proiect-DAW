@@ -98,12 +98,24 @@ object-position:center;
 overflow:hidden;
 }
 }
+@media (max-width:1000px){
+  .carousel-inner .carousel-item img{
+max-height:200px;
+min-height:200px;
+object-position:center;
+overflow:hidden;
+}
+}
 
 @media(max-width:768px){
 .carousel .carousel-inner{
 
 height:auto
  }
+}
+@media (min-width: 200px)
+.container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 100%;
 }
     </style>
 <?php
