@@ -43,6 +43,36 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
   if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
   else include 'fragmente/navbar_guest.php'
   ?>
+   <div class="py-5 mx-auto row row-cols-1 row-cols-lg-3 g-4" style="width:80%;">
+   <?php 
+    $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+    if (mysqli_connect_errno()) {
+      echo "Failed to connect to MySQL: " . mysqli_connect_error();
+      exit();
+    }
+    $cerere_trupe="SELECT nume,descriere FROM trupe";
+    $result_trupe= mysqli_query($conexiune, $cerere_trupe);
+    if (mysqli_num_rows($result_trupe) > 0){
+		while ($row_trupe = mysqli_fetch_assoc($result_trupe)) {
+      $descriere_cut = str_split($row_trupe['descriere'], 120);
+    	echo "<div class='col'>
+      <div class='card px-0 h-100 card-hover'>
+      <img src='https://storage.googleapis.com/lure-prod-bucket/bands/".$row_trupe['nume']."/".$row_trupe['nume']."_Poza1.jpg' class='card-img-top' alt='".$row_trupe['nume']."'>
+      <a href='trupa.php?id=".str_replace(" ","+",$row_trupe['nume'])."' class='stretched-link text-decoration-none link-dark'>
+      <div class='card-body'>
+      <h5 class='card-title'>".$row_trupe['nume']."</h5>
+      <p class='card-text'>".$descriere_cut[0]."...</p>
+      </a>
+      </div>
+      </div>
+      </div>
+      ";
+}
+
+    }
+
+    ?>
+    </div>
   </body>
 </html>
 
