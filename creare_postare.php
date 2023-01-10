@@ -7,7 +7,7 @@ if (isset($_POST["add_post"])) {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-    if (isset($_POST['link_videoclip'])){
+    if (($_POST['link_videoclip'])!=''){
   echo "Valoare Link:".$_POST['link_videoclip'];
   echo "<br>";}
   else echo "nu este setat";
