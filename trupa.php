@@ -84,7 +84,8 @@ else {header('Location:index.php');exit();}
     <style>
 
 .carousel-inner .carousel-item img{
-max-height:400px;
+max-height:350px;
+min-height:350px;
 object-position:center;
 overflow:hidden;
 }
@@ -156,7 +157,7 @@ else include 'fragmente/navbar_guest.php'
                 </div>
         <?php 
        echo "<p>".$row_trupa["nume"]."</p>
-        <div class='d-flex justify-content-between'>
+        <div class='d-flex justify-content-between flex-wrap'>
         <p> Oras: ".$row_trupa['oras']."</p>
         <p> Gen: ".$row_trupa['gen']."</p>
         <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
