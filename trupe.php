@@ -48,13 +48,14 @@ else include 'fragmente/navbar_guest.php'
     $result_trupe= mysqli_query($conexiune, $cerere_trupe);
     if (mysqli_num_rows($result_trupe) > 0){
 		while ($row_trupe = mysqli_fetch_assoc($result_trupe)) {
+      $descriere_cut = str_split($row_trupe['descriere'], 120);
     	echo "<div class='col'>
       <div class='card px-0 h-100 card-hover'>
       <img src='https://storage.googleapis.com/lure-prod-bucket/bands/".$row_trupe['nume']."/".$row_trupe['nume']."_Poza1.jpg' class='card-img-top' alt='".$row_trupe['nume']."'>
-      <a href='#' class='text-decoration-none link-dark'>
+      <a href='trupa.php?id=".str_replace(" ","+",$row_trupe['nume'])."' class='stretched-link text-decoration-none link-dark'>
       <div class='card-body'>
       <h5 class='card-title'>".$row_trupe['nume']."</h5>
-      <p class='card-text'>".$row_trupe['descriere']."</p>
+      <p class='card-text'>".$descriere_cut[0]."</p>
       </a>
       </div>
       </div>
