@@ -98,7 +98,7 @@ object-position:center;
 overflow:hidden;
 }
 }
-@media (max-width:1000px){
+@media (max-width:700px){
   .carousel-inner .carousel-item img{
 max-height:200px;
 min-height:200px;
