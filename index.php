@@ -51,7 +51,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-    $cerere_trupe="SELECT nume,descriere FROM trupe";
+    $cerere_trupe="SELECT nume,descriere FROM trupe ORDER BY nume";
     $result_trupe= mysqli_query($conexiune, $cerere_trupe);
     if (mysqli_num_rows($result_trupe) > 0){
 		while ($row_trupe = mysqli_fetch_assoc($result_trupe)) {
