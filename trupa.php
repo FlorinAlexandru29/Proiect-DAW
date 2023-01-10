@@ -13,7 +13,6 @@ if(isset($_GET["id"]))
   
  
   $cerere_trupa="SELECT * FROM trupe WHERE nume='".$trupa."' ";
- echo $cerere_trupa;
  
   $result_trupa= mysqli_query($conexiune, $cerere_trupa);
   if (mysqli_num_rows($result_trupa) > 0){
@@ -42,8 +41,6 @@ try {
 $i=1;
 foreach ($objects as $object) {
   $poza[$i]= $object->name(); 
-  echo $poza[$i];
-  echo "<BR>";
   $i=$i+1;
   // NOTE: if $object->name() ends with '/' then it is a 'folder'
 } 

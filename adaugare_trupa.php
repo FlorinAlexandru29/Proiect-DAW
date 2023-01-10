@@ -41,12 +41,12 @@ try {
 ]
 );
 
-echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
+// "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
 
     // Upload file
 
 }
-
+echo "Fisierele au fost incarcate cu success";
 }
 catch(Exception $e) {
   echo $e->getMessage();
