@@ -47,7 +47,7 @@ if(isset($_GET["id"]))
         <div class="pt-5 mx-auto row row-cols-1 row-cols-lg-2 g-4" style="width:60%;">
             <div class="col">
                 <img class="d-block w-100 h-auto" style="max-height:500px;" 
-                src="https://storage.googleapis.com/lure-prod-bucket/postari/Implant Pentru Refuz/63bdc9372b97b.jpg">
+                src="https://storage.googleapis.com/lure-prod-bucket/postari/".$row_postare['nume_trupa']."/".$row_postare['id'].".jpg">
             </div>
             <div class="col mt-auto mb-0 flex-column d-flex align-items-start">
                 <?php 
@@ -67,7 +67,14 @@ if(isset($_GET["id"]))
             echo $row_postare['continut']; 
             ?>
             </p>
-            <iframe class="pb-5" style="width:100%;max-height:500px;" height="500px" 
-            src="https://www.youtube.com/embed/WBcBp1F1fWo?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <?php
+            if ($row_postare['link_video']!=0) echo "
+            <iframe class='pb-5' style='width:100%;max-height:500px;' height='500px' 
+            src='".$row_postare['link_video']."?rel=0' title='YouTube video player' frameborder='0' 
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' 
+            allowfullscreen></iframe>
+            "
+            ?>
+            
             </div>
             </main>
