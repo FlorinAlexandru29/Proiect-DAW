@@ -71,6 +71,15 @@ if(isset($_GET["id"]))
         iframe{max-height: 300px !important;}
     }
 </style>
+<script>
+      function show_reply(indice) {
+        document.getElementById("reply-comm"+indice).style.display = "flex";
+      }
+      
+     function hide_reply(indice) {
+      document.getElementById("reply-comm"+indice).style.display = "none";
+    }
+    </script>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
         <div class="pt-5 mx-auto row row-cols-1 row-cols-lg-2 g-4" style="width:60%;">
             <div class="col">
