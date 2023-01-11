@@ -149,6 +149,7 @@ if (isset($_COOKIE['user_name'])){
     </div>
     </div>";
 }
+else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
 
 
 ?>
