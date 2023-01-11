@@ -188,8 +188,14 @@ else include 'fragmente/navbar_guest.php'
         ?>
         <hr class="my-4">
         <?php 
-        $date = date('Y-m-d H:i:s');
-        echo $date;
+        $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+
+        if (mysqli_connect_errno()) {
+         echo "Failed to connect to MySQL: " . mysqli_connect_error();
+         exit();
+         }
+         $cerere_postare = "SELECT * FROM postari WHERE nume_trupa='".$trupa."' ORDER BY data_postare desc";
+         echo $cerere_postare;
         
         
         ?>
