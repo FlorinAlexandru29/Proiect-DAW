@@ -195,7 +195,7 @@ else include 'fragmente/navbar_guest.php'
          exit();
          }
          $cerere_postare = "SELECT * FROM postari WHERE nume_trupa='".$trupa."' ORDER BY data_postare desc";
-         echo $cerere_postare;
+         
          $result_postare=mysqli_query($conexiune, $cerere_postare);
          if (mysqli_num_rows($result_postare) > 0){$i=1;
           while ($row_postare = mysqli_fetch_assoc($result_postare)) {
