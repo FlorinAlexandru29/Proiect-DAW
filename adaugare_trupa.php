@@ -122,7 +122,7 @@ catch(Exception $e) {
                     <div class="mb-3 input-group-lg">
                            
                         <label for="descriere" class="form-label">Descriere</label>
-                        <textarea class='form-control' id="descriere" name="descriere" rows="5" style="resize: none;" required> </textarea>
+                        <textarea class='form-control' id="descriere" name="descriere" rows="5" required> </textarea>
                     </div>
 
                     <div class="input-group mb-3">
