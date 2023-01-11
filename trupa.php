@@ -178,14 +178,14 @@ else include 'fragmente/navbar_guest.php'
                 </button>
                 </div>
         <?php 
-       echo "<p>".$row_trupa["nume"]."</p>
-        <div class='d-flex justify-content-between flex-wrap'>
-        <p> Oras: ".$row_trupa['oras']."</p>
-        <p> Gen: ".$row_trupa['gen']."</p>
-        <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
-        </div>
-        <p>".$row_trupa["descriere"]."</p>
-        " 
+       echo uft8_encode("<p>".$row_trupa["nume"]."</p>
+       <div class='d-flex justify-content-between flex-wrap'>
+       <p> Oras: ".$row_trupa['oras']."</p>
+       <p> Gen: ".$row_trupa['gen']."</p>
+       <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
+       </div>
+       <p>".$row_trupa["descriere"]."</p>
+       "); 
         ?>
         <hr class="my-4">
         <?php 
