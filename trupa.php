@@ -188,7 +188,8 @@ else include 'fragmente/navbar_guest.php'
         ?>
         <hr class="my-4">
         <?php 
-        
+        $date = date('Y-m-d H:i:s');
+        echo $date;
         
         
         ?>
@@ -205,7 +206,6 @@ else include 'fragmente/navbar_guest.php'
            </a>
      </div>
      </div>
-      <hr class="my-0 w-100">
      <div class="my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover" style="min-height:200px;max-height:300px;">
        <a href="#" class="text-decoration-none link-dark">
        <div class="my-auto flex-column d-flex align-items-start">
