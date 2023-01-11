@@ -153,12 +153,12 @@ else include 'fragmente/navbar_guest.php'
                 <div class="carousel-inner">
                   
                <?php 
-               echo"
+               echo "
                <div class='carousel-item active'>
                <img src='https://storage.googleapis.com/lure-prod-bucket/".$poza[1]."' class='d-block w-100' alt='...'>
              </div>";
              for($i=2;$i<=$n;$i++){
-              echo"
+              echo "
                <div class='carousel-item'>
                <img src='https://storage.googleapis.com/lure-prod-bucket/".$poza[$i]."' class='d-block w-100' alt='...'>
              </div>";
@@ -178,13 +178,17 @@ else include 'fragmente/navbar_guest.php'
                 </button>
                 </div>
         <?php 
+        $diacritice = array("ă", "î", "ș", "ț", "â","Ă", "Î", "Ș", "Ț", "Â");
+        $diacritice_inlocuitor = array ("a", "i", "s", "t", "a","A", "I", "S", "T", "A");
+        $descriere_fara_diacritice = str_replace($diacritice, $diacritice_inlocuitor, $row_trupa["descriere"]);
+
        echo "<p>".$row_trupa["nume"]."</p>
        <div class='d-flex justify-content-between flex-wrap'>
        <p> Oras: ".$row_trupa['oras']."</p>
        <p> Gen: ".$row_trupa['gen']."</p>
        <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
        </div>
-       <p>".$row_trupa["descriere"]."</p>
+       <p>".$descriere_fara_diacritice."</p>
        "; 
         ?>
         <hr class="my-4">
