@@ -187,6 +187,37 @@ else include 'fragmente/navbar_guest.php'
         " 
         ?>
         <hr class="my-4">
+        <?php 
+        
+        
+        
+        ?>
+        <div class="my-3 mx-auto row row-cols-1 row-cols-lg-2 g-4 shadow p-3 bg-body rounded-5 card-hover">
+     <div class="col mt-0">
+            <img class="d-block w-100 h-100 rounded-3" style="max-height:300px;" src="https://storage.googleapis.com/lure-prod-bucket/postari/Implant Pentru Refuz/63bdc9372b97b.jpg">          
+           </div>
+     <div class="col my-auto flex-column d-flex align-items-start">
+       <a href="#" class="text-decoration-none link-dark">
+         <h4>Implant Pentru Refuz Lanseaza Un Nou Album </h4>
+         <p>Data Postare: 2023-01-10</p>
+         <p> Trupa de metalcore din Timisoara, Implant Pentru Refuz, va lansa un album nou vara aceasta. 
+             </p>
+           </a>
+     </div>
+     </div>
+      <hr class="my-0 w-100">
+     <div class="my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover" style="min-height:200px;max-height:300px;">
+       <a href="#" class="text-decoration-none link-dark">
+       <div class="my-auto flex-column d-flex align-items-start">
+           <h4>Implant Pentru Refuz Lanseaza Un Nou Album </h4>
+           <p>Data Postare: 2023-01-10</p>
+           <p> Trupa de metalcore din Timisoara, Implant Pentru Refuz, va lansa un album nou vara aceasta. 
+               </p> 
+       </div>   
+     </a>   
+       </div>
+
+       <hr class="my-4">
       </div>
       </div>
       </main>
