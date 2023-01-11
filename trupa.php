@@ -196,34 +196,46 @@ else include 'fragmente/navbar_guest.php'
          }
          $cerere_postare = "SELECT * FROM postari WHERE nume_trupa='".$trupa."' ORDER BY data_postare desc";
          echo $cerere_postare;
-        
-        
-        ?>
-        <div class="my-3 mx-auto row row-cols-1 row-cols-lg-2 g-4 shadow p-3 bg-body rounded-5 card-hover">
-     <div class="col mt-0">
-            <img class="d-block w-100 h-100 rounded-3" style="max-height:300px;" src="https://storage.googleapis.com/lure-prod-bucket/postari/Implant Pentru Refuz/63bdc9372b97b.jpg">          
-           </div>
-     <div class="col my-auto flex-column d-flex align-items-start">
-       <a href="#" class="text-decoration-none link-dark">
-         <h4>Implant Pentru Refuz Lanseaza Un Nou Album </h4>
-         <p>Data Postare: 2023-01-10</p>
-         <p> Trupa de metalcore din Timisoara, Implant Pentru Refuz, va lansa un album nou vara aceasta. 
-             </p>
-           </a>
-     </div>
-     </div>
-     <div class="my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover" style="min-height:200px;max-height:300px;">
-       <a href="#" class="text-decoration-none link-dark">
-       <div class="my-auto flex-column d-flex align-items-start">
-           <h4>Implant Pentru Refuz Lanseaza Un Nou Album </h4>
-           <p>Data Postare: 2023-01-10</p>
-           <p> Trupa de metalcore din Timisoara, Implant Pentru Refuz, va lansa un album nou vara aceasta. 
-               </p> 
-       </div>   
-     </a>   
-       </div>
+         $result_postare=mysqli_query($conexiune, $cerere_postare);
+         if (mysqli_num_rows($result_postare) > 0){$i=1;
+          while ($row_postare = mysqli_fetch_assoc($result_postare)) {
+            if ($i%2==1){
+              $continut_cut = str_split($row_postare['continut'], 200);
+              echo "
+              <div class='my-3 mx-auto row row-cols-1 row-cols-lg-2 g-4 shadow p-3 bg-body rounded-5 card-hover'>
+              <div class='col mt-0'>
+                     <img class='d-block w-100 h-100 rounded-3' style='max-height:300px;' src='https://storage.googleapis.com/lure-prod-bucket/postari/".$trupa."/".$row_postare['id'].".jpg'>          
+                    </div>
+              <div class='col my-auto flex-column d-flex align-items-start'>
+                <a href='postare.php?id=".$row_postare['id']."' class='text-decoration-none link-dark'>
+                  <h4>".$row_postare['titlu']." </h4>
+                  <p>".substr($row_postare['data_postare'], 0, -3)."</p>
+                  <p> ".$continut_cut[0]."</p>
+                    </a>
+              </div>
+              </div>
+              <hr class='my-4'>
+              ";
+            }
+            else {$continut_cut = str_split($row_postare['continut'], 200);
+              echo "
+              <div class='my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover' style='min-height:200px;max-height:300px;'>
+              <a href='postare.php?id=".$row_postare['id']."' class='text-decoration-none link-dark'>
+              <div class='my-auto flex-column d-flex align-items-start'>
+              <h4>".$row_postare['titlu']."</h4>
+              <p>".substr($row_postare['data_postare'], 0, -3)."</p>
+              <p> ".$continut_cut[0]."</p> 
+              </div>   
+              </a>   
+              </div>
+              <hr class='my-4'>
+              ";
 
-       <hr class="my-4">
+            }
+            $i=$i+1;
+          }
+        }
+        ?>
       </div>
       </div>
       </main>
