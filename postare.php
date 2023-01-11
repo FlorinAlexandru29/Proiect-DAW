@@ -17,6 +17,7 @@ if(isset($_GET["id"]))
 }
 
  else {header('Location:index.php');exit();}
+
   ?>
 
 <!doctype html>
@@ -31,6 +32,33 @@ if(isset($_GET["id"]))
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
+    <?php 
+    if(isset($_POST['logout'])){     //scriptul de logout
+        setcookie("user_name", "guest", time()- 120,'/');
+        setcookie("profile_pic", '',time()-120,'/');
+        header('Location:index.php');
+      }
+      @session_start();
+      if(isset($_SESSION['activat'])){
+      echo "activeaza-ti contul";
+      unset($_SESSION['activat']);
+      }
+      
+      if(isset($_POST['login-expanded'])) {
+        $email=$_POST['email_expanded'];
+        $password=$_POST['password_expanded'];
+        include 'tools/login.php';}
+      
+      if(isset($_POST['login-mobile'])){ 
+        $email=$_POST['email_mobile'];
+        $password=$_POST['password_mobile'];
+        include 'tools/login.php';}
+      
+      if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php';
+            
+    if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
+    else include 'fragmente/navbar_guest.php'
+  ?>
 <style>
     @media screen and (max-width: 1000px){
     .row-cols-1 > * {
