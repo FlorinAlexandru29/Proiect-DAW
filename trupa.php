@@ -72,7 +72,7 @@ else {header('Location:index.php');exit();}
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-16">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trupa</title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
