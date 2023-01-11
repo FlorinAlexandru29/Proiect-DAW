@@ -122,29 +122,37 @@ if(isset($_GET["id"]))
                       <div class="row">
                         <div class="col">
 <!--inceput casuta comentariu-->
-<div class="row mb-5">
-  <div class="d-flex flex-start"  >
+<?php
+if (isset($_COOKIE['user_name'])){
+  echo"
+  <div class='row mb-5'>
+  <div class='d-flex flex-start'  >
     
-      <img class="me-3 rounded-circle shadow-1-strong"
-        src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
-        width="65" height="65" />
+      <img class='me-3 rounded-circle shadow-1-strong'
+        src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' alt='avatar'
+        width='65' height='65' />
     
-    <div class="flex-grow-1 flex-shrink-1">
+    <div class='flex-grow-1 flex-shrink-1'>
       
-        <div class="d-flex align-items-start">
-          <p class="mb-1">
-            User_Name
+        <div class='d-flex align-items-start'>
+          <p class='mb-1'>
+            ".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."
           </p>
         </div>
-        <form method="POST" action="tools/adaugare-comentariu.php" id="form-adaugare-comentariu">
-        <textarea class='form-control' name="comm" rows="5" style="resize: none;" required> </textarea>
+        <form method='POST' action='tools/adaugare-comentariu.php' id='form-adaugare-comentariu'>
+        <textarea class='form-control' name='comm' rows='5' style='resize: none;' required> </textarea>
       </div>
     </div>
-    <div class="d-flex col justify-content-end mt-2">
-      <button type="submit" form="form-adaugare-comentariu" name="add_comm" class="d-flex align-items-center btn btn-primary rounded-pill"><span class="small">Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
+    <div class='d-flex col justify-content-end mt-2'>
+      <button type='submit' form='form-adaugare-comentariu' name='add_comm' class='d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
     </form>
     </div>
-    </div>
+    </div>";
+}
+
+
+?>
+
 <!--sf casuta comentariu-->
                           <div class="d-flex flex-start">
                             <img class="rounded-circle shadow-1-strong me-3"
