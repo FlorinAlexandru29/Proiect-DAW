@@ -92,8 +92,8 @@ overflow:hidden;
 
 @media (max-width:1000px){
   .carousel-inner .carousel-item img{
-max-height:250px;
-min-height:250px;
+max-height:300px;
+min-height:300px;
 object-position:center;
 overflow:hidden;
 }
@@ -219,7 +219,7 @@ else include 'fragmente/navbar_guest.php'
             }
             else {$continut_cut = str_split($row_postare['continut'], 200);
               echo "
-              <div class='my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover' style='min-height:200px;max-height:300px;'>
+              <div class='my-3 mx-auto row g-4 shadow p-3 bg-body rounded-5 card-hover' style='min-height:200px;'>
               <a href='postare.php?id=".$row_postare['id']."' class='text-decoration-none link-dark'>
               <div class='my-auto flex-column d-flex align-items-start'>
               <h4>".$row_postare['titlu']."</h4>
