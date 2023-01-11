@@ -149,7 +149,7 @@ if (isset($_COOKIE['user_name'])){
             ".$row_nume['nume']."
           </p>
         </div>
-        <form method='POST' action='tools/adaugare-comentariu.php' id='form-adaugare-comentariu'>
+        <form method='POST' action='tools/adaugare_comentariu.php' id='form-adaugare-comentariu'>
         <textarea class='form-control' name='comm' rows='5' style='resize: none;' required> </textarea>
       </div>
     </div>
