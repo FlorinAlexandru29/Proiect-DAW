@@ -13,8 +13,15 @@ if (isset($_POST["add_post"])) {
     echo "<br>";
     $id_postare=uniqid();
     date_default_timezone_set('Europe/Bucharest');
-    $data_postare = date('Y-m-d H:i:s');
-    $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".$id_postare."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$_POST['continut_postare']."', '".$data_postare."','".$_POST['link_videoclip']."')";
+    $data_postare = date('Y-m-d H:i');
+
+        $diacritice = array("ă", "î", "ș", "ț", "â","Ă", "Î", "Ș", "Ț", "Â");
+        $diacritice_inlocuitor = array ("a", "i", "s", "t", "a","A", "I", "S", "T", "A");
+        $continut_fara_diacritice = str_replace($diacritice, $diacritice_inlocuitor, $_POST['continut_postare']);
+
+
+
+    $cerere="INSERT INTO postari (`id`, `titlu`, `nume_trupa`, `continut`, `data_postare`,link_videoclip) VALUES ('".$id_postare."','".$_POST['post_name']."', '".$_POST['nume_trupa']."','".$continut_fara_diacritice."', '".$data_postare."','".$_POST['link_videoclip']."')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);  
