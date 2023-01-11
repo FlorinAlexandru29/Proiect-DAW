@@ -72,9 +72,10 @@ else {header('Location:index.php');exit();}
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-16">
+    <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trupa</title>
+    <title><?php echo $row_trupa['nume']; ?>
+    </title>
     <link href="resurse/bootstrap/bootstrap.css" rel="stylesheet">
     <script src="resurse/bootstrap/bootstrap.bundle.js"></script>
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
