@@ -9,7 +9,12 @@
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
       exit();
     }
-    $cerere="Insert into trupe(nume,gen,an_infiintare,oras,descriere) values ('".$_POST['band_name']."','" .$_POST['gen'] ."','".$_POST['year']."','".$_POST['oras']."','".$_POST['descriere']."')";
+        $diacritice = array("ă", "î", "ș", "ț", "â","Ă", "Î", "Ș", "Ț", "Â");
+        $diacritice_inlocuitor = array ("a", "i", "s", "t", "a","A", "I", "S", "T", "A");
+        $descriere_fara_diacritice = str_replace($diacritice, $diacritice_inlocuitor, $_POST['descriere']);
+
+
+    $cerere="Insert into trupe(nume,gen,an_infiintare,oras,descriere) values ('".$_POST['band_name']."','" .$_POST['gen'] ."','".$_POST['year']."','".$_POST['oras']."','".$descriere_fara_diacritice."')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);  
