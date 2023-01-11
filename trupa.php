@@ -1,4 +1,5 @@
 <?php 
+    header('Content-Type: text/html; charset=ISO-8859-1');
 require_once "vendor/autoload.php";
 use Google\Cloud\Storage\StorageClient;
 if(isset($_GET["id"]))
@@ -85,8 +86,8 @@ else {header('Location:index.php');exit();}
     <style>
 
 .carousel-inner .carousel-item img{
-max-height:350px;
-min-height:350px;
+max-height:400px;
+min-height:400px;
 object-position:center;
 overflow:hidden;
 }
@@ -178,14 +179,14 @@ else include 'fragmente/navbar_guest.php'
                 </button>
                 </div>
         <?php 
-       echo uft8_encode("<p>".$row_trupa["nume"]."</p>
+       echo "<p>".$row_trupa["nume"]."</p>
        <div class='d-flex justify-content-between flex-wrap'>
        <p> Oras: ".$row_trupa['oras']."</p>
        <p> Gen: ".$row_trupa['gen']."</p>
        <p> An Infiintare: ".$row_trupa['an_infiintare']."</p>
        </div>
        <p>".$row_trupa["descriere"]."</p>
-       "); 
+       "; 
         ?>
         <hr class="my-4">
         <?php 
