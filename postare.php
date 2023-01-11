@@ -111,6 +111,13 @@ if(isset($_GET["id"]))
             ";}
             ?>
             <hr class="my-4 w-100">
+            <?php 
+            $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+            if (mysqli_connect_errno()) {
+              echo "Failed to connect to MySQL: " . mysqli_connect_error();
+              exit();
+            }
+            ?>
             <section class="gradient-custom w-100">
             <div class="container">
               <div class="row d-flex justify-content-center">
@@ -124,6 +131,9 @@ if(isset($_GET["id"]))
 <!--inceput casuta comentariu-->
 <?php
 if (isset($_COOKIE['user_name'])){
+  $cerere="select nume from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
+  $result_nume= mysqli_query($conexiune, $cerere);
+  $row_nume = mysqli_fetch_assoc($result_nume);
   echo"
   <div class='row mb-5'>
   <div class='d-flex flex-start'  >
@@ -136,7 +146,7 @@ if (isset($_COOKIE['user_name'])){
       
         <div class='d-flex align-items-start'>
           <p class='mb-1'>
-            ".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."
+            ".$row_nume['nume']."
           </p>
         </div>
         <form method='POST' action='tools/adaugare-comentariu.php' id='form-adaugare-comentariu'>
@@ -144,7 +154,9 @@ if (isset($_COOKIE['user_name'])){
       </div>
     </div>
     <div class='d-flex col justify-content-end mt-2'>
-      <button type='submit' form='form-adaugare-comentariu' name='add_comm' class='d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
+    <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
+    <input type='hidden' name='reply' value='no'/>
+    <button type='submit' form='form-adaugare-comentariu' name='add_comm' class='d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
     </form>
     </div>
     </div>";
