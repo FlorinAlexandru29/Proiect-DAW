@@ -171,7 +171,60 @@ if (isset($_COOKIE['user_name'])){
     </div>";
 }
 else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
+$cerere_comentariu="SELECT * FROM comments where reply='no' ORDER BY data_comentariu desc";
+$result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
+if (mysqli_num_rows($result_comentariu) > 0){
+  while ($row_comentariu = mysqli_fetch_assoc($result_postare)) {
 
+    echo "
+    <div class='d-flex flex-start'>
+    <img class='rounded-circle shadow-1-strong me-3' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg' alt='avatar' width='65' height='65'>
+    <div class='flex-grow-1 flex-shrink-1'>
+      <div>
+        <div class='d-flex justify-content-between align-items-center'>
+          <p class='mb-1'>
+            ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
+          </p>
+          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' onclick='show_reply(".$row_comentariu['id_comment'].")'><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
+        </div>
+        <p class='small mb-0'>
+         ".$row_comentariu['comentariu']."
+        </p>
+      </div>
+
+      <!-- ultimul comentariu-->
+      <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
+      <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
+      <input type='hidden' name='reply_id' value='".$row_comentariu['id_comment']."'/>
+
+      <div class='d-flex flex-start mt-4'>
+          <img class='me-3 rounded-circle shadow-1-strong' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' alt='avatar' width='65' height='65'>
+        <div class='flex-grow-1 flex-shrink-1'>
+          <div>
+            <div class='d-flex justify-content-between align-items-center'>
+              <p class='mb-1'>
+              ".$row_nume['nume']."
+              </p>
+            </div>
+            <textarea class='form-control' id='descriere' name='descriere' rows='5' style='resize: none;'> </textarea>
+          </div>
+        </div>
+      </div>
+        <div class='d-flex col justify-content-end mt-2'>
+          <button class='d-flex align-items-center btn btn-outline-danger rounded-pill' style='margin-left:65px;' onclick='hide_reply(".$row_comentariu['id_comment'].")'><span class='small'>Cancel</span><i class='bx bx-message-x fs-lg ms-2'></i></button>
+          <button class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
+        </div>
+        </div>
+      <!-- form reply-->
+    </div>
+  </div>
+    
+    ";
+  }
+
+
+}
+else echo "<p> nu exista comentarii momentan </p>";
 
 ?>
 
