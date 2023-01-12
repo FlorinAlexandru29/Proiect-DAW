@@ -206,7 +206,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
       <form method='POST' action='tools/adaugare_comentariu.php' id='form-reply-".$row_comentariu['id_comment']."'>
       <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
-      <input type='hidden' name='reply_id' value='".$row_comentariu['id_comment']."'/>
+      <input type='hidden' name='reply' value='".$row_comentariu['id_comment']."'/>
 
       <div class='d-flex flex-start mt-4'>
           <img class='me-3 rounded-circle shadow-1-strong' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' alt='avatar' width='65' height='65'>
@@ -217,7 +217,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
               ".$row_nume['nume']."
               </p>
             </div>
-            <textarea class='form-control' name='reply' rows='5' style='resize: none;' required></textarea>
+            <textarea class='form-control' name='comm' rows='5' style='resize: none;' required></textarea>
           </div>
         </div>
       </div>
