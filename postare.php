@@ -174,7 +174,7 @@ else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
 $cerere_comentariu="SELECT * FROM comments where reply='no' ORDER BY data_comentariu desc";
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
-  while ($row_comentariu = mysqli_fetch_assoc($result_postare)) {
+  while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
 
     echo "
     <div class='d-flex flex-start'>
