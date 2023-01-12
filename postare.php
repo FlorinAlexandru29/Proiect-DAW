@@ -194,8 +194,30 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
          ".$row_comentariu['comentariu']."
         </p>
       </div>";
-    //  $cerere_reply="SELECT FROM "
-
+     $cerere_reply="SELECT * From comments WHERE id_postare='".$_GET["id"]."' and reply='".$row_comentariu['id_comment']."' ORDER BY data_comentariu desc ";
+     $result_reply=mysqli_query($conexiune, $cerere_reply);
+     if (mysqli_num_rows($result_reply) > 0){
+      while ($row_reply = mysqli_fetch_assoc($result_reply)) {
+          echo "<div class='d-flex flex-start mt-4'>
+          
+            <img class='me-3 rounded-circle shadow-1-strong' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_reply['user_name'].".jpg' alt='avatar' width='65' height='65'>
+        
+          <div class='flex-grow-1 flex-shrink-1'>
+            <div>
+              <div class='d-flex justify-content-between align-items-center'>
+                <p class='mb-1'>
+                ".$row_reply['user_name']." <span class='small'>- ".$row_reply['data_comentariu']."</span>
+                </p>
+              </div>
+              <p class='small mb-0'>
+              ".$row_reply['comentariu']."
+              </p>
+            </div>
+          </div>
+        </div>
+          ";
+      }
+     }
 
 
 
