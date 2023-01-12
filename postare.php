@@ -69,6 +69,7 @@ if(isset($_GET["id"]))
 }
     @media screen and (max-width: 600px){
         iframe{max-height: 300px !important;}
+        .corp{width:95% !important;}
     }
 </style>
 <script>
@@ -81,7 +82,7 @@ if(isset($_GET["id"]))
     }
     </script>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
-        <div class="pt-5 mx-auto row row-cols-1 row-cols-lg-2 g-4" style="width:60%;">
+        <div class="pt-5 mx-auto row row-cols-1 row-cols-lg-2 g-4 corp" style="width:60%;">
             <div class="col">
                 <?php
 
@@ -103,7 +104,7 @@ if(isset($_GET["id"]))
             </div>
             <hr class="my-4 my-0 w-100">
             </div>
-            <div class="pt-2 mx-auto row row-cols-1 row-cols-lg-2 g-4" style="width:60%;">
+            <div class="pt-2 mx-auto row row-cols-1 row-cols-lg-2 g-4 corp" style="width:60%;">
             <p class="align-items-start" style="width:80%">
             <?php
             echo $row_postare['continut']; 
@@ -133,7 +134,7 @@ if(isset($_GET["id"]))
                 <div class="col p-0">
                   <div class="card">
                     <div class="card-body p-4">
-                      <h4 class="text-center mb-4 pb-2">Nested comments section</h4>
+                      <h4 class="text-center mb-4 pb-2">Comentarii</h4>
           
                       <div class="row">
                         <div class="col">
