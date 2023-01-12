@@ -171,7 +171,7 @@ if (isset($_COOKIE['user_name'])){
     </div>";
 }
 else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
-$cerere_comentariu="SELECT * FROM comments where reply='no' ORDER BY data_comentariu desc";
+$cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_GET["id"]."' ORDER BY data_comentariu desc";
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
   while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
@@ -185,7 +185,7 @@ if (mysqli_num_rows($result_comentariu) > 0){
           <p class='mb-1'>
             ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
           </p>
-          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' onclick='show_reply(".$row_comentariu['id_comment'].")'><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
+          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' onclick='show_reply('".$row_comentariu['id_comment']."')'><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
         </div>
         <p class='small mb-0'>
          ".$row_comentariu['comentariu']."
