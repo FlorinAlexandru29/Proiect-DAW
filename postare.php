@@ -159,7 +159,7 @@ if (isset($_COOKIE['user_name'])){
           </p>
         </div>
         <form method='POST' action='tools/adaugare_comentariu.php' id='form-adaugare-comentariu'>
-        <textarea class='form-control' name='comm' rows='5' style='resize: none;' required> </textarea>
+        <textarea class='form-control' name='comm' rows='5' style='resize: none;' required></textarea>
       </div>
     </div>
     <div class='d-flex col justify-content-end mt-2'>
@@ -194,9 +194,17 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
          ".$row_comentariu['comentariu']."
         </p>
       </div>";
+    //  $cerere_reply="SELECT FROM "
+
+
+
+
+
+
       if (isset($_COOKIE['user_name'])) echo "
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
+      <form method='POST' action='tools/adaugare_comentariu.php' id='form-adaugare-reply'>
       <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
       <input type='hidden' name='reply_id' value='".$row_comentariu['id_comment']."'/>
 
@@ -209,21 +217,22 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
               ".$row_nume['nume']."
               </p>
             </div>
-            <textarea class='form-control' id='descriere' name='descriere' rows='5' style='resize: none;'> </textarea>
+            <textarea class='form-control' name='reply' rows='5' style='resize: none;' required></textarea>
           </div>
         </div>
       </div>
         <div class='d-flex col justify-content-end mt-2'>
           <button class='d-flex align-items-center btn btn-outline-danger rounded-pill' style='margin-left:65px;' ".$buton_hide_value."><span class='small'>Cancel</span><i class='bx bx-message-x fs-lg ms-2'></i></button>
-          <button class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
-        </div>
+          <button type='submit' form='form-adaugare-reply' name='add_comm' class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
+       </form>
+          </div>
         </div>
       <!-- form reply-->
     </div>
   </div>
     
     ";
-    else echo "<p id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'> Trebuie sa te autentifici pentru a adauga un comentariu </div> </div>";
+    else echo "<p class='mt-5' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'> Trebuie sa te autentifici pentru a adauga un comentariu </div> </div>";
   }
 
 
