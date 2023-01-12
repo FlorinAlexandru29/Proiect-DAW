@@ -185,14 +185,16 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
         <div class='d-flex justify-content-between align-items-center'>
           <p class='mb-1'>
             ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
-          </p>
-          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
+          </p>";
+          if (isset($_COOKIE['user_name'])) echo "
+          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>";
+          echo "
         </div>
         <p class='small mb-0'>
          ".$row_comentariu['comentariu']."
         </p>
-      </div>
-
+      </div>";
+      if (isset($_COOKIE['user_name'])) echo "
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
       <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
