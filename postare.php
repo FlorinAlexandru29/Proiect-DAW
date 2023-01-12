@@ -204,7 +204,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
       if (isset($_COOKIE['user_name'])) echo "
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
-      <form method='POST' action='tools/adaugare_comentariu.php' id='form-adaugare-reply'>
+      <form method='POST' action='tools/adaugare_comentariu.php' id='form-reply-".$row_comentariu['id_comment']."'>
       <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
       <input type='hidden' name='reply_id' value='".$row_comentariu['id_comment']."'/>
 
@@ -223,7 +223,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
       </div>
         <div class='d-flex col justify-content-end mt-2'>
           <button class='d-flex align-items-center btn btn-outline-danger rounded-pill' style='margin-left:65px;' ".$buton_hide_value."><span class='small'>Cancel</span><i class='bx bx-message-x fs-lg ms-2'></i></button>
-          <button type='submit' form='form-adaugare-reply' name='add_comm' class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
+          <button type='submit' form='form-reply-".$row_comentariu['id_comment']."' name='add_comm' class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
        </form>
           </div>
         </div>
