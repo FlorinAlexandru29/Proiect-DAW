@@ -185,10 +185,10 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
         <div class='d-flex justify-content-between align-items-center'>
           <p class='mb-1'>
             ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
-          </p>";
-          if (isset($_COOKIE['user_name'])) echo "
-          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>";
-          echo "
+          </p>
+          
+          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
+        
         </div>
         <p class='small mb-0'>
          ".$row_comentariu['comentariu']."
@@ -223,6 +223,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
   </div>
     
     ";
+    else echo "<p id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'> Trebuie sa te autentifici pentru a adauga un comentariu </div> </div>";
   }
 
 
