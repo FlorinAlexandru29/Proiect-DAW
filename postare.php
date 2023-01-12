@@ -175,7 +175,7 @@ $cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
   while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
-$buton_value="onclick=\"show_reply('63bf468de2a5a')'\"";
+$buton_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
     echo "
     <div class='d-flex flex-start'>
     <img class='rounded-circle shadow-1-strong me-3' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg' alt='avatar' width='65' height='65'>
