@@ -178,7 +178,7 @@ if (mysqli_num_rows($result_comentariu) > 0){
 $buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
 $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
     echo "
-    <div class='d-flex flex-start'>
+    <div class='d-flex flex-start mb-4'>
     <img class='rounded-circle shadow-1-strong me-3' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg' alt='avatar' width='65' height='65'>
     <div class='flex-grow-1 flex-shrink-1'>
       <div>
