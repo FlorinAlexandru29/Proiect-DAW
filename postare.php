@@ -175,7 +175,8 @@ $cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
   while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
-$buton_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
+$buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
+$buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
     echo "
     <div class='d-flex flex-start'>
     <img class='rounded-circle shadow-1-strong me-3' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg' alt='avatar' width='65' height='65'>
@@ -185,7 +186,7 @@ $buton_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
           <p class='mb-1'>
             ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
           </p>
-          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
+          <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
         </div>
         <p class='small mb-0'>
          ".$row_comentariu['comentariu']."
@@ -211,7 +212,7 @@ $buton_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
         </div>
       </div>
         <div class='d-flex col justify-content-end mt-2'>
-          <button class='d-flex align-items-center btn btn-outline-danger rounded-pill' style='margin-left:65px;' onclick='hide_reply(".$row_comentariu['id_comment'].")'><span class='small'>Cancel</span><i class='bx bx-message-x fs-lg ms-2'></i></button>
+          <button class='d-flex align-items-center btn btn-outline-danger rounded-pill' style='margin-left:65px;' ".$buton_hide_value."><span class='small'>Cancel</span><i class='bx bx-message-x fs-lg ms-2'></i></button>
           <button class='ms-5 d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
         </div>
         </div>
