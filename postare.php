@@ -164,8 +164,9 @@ if (isset($_COOKIE['user_name'])){
       </div>
     </div>
     <div class='d-flex col justify-content-end mt-2'>
-    <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
-    <input type='hidden' name='reply' value='no'/>
+    <input type='hidden' name='user_name' value='".$_COOKIE["user_name"]."'>
+    <input type='hidden' name='post_id' value='".$_GET["id"]."'>
+    <input type='hidden' name='reply' value='no'>
     <button type='submit' form='form-adaugare-comentariu' name='add_comm' class='d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
     </form>
     </div>
@@ -228,6 +229,7 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
       <form method='POST' action='tools/adaugare_comentariu.php' id='form-reply-".$row_comentariu['id_comment']."'>
+      <input type='hidden' name='user_name' value='".$_COOKIE["user_name"]."'>
       <input type='hidden' name='post_id' value='".$_GET["id"]."'/>
       <input type='hidden' name='reply' value='".$row_comentariu['id_comment']."'/>
 
