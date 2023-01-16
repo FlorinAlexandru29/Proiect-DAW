@@ -27,9 +27,14 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   if($row["profile_pic"]==1) setcookie("profile_pic", openssl_encrypt($row["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'), time()+120,'/');
 
 
+  @session_start();
+
+  if($row["activat"]==0) {
+    $_SESSION['activat'] = 0;
+  }
+
   mysqli_close($conexiune);
   $header="Location:".$pagina_request;
-  echo $header;
   header($header);
   exit(); 
 } 
