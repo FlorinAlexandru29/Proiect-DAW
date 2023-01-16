@@ -73,6 +73,11 @@ if(isset($_COOKIE["profile_pic"])){
 <input type="file" id="FileUpload1" name="FileUpload1" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
+<?php 
+echo "
+<input type='hidden' name='user_name' value='".$_COOKIE["user_name"]."'>";
+?>
+
 <input class="btn rounded-pill btn-success mb-2" type="submit" value="Salveaza poza" name="save_photo" form="form1">
 </form>
 <script type="text/javascript">

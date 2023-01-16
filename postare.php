@@ -179,9 +179,13 @@ if (mysqli_num_rows($result_comentariu) > 0){
   while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
 $buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
 $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
+$cerere_pfp="Select * from users where user_name='".$row_comentariu['user_name']."' and profile_pic=1";
+$result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
+if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+  else $poza_profil="resurse/profile_pics/guest.png";
     echo "
     <div class='d-flex flex-start mb-4'>
-    <img class='rounded-circle shadow-1-strong me-3' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg' alt='avatar' width='65' height='65'>
+    <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil."' alt='avatar' width='65' height='65'>
     <div class='flex-grow-1 flex-shrink-1'>
       <div>
         <div class='d-flex justify-content-between align-items-center'>
@@ -200,9 +204,14 @@ $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
      $result_reply=mysqli_query($conexiune, $cerere_reply);
      if (mysqli_num_rows($result_reply) > 0){
       while ($row_reply = mysqli_fetch_assoc($result_reply)) {
+        $cerere_pfp="Select * from users where user_name='".$row_reply['user_name']."' and profile_pic=1";
+        $result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
+        if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+        else $poza_profil="resurse/profile_pics/guest.png";
+        
           echo "<div class='d-flex flex-start mt-4'>
           
-            <img class='me-3 rounded-circle shadow-1-strong' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_reply['user_name'].".jpg' alt='avatar' width='65' height='65'>
+            <img class='me-3 rounded-circle shadow-1-strong' src='".$poza_profil."' alt='avatar' width='65' height='65'>
         
           <div class='flex-grow-1 flex-shrink-1'>
             <div>

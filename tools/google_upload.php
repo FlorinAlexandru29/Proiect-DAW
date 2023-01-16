@@ -14,7 +14,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 
     
      $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
-    $cloudPath = 'profile_pic/' . $row['user_name'].".jpg";
+    $cloudPath = 'profile_pic/' . openssl_decrypt ($_POST["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
 
 
     $bucketName = 'lure-prod-bucket';
@@ -59,13 +59,13 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
 );
 
     echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
-     if ($_row['profile_pic']==0){
+     if ($_row['profile_pic']==0){ //todo select profile pic
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
       }
-    $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".$row['user_name']."'";
+    $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".openssl_decrypt ($_POST["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
     mysqli_query($conexiune,$cerere);
     mysqli_close($conexiune);
     setcookie("profile_pic", '',time()-120,'/'); //nu stiu de ce opresc si pornesc cookie-ul iar?
