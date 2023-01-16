@@ -47,11 +47,13 @@ if(isset($_GET["id"]))
       if(isset($_POST['login-expanded'])) {
         $email=$_POST['email_expanded'];
         $password=$_POST['password_expanded'];
+        $pagina_request="postare.php?id=".$_GET['post_id']."";
         include 'tools/login.php';}
       
       if(isset($_POST['login-mobile'])){ 
         $email=$_POST['email_mobile'];
         $password=$_POST['password_mobile'];
+        $pagina_request="postare.php?id=".$_GET['post_id']."";
         include 'tools/login.php';}
       
       if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php';
@@ -154,7 +156,7 @@ if (isset($_COOKIE['user_name'])){
   <div class='d-flex flex-start'  >
     
       <img class='me-3 rounded-circle shadow-1-strong'
-        src='".$poza_profil."' alt='avatar'
+        src='".$poza_profil_logat."' alt='avatar'
         width='65' height='65' />
     
     <div class='flex-grow-1 flex-shrink-1'>

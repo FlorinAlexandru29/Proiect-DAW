@@ -34,8 +34,9 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   }
 
   mysqli_close($conexiune);
-
-  header('Location:index.php');
+  $header="Location:".$pagina_request;
+  header($header);
+  exit(); 
 } 
   else {
     if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
