@@ -148,13 +148,13 @@ if (isset($_COOKIE['user_name'])){
   echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
   if ($row_user['profile_pic']==0) $poza_profil= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
     else $poza_profil="resurse/profile_pics/guest.png";
-  if ($row_user['activat']==0){
+  if ($row_user['activat']==1){
   echo"
   <div class='row mb-5'>
   <div class='d-flex flex-start'  >
     
       <img class='me-3 rounded-circle shadow-1-strong'
-        src='".$poza_profi."' alt='avatar'
+        src='".$poza_profil."' alt='avatar'
         width='65' height='65' />
     
     <div class='flex-grow-1 flex-shrink-1'>
