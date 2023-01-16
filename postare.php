@@ -146,8 +146,8 @@ if (isset($_COOKIE['user_name'])){
   $row_user = mysqli_fetch_assoc($result_user);
 
   echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
-  if ($row_user['profile_pic']==1) $poza_profil= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
-    else $poza_profil="resurse/profile_pics/guest.png";
+  if ($row_user['profile_pic']==1) $poza_profil_logat= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
+    else $poza_profil_logat="resurse/profile_pics/guest.png";
   if ($row_user['activat']==1){
   echo"
   <div class='row mb-5'>
@@ -187,11 +187,11 @@ $buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
 $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
 $cerere_pfp="Select * from users where user_name='".$row_comentariu['user_name']."' and profile_pic=1";
 $result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
-if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil_logat="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
-  else $poza_profil_logat="resurse/profile_pics/guest.png";
+if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+  else $poza_profil="resurse/profile_pics/guest.png";
     echo "
     <div class='d-flex flex-start mb-4'>
-    <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil_logat."' alt='avatar' width='65' height='65'>
+    <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil."' alt='avatar' width='65' height='65'>
     <div class='flex-grow-1 flex-shrink-1'>
       <div>
         <div class='d-flex justify-content-between align-items-center'>
