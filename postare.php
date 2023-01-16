@@ -141,9 +141,10 @@ if(isset($_GET["id"]))
 <!--inceput casuta comentariu-->
 <?php
 if (isset($_COOKIE['user_name'])){
-  $cerere="select nume from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
-  $result_nume= mysqli_query($conexiune, $cerere);
-  $row_nume = mysqli_fetch_assoc($result_nume);
+  $cerere="select nume, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
+  $result_user= mysqli_query($conexiune, $cerere);
+  $row_user = mysqli_fetch_assoc($result_user);
+  echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
   echo"
   <div class='row mb-5'>
   <div class='d-flex flex-start'  >
@@ -156,7 +157,7 @@ if (isset($_COOKIE['user_name'])){
       
         <div class='d-flex align-items-start'>
           <p class='mb-1'>
-            ".$row_nume['nume']."
+            ".$row_user['nume']."
           </p>
         </div>
         <form method='POST' action='tools/adaugare_comentariu.php' id='form-adaugare-comentariu'>
