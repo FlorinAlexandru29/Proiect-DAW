@@ -21,13 +21,13 @@ if(isset($_GET["id"]))
  if(isset($_POST['login-expanded'])) {
   $email=$_POST['email_expanded'];
   $password=$_POST['password_expanded'];
-  $pagina_request="postare.php?id=";
+ 
   include 'tools/login.php';}
 
 if(isset($_POST['login-mobile'])){ 
   $email=$_POST['email_mobile'];
   $password=$_POST['password_mobile'];
-  $pagina_request="postare.php?id=".$_GET['id']."";
+ 
   include 'tools/login.php';}
 
   ?>
