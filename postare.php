@@ -187,11 +187,11 @@ $buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
 $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
 $cerere_pfp="Select * from users where user_name='".$row_comentariu['user_name']."' and profile_pic=1";
 $result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
-if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
-  else $poza_profil="resurse/profile_pics/guest.png";
+if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil_logat="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+  else $poza_profil_logat="resurse/profile_pics/guest.png";
     echo "
     <div class='d-flex flex-start mb-4'>
-    <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil."' alt='avatar' width='65' height='65'>
+    <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil_logat."' alt='avatar' width='65' height='65'>
     <div class='flex-grow-1 flex-shrink-1'>
       <div>
         <div class='d-flex justify-content-between align-items-center'>
@@ -240,7 +240,9 @@ if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googl
 
 
 
-      if (isset($_COOKIE['user_name'])) echo "
+      if (isset($_COOKIE['user_name'])){ 
+        if ($row_user['activat']==1){
+      echo "
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>
       <form method='POST' action='tools/adaugare_comentariu.php' id='form-reply-".$row_comentariu['id_comment']."'>
@@ -249,7 +251,7 @@ if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googl
       <input type='hidden' name='reply' value='".$row_comentariu['id_comment']."'/>
 
       <div class='d-flex flex-start mt-4'>
-          <img class='me-3 rounded-circle shadow-1-strong' src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' alt='avatar' width='65' height='65'>
+          <img class='me-3 rounded-circle shadow-1-strong' src='".$poza_profil_logat."' alt='avatar' width='65' height='65'>
         <div class='flex-grow-1 flex-shrink-1'>
           <div>
             <div class='d-flex justify-content-between align-items-center'>
@@ -271,7 +273,9 @@ if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googl
     </div>
   </div>
     
-    ";
+    ";}
+    else echo "<p class='mt-5' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'> Trebuie sa iti activezi contul pentru a adauga un comentariu </div> </div>";
+  }
     else echo "<p class='mt-5' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'> Trebuie sa te autentifici pentru a adauga un comentariu </div> </div>";
   }
 
