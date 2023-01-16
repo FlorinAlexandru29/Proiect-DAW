@@ -18,6 +18,18 @@ if(isset($_GET["id"]))
 
  else {header('Location:index.php');exit();}
 
+ if(isset($_POST['login-expanded'])) {
+  $email=$_POST['email_expanded'];
+  $password=$_POST['password_expanded'];
+  $pagina_request="postare.php?id=".$_GET['post_id']."";
+  include 'tools/login.php';}
+
+if(isset($_POST['login-mobile'])){ 
+  $email=$_POST['email_mobile'];
+  $password=$_POST['password_mobile'];
+  $pagina_request="postare.php?id=".$_GET['post_id']."";
+  include 'tools/login.php';}
+
   ?>
 
 <!doctype html>
@@ -44,17 +56,6 @@ if(isset($_GET["id"]))
       unset($_SESSION['activat']);
       }
       
-      if(isset($_POST['login-expanded'])) {
-        $email=$_POST['email_expanded'];
-        $password=$_POST['password_expanded'];
-        $pagina_request="postare.php?id=".$_GET['post_id']."";
-        include 'tools/login.php';}
-      
-      if(isset($_POST['login-mobile'])){ 
-        $email=$_POST['email_mobile'];
-        $password=$_POST['password_mobile'];
-        $pagina_request="postare.php?id=".$_GET['post_id']."";
-        include 'tools/login.php';}
       
       if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php';
             
