@@ -144,13 +144,17 @@ if (isset($_COOKIE['user_name'])){
   $cerere="select nume, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
   $result_user= mysqli_query($conexiune, $cerere);
   $row_user = mysqli_fetch_assoc($result_user);
+
   echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
+  if ($row_user['profile_pic']==0) $poza_profil= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
+    else $poza_profil="resurse/profile_pics/guest.png";
+  if ($row_user['activat']==0){
   echo"
   <div class='row mb-5'>
   <div class='d-flex flex-start'  >
     
       <img class='me-3 rounded-circle shadow-1-strong'
-        src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' alt='avatar'
+        src='".$poza_profi."' alt='avatar'
         width='65' height='65' />
     
     <div class='flex-grow-1 flex-shrink-1'>
@@ -171,7 +175,8 @@ if (isset($_COOKIE['user_name'])){
     <button type='submit' form='form-adaugare-comentariu' name='add_comm' class='d-flex align-items-center btn btn-primary rounded-pill'><span class='small'>Send</span><i class='bx bxs-send fs-lg ms-2'></i></button>
     </form>
     </div>
-    </div>";
+    </div>";}
+    else echo "<p> trebuie sa iti activezi contul pentru a adauga un comentariu </p>"; 
 }
 else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
 $cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_GET["id"]."' ORDER BY data_comentariu desc";
