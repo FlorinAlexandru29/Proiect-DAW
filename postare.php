@@ -27,7 +27,7 @@ if(isset($_GET["id"]))
 if(isset($_POST['login-mobile'])){ 
   $email=$_POST['email_mobile'];
   $password=$_POST['password_mobile'];
-  $pagina_apel="postare.php";
+  $pagina_request_login="postare.php?id=".$_GET["id"];
   include 'tools/login.php';}
 
   ?>

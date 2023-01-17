@@ -67,8 +67,10 @@
       </li>
     </ul>
   <div id="div-login-mobile" class="container ms-0 position-absolute">
+    <?php 
+    echo "<form id='login-form-mobile' method='POST' action='".$pagina_request_login."' class='p-2'>"
+    ?>
     
-    <form id="login-form-mobile" method="POST" action="index.php" class="p-2">
       <div class="mb-1">
         <input form="login-form-mobile" type="email" name="email_mobile" required class="form-control text-bg-dark"  placeholder="Email">
       </div>
