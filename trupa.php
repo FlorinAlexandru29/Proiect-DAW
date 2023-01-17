@@ -67,7 +67,17 @@ $n=$i-1; //din cauza ultimului i=i+1 trebuie sa scad ultima adaugare ex pt 3 poz
 }
 else {header('Location:index.php');exit();}
 
+if(isset($_POST['login-expanded'])) {
+  $email=$_POST['email_expanded'];
+  $password=$_POST['password_expanded'];
+  $pagina_request_login="trupa.php?id=".$_GET["id"];
+  include 'tools/login.php';}
 
+if(isset($_POST['login-mobile'])){ 
+  $email=$_POST['email_mobile'];
+  $password=$_POST['password_mobile'];
+  $pagina_request_login="trupa.php?id=".$_GET["id"];
+  include 'tools/login.php';}
 ?>
 <!doctype html>
 <html lang="en">
@@ -132,19 +142,12 @@ echo "activeaza-ti contul";
 unset($_SESSION['activat']);
 }
 
-if(isset($_POST['login-expanded'])) {
-  $email=$_POST['email_expanded'];
-  $password=$_POST['password_expanded'];
-  include 'tools/login.php';}
 
-if(isset($_POST['login-mobile'])){ 
-  $email=$_POST['email_mobile'];
-  $password=$_POST['password_mobile'];
-  include 'tools/login.php';}
 
 if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php';
 if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
-else include 'fragmente/navbar_guest.php'
+else {$pagina_request_login="trupa.php?id=".$_GET["id"];
+  include 'fragmente/navbar_guest.php';}
 ?>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
         <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start mt-1" >

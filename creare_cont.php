@@ -87,6 +87,7 @@ if(isset($_POST['creeaza_cont'])){
     if (isset($_COOKIE["user_name"])) {
   header('Location:index.php');
 } //redirect pe home page daca este deja autentificat
+$pagina_request_login="index.php";
 include 'fragmente/navbar_guest.php';
 ?>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">

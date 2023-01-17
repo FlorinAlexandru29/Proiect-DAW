@@ -75,6 +75,10 @@ if(isset($_POST['login-mobile'])){
         iframe{max-height: 300px !important;}
         .corp{width:95% !important;}
     }
+    @media screen and (max-width: 1000px){
+        iframe{max-height: 300px !important;}
+        .corp{width:85% !important;}
+    }
 </style>
 <script>
       function show_reply(indice) {
