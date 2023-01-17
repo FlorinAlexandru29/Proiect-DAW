@@ -21,7 +21,7 @@ if(isset($_GET["id"]))
  if(isset($_POST['login-expanded'])) {
   $email=$_POST['email_expanded'];
   $password=$_POST['password_expanded'];
-  $pagina_apel="postare.php";
+  $pagina_request_login="postare.php?id=".$_GET["id"];
   include 'tools/login.php';}
 
 if(isset($_POST['login-mobile'])){ 
@@ -60,7 +60,8 @@ if(isset($_POST['login-mobile'])){
       if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php';
             
     if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
-    else include 'fragmente/navbar_guest.php'
+    else {$pagina_request_login="postare.php?id=".$_GET["id"];
+      include 'fragmente/navbar_guest.php';}
   ?>
 <style>
     @media screen and (max-width: 1000px){

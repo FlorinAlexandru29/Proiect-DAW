@@ -34,9 +34,9 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   }
 
   mysqli_close($conexiune);
-  echo $pagina_apel;
-  //header('Location:index.php');
-  //exit(); 
+  $redirect_login="Location:".$pagina_request_login;
+  header($redirect_login);
+  exit() ;
 } 
   else {
     if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
