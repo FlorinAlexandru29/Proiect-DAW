@@ -195,7 +195,7 @@ else $poza_profil="resurse/profile_pics/guest.png";
       <div>
         <div class='d-flex justify-content-between align-items-center'>
           <p class='mb-1'>
-            ".$row_comentariu['user_name']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
+            ".$row_comentariu['nume']." <span class='small'>- ".$row_comentariu['data_comentariu']."</span>
           </p>
           
           <button class='d-flex align-items-center btn btn-outline-primary rounded-pill btn-sm' ".$buton_show_value."><i class='bx bx-share fs-lg me-2'></i><span class='small'> reply</span></button>
@@ -205,13 +205,15 @@ else $poza_profil="resurse/profile_pics/guest.png";
          ".$row_comentariu['comentariu']."
         </p>
       </div>";
-     $cerere_reply="SELECT * From comments WHERE id_postare='".$_GET["id"]."' and reply='".$row_comentariu['id_comment']."' ORDER BY data_comentariu desc ";
+     $cerere_reply="SELECT * FROM comments cm
+     INNER JOIN users u ON u.user_name = cm.user_name
+     WHERE cm.id_postare = '".$_GET["id"]."' AND cm.reply='".$row_comentariu['id_comment']."' ORDER BY data_comentariu desc";
+     
      $result_reply=mysqli_query($conexiune, $cerere_reply);
      if (mysqli_num_rows($result_reply) > 0){
       while ($row_reply = mysqli_fetch_assoc($result_reply)) {
-        $cerere_pfp="Select * from users where user_name='".$row_reply['user_name']."' and profile_pic=1";
-        $result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
-        if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+
+        if ($row_reply['profile_pic'] == 1) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
         else $poza_profil="resurse/profile_pics/guest.png";
         
           echo "<div class='d-flex flex-start mt-4'>
@@ -222,7 +224,7 @@ else $poza_profil="resurse/profile_pics/guest.png";
             <div>
               <div class='d-flex justify-content-between align-items-center'>
                 <p class='mb-1'>
-                ".$row_reply['user_name']." <span class='small'>- ".$row_reply['data_comentariu']."</span>
+                ".$row_reply['nume']." <span class='small'>- ".$row_reply['data_comentariu']."</span>
                 </p>
               </div>
               <p class='small mb-0'>
