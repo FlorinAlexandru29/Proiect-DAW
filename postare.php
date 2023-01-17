@@ -176,16 +176,18 @@ if (isset($_COOKIE['user_name'])){
 }
 else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
 
-$cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_GET["id"]."' ORDER BY data_comentariu desc";
+$cerere_comentariu="SELECT * FROM comments cm
+INNER JOIN users u ON u.user_name = cm.user_name
+WHERE cm.id_postare = '".$_GET["id"]."' AND cm.reply='no' ORDER BY data_comentariu desc";
+
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
   while ($row_comentariu = mysqli_fetch_assoc($result_comentariu)) {
 $buton_show_value="onclick=\"show_reply('".$row_comentariu['id_comment']."')\"";
 $buton_hide_value="onclick=\"hide_reply('".$row_comentariu['id_comment']."')\"";
-$cerere_pfp="Select * from users where user_name='".$row_comentariu['user_name']."' and profile_pic=1";
-$result_cerere_pfp=mysqli_query($conexiune,$cerere_pfp);
-if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
-  else $poza_profil="resurse/profile_pics/guest.png";
+
+if ($row_comentariu['profile_pic']==1) $poza_profil="https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row_comentariu['user_name'].".jpg";
+else $poza_profil="resurse/profile_pics/guest.png";
     echo "
     <div class='d-flex flex-start mb-4'>
     <img class='rounded-circle shadow-1-strong me-3' src='".$poza_profil."' alt='avatar' width='65' height='65'>
