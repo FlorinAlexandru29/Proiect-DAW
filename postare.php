@@ -144,12 +144,7 @@ if(isset($_POST['login-mobile'])){
 <!--inceput casuta comentariu-->
 <?php
 if (isset($_COOKIE['user_name'])){
-  $cerere="select nume, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
-  $result_user= mysqli_query($conexiune, $cerere);
-  $row_user = mysqli_fetch_assoc($result_user);
-
-  echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
-  if ($row_user['activat']==1){
+  if ($cont_activat==1){
   echo"
   <div class='row mb-5'>
   <div class='d-flex flex-start'  >
@@ -180,6 +175,7 @@ if (isset($_COOKIE['user_name'])){
     else echo "<p> trebuie sa iti activezi contul pentru a adauga un comentariu </p>"; 
 }
 else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
+
 $cerere_comentariu="SELECT * FROM comments where reply='no' and id_postare='".$_GET["id"]."' ORDER BY data_comentariu desc";
 $result_comentariu=mysqli_query($conexiune, $cerere_comentariu);
 if (mysqli_num_rows($result_comentariu) > 0){
@@ -242,7 +238,7 @@ if (mysqli_num_rows($result_cerere_pfp) > 0) $poza_profil="https://storage.googl
 
 
       if (isset($_COOKIE['user_name'])){ 
-        if ($row_user['activat']==1){
+        if ($cont_activat==1){
       echo "
       <!-- ultimul comentariu-->
       <div class='row' id='reply-comm".$row_comentariu['id_comment']."'style='display:none !important;'>

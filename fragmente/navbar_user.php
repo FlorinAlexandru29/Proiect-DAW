@@ -30,7 +30,8 @@
                   else $poza_profil_logat="resurse/profile_pics/guest.png";
                               echo "<img src='".$poza_profil_logat."' width='40' height='40' class='rounded-circle me-2'>";                            
                           
-                          
+                              if ($row_user['activat']==1) $cont_activat=1;
+                              else $cont_activat=0;
                           echo 'Hello: '.openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'); ?>
                 
                             </a>
