@@ -149,8 +149,6 @@ if (isset($_COOKIE['user_name'])){
   $row_user = mysqli_fetch_assoc($result_user);
 
   echo "date".$row_user['nume'].$row_user['profile_pic'].$row_user['activat'];
-  if ($row_user['profile_pic']==1) $poza_profil_logat= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
-    else $poza_profil_logat="resurse/profile_pics/guest.png";
   if ($row_user['activat']==1){
   echo"
   <div class='row mb-5'>
