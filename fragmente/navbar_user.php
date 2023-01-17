@@ -18,13 +18,20 @@
          <div class="dropdown text-end">
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php 
-                
-                            if(isset($_COOKIE["profile_pic"])){
-                              echo "<img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["profile_pic"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg' width='40' height='40' class='rounded-circle me-2'>";
-                            }
-                            else echo "<img src='resurse/profile_pics/guest.png' width='40' height='40' class='rounded-circle me-2'>";
-                            
-                           echo 'Hello: '.openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'); ?>
+                 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+                 if (mysqli_connect_errno()) {
+                   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+                   exit();
+                 }
+                $cerere="select nume, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
+                $result_user= mysqli_query($conexiune, $cerere);
+                $row_user = mysqli_fetch_assoc($result_user);
+                if ($row_user['profile_pic']==1) $poza_profil_logat= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
+                  else $poza_profil_logat="resurse/profile_pics/guest.png";
+                              echo "<img src='".$poza_profil_logat."' width='40' height='40' class='rounded-circle me-2'>";                            
+                          
+                          
+                          echo 'Hello: '.openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'); ?>
                 
                             </a>
             <ul class="dropdown-menu">
