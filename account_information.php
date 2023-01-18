@@ -182,7 +182,11 @@ echo "
       <?php
        echo "status cont: ";
     if ($row['activat']==1) echo "Contul tau este activat!";
-    else echo "Contul tau nu este activat";
+    else {echo "<p> Contul tau nu este activat </p>
+      <form method='POST' id='form-trimitere-cod' action='#'
+      <input type='submit' value='Retrimitere Cod' name='send_code' form='form-trimitere-cod' class='mx-auto btn btn-danger shadow-primary' style='font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;'>
+      </form>";  
+    }
      
       ?>
       
