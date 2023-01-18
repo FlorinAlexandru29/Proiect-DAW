@@ -70,11 +70,13 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     }
     $_SESSION['upload_success'] = 0;
     header('Location:account_information.php');
+    exit();
     
 } 
 catch(Exception $e) {
     $_SESSION['eroare_trimitere']="Eroare salvare poza profil. Mesaj Eroare: ".$e->getMessage();
     header('Location:account_information.php');
+    exit();
 } 
 
 ?>
