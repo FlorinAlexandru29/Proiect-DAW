@@ -4,12 +4,17 @@
     header('Location:account_information.php');
     exit();
   }
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-            $_SESSION["eroare_trimitere"]="Fisierul incarcat trebuie sa aiba una din urmatoarele extensii :PNG,JPEG,JPG";
-            header('Location:account_information.php');
-            exit();
-}
+
+  $mimetype = mime_content_type($_FILES['FileUpload1']['tmp_name']);
+  if(in_array($mimetype, array('image/jpeg', 'image/gif', 'image/png'))) {
+     move_uploaded_file($_FILES['file']['tmp_name'], '/whatever/something/imagedir/' . $_FILES['file']['name']);
+  
+  }
+  else {
+    $_SESSION["eroare_trimitere"]="Fisierul incarcat trebuie sa aiba una din urmatoarele extensii :PNG,JPEG,JPG";
+    header('Location:account_information.php');
+    exit();
+  }
 require_once "vendor/autoload.php";
 
 use Google\Cloud\Storage\StorageClient;
