@@ -1,4 +1,9 @@
 <?php
+ if ($_FILES["FileUpload1"]["size"] > 25000000) {
+    $_SESSION['eroare_trimitere']="Eroare salvare poza profil. Poza depaseste 25MB ";
+    header('Location:account_information.php');
+    exit();
+  }
 require_once "vendor/autoload.php";
 
 use Google\Cloud\Storage\StorageClient;
@@ -14,11 +19,7 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     
      $fileContent = file_get_contents($_FILES["FileUpload1"]["tmp_name"]);
 
-     if ($_FILES["FileUpload1"]["size"] > 25000000) {
-        $_SESSION['eroare_trimitere']="Eroare salvare poza profil. Poza depaseste 25MB ";
-        header('Location:account_information.php');
-        exit();
-      }
+    
     $cloudPath = 'profile_pic/' . openssl_decrypt ($_POST["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
 
 
