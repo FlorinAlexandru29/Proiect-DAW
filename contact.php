@@ -28,7 +28,11 @@
 
 //trimitere contact
   if(isset($_POST['trimite_contact'])){
-
+    if (empty($_POST['g-recaptcha-response'])){
+      $_SESSION['eroare_trimitere']="Te rugam sa rezolvi captcha-ul";
+      $header('Location:contact.php');
+      exit();
+    }
     $subject="Contact ".$_POST['nume_contact'];
 
     $body="Nume: ". $_POST['nume_contact']." <br> Email: ". $_POST['email_contact']." <br> Telefon: ". $_POST['telefon_contact']." <br> Mesaj: ". $_POST['mesaj_contact'];
@@ -58,9 +62,6 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
     <style>
-      .g-recaptcha > * {
-        width:100% !important;
-      }
       </style>
 
     <?php 
@@ -131,6 +132,9 @@
                       </div>
                     <div class="col-12 pt-2 pt-sm-3">
                     <div class="g-recaptcha" data-sitekey="6LcOHgokAAAAAIQih7e7T-OSYK8k_ocUhORZJbam"></div>
+    </div>
+                    <div class="col-12 pt-2 pt-sm-3">
+                   
                       <input form="form-contact" type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto" name="trimite_contact" value="Trimite formularul">
                     </div>
                   </form>
