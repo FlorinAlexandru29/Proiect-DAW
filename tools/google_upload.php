@@ -7,11 +7,17 @@
 
   $mimetype = mime_content_type($_FILES['FileUpload1']['tmp_name']);
   if(in_array($mimetype, array('image/jpeg', 'image/gif', 'image/png'))) {
-     move_uploaded_file($_FILES['file']['tmp_name'], '/whatever/something/imagedir/' . $_FILES['file']['name']);
-  
+    $allowed = array('gif', 'png', 'jpg','jpeg');
+    $filename = strtolower($_FILES['FileUpload1']['name']);
+    $ext = pathinfo($filename, PATHINFO_EXTENSION);
+    if (!in_array($ext, $allowed)) {
+        $_SESSION["eroare_trimitere"]= "Fisierul incarcat trebuie sa aiba una din urmatoarele extensii :PNG,JPEG,JPG";
+    }
+    
+
   }
   else {
-    $_SESSION["eroare_trimitere"]="Fisierul incarcat trebuie sa aiba una din urmatoarele extensii :PNG,JPEG,JPG";
+    $_SESSION["eroare_trimitere"]="Fisierul incarcat este invalid";
     header('Location:account_information.php');
     exit();
   }
