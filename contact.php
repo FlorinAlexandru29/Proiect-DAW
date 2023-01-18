@@ -57,6 +57,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
+    <style>
+      .g-recaptcha > * {
+        width:100% !important;
+      }
+      </style>
 
     <?php 
 
