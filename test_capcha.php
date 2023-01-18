@@ -13,7 +13,7 @@
 
 <?php echo $_POST['g-recaptcha-response']; ?>
 
-<form method="POST" action="test.capcha.php">
+<form method="POST" action="test_capcha.php">
 <div class="g-recaptcha" data-sitekey="6LcOHgokAAAAAIQih7e7T-OSYK8k_ocUhORZJbam"></div>
 <input type="submit">
 </form>
