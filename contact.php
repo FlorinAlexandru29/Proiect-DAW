@@ -93,10 +93,7 @@
                   </div>
                   <div class="ps-3 ps-sm-4">
                     <h2 class="h4 pb-1 mb-2">Trimite-ne un email</h2>
-                    <p class="mb-2">Pentru orice intrebari, ne puteti contacta folosind formularul alaturat, sau prin a ne trimite un email direct. </p>
-                    <div class="btn btn-link btn-lg px-0">
-                      Apasa aici!
-                    </div>
+                    <p class="mb-2">Pentru orice intrebari, ne puteti contacta folosind formularul alaturat </p>
                   </div>
                 </div>
                 
