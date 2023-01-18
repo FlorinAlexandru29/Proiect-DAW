@@ -1,6 +1,6 @@
 <?php
  if ($_FILES["FileUpload1"]["size"] > 25000000) {
-    $_SESSION['eroare_trimitere']="Eroare salvare poza profil. Poza depaseste 25MB ";
+    $_SESSION["eroare_trimitere"]="Eroare salvare poza profil. Poza depaseste 25MB ";
     header('Location:account_information.php');
     exit();
   }
