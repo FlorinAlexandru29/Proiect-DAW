@@ -55,6 +55,7 @@
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
     <?php 
@@ -124,6 +125,7 @@
                         
                       </div>
                     <div class="col-12 pt-2 pt-sm-3">
+                    <div class="g-recaptcha" data-sitekey="6LcOHgokAAAAAIQih7e7T-OSYK8k_ocUhORZJbam"></div>
                       <input form="form-contact" type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto" name="trimite_contact" value="Trimite formularul">
                     </div>
                   </form>

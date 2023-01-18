@@ -41,7 +41,10 @@ if(isset($_POST['creeaza_cont'])){
    } //eroare pentru user-name existent
   
   else{
-    $cerere="Insert into users(user_name,email,password) values ('".$_POST['user_name']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ')";
+    date_default_timezone_set('Europe/Bucharest');
+    $data_creare_cont = date('Y-m-d H:i');
+
+    $cerere="Insert into users(user_name,nume,email,password,data_creare) values ('".$_POST['user_name']."','".$_POST['nume_prenume']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ','".$data_creare_cont."')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
@@ -96,7 +99,13 @@ include 'fragmente/navbar_guest.php';
       <hr class="my-4">
       <form method="POST" id="creare_cont" action="creare_cont.php">
       <div class="mb-3 input-group-lg">
+        <label for="nume_prenume" class="form-label">Nume si Prenume</label>
+        <input type='text' id='nume_prenume' class='form-control' name='nume_prenume' required>
+      </div>
+
+      <div class="mb-3 input-group-lg">
         <label for="user_name" class="form-label">Nume de utilizator</label>
+
         <?php  
         
       

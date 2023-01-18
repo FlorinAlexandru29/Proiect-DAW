@@ -11,6 +11,9 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
+//stergere useri care nu si-au activat contul in ultimele 30 de zile
+$cerere_useri_inactivi= mysqli_query($conexiune,"Delete FROM `users` WHERE `data_creare` < DATE_SUB(NOW(), INTERVAL 30 DAY) AND activat=0");
+
 
 $result_email = mysqli_query($conexiune, $conditie_email);
 $result_password = mysqli_query($conexiune, $conditie_password);
