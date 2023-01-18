@@ -12,6 +12,8 @@
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
     if (!in_array($ext, $allowed)) {
         $_SESSION["eroare_trimitere"]= "Fisierul incarcat trebuie sa aiba una din urmatoarele extensii :PNG,JPEG,JPG";
+        header('Location:account_information.php');
+        exit();
     }
     
 
