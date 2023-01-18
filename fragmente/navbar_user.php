@@ -85,4 +85,3 @@
             </form>
     </div>      
   </div>
-  <!-- Pop-up pentru pierdere parola -->

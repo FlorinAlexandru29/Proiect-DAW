@@ -241,21 +241,21 @@ unset($_SESSION['upload_success']);}
 
 ?>
 <!-- Pop-up stergere cont -->
-<div class="offcanvas offcanvas-top" style="height:20vh !important;" tabindex="-1" id="offcanvastop" aria-labelledby="offcanvastopLabel">
-  <div class="offcanvas-header justify-content-evenly">
-    <h4 class="offcanvas-title ms-5" id="offcanvastopLabel">Introdu adresa de email aferenta contului tau</h4>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<div class="offcanvas offcanvas-top" style="height:25vh !important;" tabindex="-1" id="offcanvastop" aria-labelledby="offcanvastopLabel">
+<div class="offcanvas-header justify-content-center">
+    <h4 class="offcanvas-title ms-5" id="offcanvastopLabel">Pentru a sterge contul introdu parola ta</h4>
+    <button type="button" class="ms-5 btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <div class="offcanvas-body container" style="margin-left:0 !important;">
-    <div class="row">
-    <form id="form-forgot-password" class="form-floating" method="POST" action="index.php">
-      <input type="email" name="email" class="form-control" id="floatingInput" placeholder="placeholder" required>
-      <label for="floatingInput">Adresa de email</label>
+  <div class="offcanvas-body container">
+    <div class="col-12 my-0">
+    <form id="form-forgot-password" class="w-50 mx-auto form-floating" method="POST" action="index.php">
+      <input type="password" name="parola_stergere" id="floatingInput" placeholder="placeholder" required class="form-control">
+      <label for="floatingInput">Parola</label>
+    </form></div>
+    <div class="col-12 mt-0 align-items-center">
+      <input type="submit" form="form-forgot-password" class="mt-2 mx-auto btn btn-primary d-block" name="forgot_password" value="Trimite">
     </div>
-    <div class="row">
-      <input type="submit" form="form-forgot-password" class="mt-2 float-start btn btn-primary" name="forgot_password" value="Trimite">
-    </div>
-    </form>
+    
  </div>
       
    
