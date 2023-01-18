@@ -58,12 +58,9 @@ else header('Location:index.php');
     <div class="d-table position-relative mx-auto mt-2 mt-lg-4 pt-5 mb-3">
 <?php
 
-if(isset($_COOKIE["profile_pic"])){
+
     echo "
-    <img src='https://storage.googleapis.com/lure-prod-bucket/profile_pic/".$row['user_name'].".jpg' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
-  }
-  else echo "
-  <img src='resurse/profile_pics/guest.png' width='200' class='d-block img-thumbnail rounded-circle' alt='Guest Profile Pic'>";
+    <img src='".$poza_profil_logat."' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
 
   ?>
   <form action="account_information.php" method="POST" enctype="multipart/form-data" id="form1">
