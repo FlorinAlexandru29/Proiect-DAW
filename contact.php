@@ -130,10 +130,10 @@
                         <textarea class="form-control form-control-lg" name="mesaj_contact" rows="5" id="txt" style="resize: none;" required></textarea>
                         
                       </div>
-                    <div class="col-12 pt-2 pt-sm-3">
-                    <div class="g-recaptcha" data-sitekey="6LcOHgokAAAAAIQih7e7T-OSYK8k_ocUhORZJbam"></div>
+                    <div class="col-12 d-flex justify-content-center">
+                    <div class="g-recaptcha" data-sitekey="6LdiGwskAAAAAM1k7fIQgndokrclgzCxcPV2o3Q2"></div>
     </div>
-                    <div class="col-12 pt-2 pt-sm-3">
+                    <div class="col-12">
                    
                       <input form="form-contact" type="submit" class="btn btn-lg btn-primary w-100 w-sm-auto" name="trimite_contact" value="Trimite formularul">
                     </div>
