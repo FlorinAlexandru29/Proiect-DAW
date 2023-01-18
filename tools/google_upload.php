@@ -58,7 +58,6 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
   ]
 );
 
-    echo "File uploaded successfully. File path is: https://storage.googleapis.com/$bucketName/$cloudPath";
      if ($_row['profile_pic']==0){ //todo select profile pic
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
@@ -68,14 +67,14 @@ $key=$decryption=openssl_decrypt ($key, "AES-128-CTR", "kalpsdnj", 0, '123456789
     $cerere="UPDATE users SET profile_pic='1' WHERE user_name='".openssl_decrypt ($_POST["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
     mysqli_query($conexiune,$cerere);
     mysqli_close($conexiune);
-    setcookie("profile_pic", '',time()-120,'/'); //nu stiu de ce opresc si pornesc cookie-ul iar?
-    setcookie("profile_pic", $_COOKIE["user_name"],time()+120,'/');
     }
-    header('Location:account_information.php');  // alert pt upload succes
+    $_SESSION['upload_success'] = 0;
+    header('Location:account_information.php');
     
 } 
 catch(Exception $e) {
-    echo $e->getMessage();
+    $_SESSION['eroare_trimitere']="Eroare salvare poza profil. Mesaj Eroare: ".$e->getMessage();
+    header('Location:account_information.php');
 } 
 
 ?>
