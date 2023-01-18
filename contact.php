@@ -2,7 +2,6 @@
 @session_start();
     if(isset($_POST['logout'])){     //scriptul de logout
       setcookie("user_name", "guest", time()- 120,'/');
-      setcookie("profile_pic", '',time()-120,'/');
       header('Location:index.php');
     }
 
@@ -31,7 +30,6 @@
     if (empty($_POST['g-recaptcha-response'])){
       $_SESSION['eroare_trimitere']="Te rugam sa rezolvi captcha-ul";
       $header('Location:contact.php');
-      exit();
     }
     $subject="Contact ".$_POST['nume_contact'];
 

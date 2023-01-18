@@ -22,7 +22,6 @@ if(isset($_POST['save_photo'])) include 'tools/google_upload.php';
 
 if(isset($_POST['logout'])){     //scriptul de logout
   setcookie("user_name", "guest", time()- 120,'/');
-  setcookie("profile_pic", '',time()-120,'/');
   header('Location:index.php');
 }
 if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
