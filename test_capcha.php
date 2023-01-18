@@ -17,6 +17,6 @@ if (!empty($_POST['g-recaptcha-response'])) echo "a fost verificat";
 else echo "nu a fost verificat" ; ?>
 
 <form method="POST" action="test_capcha.php">
-<div class="g-recaptcha" data-sitekey="6LfOjQokAAAAAJIjhHG_T8qMmsB_RxCB0jFVzu6W"></div>
+<div class="g-recaptcha" data-sitekey="6LdiGwskAAAAAM1k7fIQgndokrclgzCxcPV2o3Q2"></div>
 <input type="submit">
 </form>
