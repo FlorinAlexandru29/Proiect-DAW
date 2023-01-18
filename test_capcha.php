@@ -13,7 +13,7 @@
 
 <?php 
 
-if (isset($_POST['g-recaptcha-response'])) echo "a fost verificat";
+if (!empty($_POST['g-recaptcha-response'])) echo "a fost verificat";
 else echo "nu a fost verificat" ; ?>
 
 <form method="POST" action="test_capcha.php">
