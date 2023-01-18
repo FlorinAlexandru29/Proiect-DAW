@@ -29,7 +29,8 @@
   if(isset($_POST['trimite_contact'])){
     if (empty($_POST['g-recaptcha-response'])){
       $_SESSION['eroare_trimitere']="Te rugam sa rezolvi captcha-ul";
-      $header('Location:contact.php');
+      header('Location:contact.php');
+      exit();
     }
     $subject="Contact ".$_POST['nume_contact'];
 
