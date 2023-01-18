@@ -223,7 +223,8 @@ if(isset($_SESSION["eroare_trimitere"])){
 </div>";
 unset($_SESSION['eroare_trimitere']);
  }
- if(isset($_SESSION["uploda_success"])){
+
+ if(isset($_SESSION["upload_success"])){
   echo "
 <div class='toast show align-items-center text-bg-success border-0 mx-auto mt-2 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='width:90% !important;'>
   <div class='d-flex'>
@@ -231,7 +232,7 @@ unset($_SESSION['eroare_trimitere']);
     <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
   </div>
 </div>";
-unset($_SESSION['uploda_success']);}
+unset($_SESSION['upload_success']);}
 
 
 ?>
