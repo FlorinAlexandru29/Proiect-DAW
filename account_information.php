@@ -67,7 +67,7 @@ else header('Location:index.php');
     
   <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
   <i class="bx bx-refresh bx-md">    </i> </button>
-<input type="file" id="FileUpload1"  name="FileUpload1" style="display: none" />
+<input type="file" id="FileUpload1"  name="FileUpload1" accept="image/png, image/jpeg, image/gif" style="display: none" />
 </div>
 <span id="spnFilePath"></span>
 <?php 
@@ -87,7 +87,7 @@ echo "
         };
         fileupload.onchange = function () {
             var fileName = fileupload.value.split('\\')[fileupload.value.split('\\').length - 1];
-            filePath.innerHTML = "<b>Selected File: </b>" + fileName;
+            filePath.innerHTML = "<p>Fisier Selectat: " + fileName + "</p>";
         };
     };
 </script>
