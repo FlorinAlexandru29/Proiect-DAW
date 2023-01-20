@@ -43,8 +43,8 @@ if(isset($_POST['creeaza_cont'])){
   else{
     date_default_timezone_set('Europe/Bucharest');
     $data_creare_cont = date('Y-m-d H:i');
-
-    $cerere="Insert into users(user_name,nume,email,password,data_creare) values ('".$_POST['user_name']."','".$_POST['nume_prenume']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ','".$data_creare_cont."')";
+    $cod_activare=uniqid();
+    $cerere="Insert into users(user_name,nume,email,password,data_creare,cod_activare) values ('".$_POST['user_name']."','".$_POST['nume_prenume']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ','".$data_creare_cont."','".$cod_activare."')";
     echo $cerere;
     mysqli_query($conexiune, $cerere);
     mysqli_close($conexiune);
@@ -55,8 +55,8 @@ if(isset($_POST['creeaza_cont'])){
     $r_user_name=$_POST['username'];
     $subject= 'Confirmare Email';
     $body="Buna <br> Pentru a confirma email-ul acceseaza acest link <br>
-    <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."'>
-    https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."
+    <a href='https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".$cod_activare."'>
+    https://lure-prod.herokuapp.com/confirmare.php?email=".$_POST['email']."&code=".$cod_activare."
     </a>
     <br> 
     O zi buna!
