@@ -62,7 +62,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
           <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
-              Cod invalid!
+              ".$_SESSION["activare_cont_fail"]."
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
           </div> </div>";
