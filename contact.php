@@ -148,7 +148,7 @@
               Mesajul a fost trimis cu success!
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
-          </div>";
+          </div> </div>";
           unset($_SESSION['contact.php']);
      }
     
@@ -160,7 +160,7 @@
             .$_SESSION["eroare_trimitere"]."
           </div>
           <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
-          </div>";
+          </div> </div>";
     unset($_SESSION['eroare_trimitere']);
  } ?>
 

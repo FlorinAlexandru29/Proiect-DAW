@@ -63,7 +63,7 @@ if(isset($_POST['creeaza_cont'])){
     <br>
     Va rugam sa nu raspundeti la acest email!";
     include 'tools/mailer.php';
-    //afisare notificare (posibil in mailer.php?)
+    //afisare notificare
   }
   }
 }
@@ -94,7 +94,36 @@ $pagina_request_login="index.php";
 include 'fragmente/navbar_guest.php';
 ?>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
-  <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start pt-5 mt-5" >
+  <!-- notificare ca a fost creat contul -->
+  <?php
+ if(isset($_SESSION["creare_cont.php"])){
+      echo "
+  <div class='toast show align-items-center text-bg-success border-0 mx-auto mt-5 toast-creare-cont' style='width:40%;' role='alert' aria-live='assertive' aria-atomic='true'>
+  <div class='d-flex'>
+    <div class='toast-body'>
+      Cont creat cu succes! Va rugam sa va verificati adresa de email pentru confirmare!
+    </div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+      unset($_SESSION['creare_cont.php']);
+ }
+
+ if(isset($_SESSION["eroare_trimitere"])){
+  echo "
+  <div class='toast show align-items-center text-bg-danger border-0 mx-auto mt-5 toast-creare-cont' style='width:40%;' role='alert' aria-live='assertive' aria-atomic='true'>
+  <div class='d-flex'>
+    <div class='toast-body'>".
+    $_SESSION["eroare_trimitere"]."
+    </div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+  unset($_SESSION['eroare_trimitere']);
+ }
+?>
+
+  <div class="container d-flex flex-wrap justify-content-center justify-content-xl-start" >
     <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
       <hr class="my-4">
       <form method="POST" id="creare_cont" action="creare_cont.php">
@@ -156,34 +185,7 @@ include 'fragmente/navbar_guest.php';
       
     </div>
   </div>
-  <!-- notificare ca a fost creat contul -->
-  <?php
- if(isset($_SESSION["creare_cont.php"])){
-      echo "
-  <div class='toast show align-items-center text-bg-success border-0 mx-auto mt-5 toast-creare-cont' style='width:40%;' role='alert' aria-live='assertive' aria-atomic='true'>
-  <div class='d-flex'>
-    <div class='toast-body'>
-      Cont creat cu succes! Va rugam sa va verificati adresa de email pentru confirmare!
-    </div>
-    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
-  </div>
-</div>";
-      unset($_SESSION['creare_cont.php']);
- }
 
- if(isset($_SESSION["eroare_trimitere"])){
-  echo "
-  <div class='toast show align-items-center text-bg-danger border-0 mx-auto mt-5 toast-creare-cont' style='width:40%;' role='alert' aria-live='assertive' aria-atomic='true'>
-  <div class='d-flex'>
-    <div class='toast-body'>".
-    $_SESSION["eroare_trimitere"]."
-    </div>
-    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
-  </div>
-</div>";
-  unset($_SESSION['eroare_trimitere']);
- }
-?>
 
 </body>
 </html>

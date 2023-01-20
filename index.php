@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['logout'])){     //scriptul de logout
-  setcookie("user_name", "guest", time()- 120,'/');
+  setcookie("user_name", "", time()- 120,'/');
   header('Location:index.php');
 }
 @session_start();
@@ -44,6 +44,31 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
   if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
   else {$pagina_request_login="index.php";
     include 'fragmente/navbar_guest.php';}
+
+
+    if(isset($_SESSION["activare_cont_success"])){
+      echo "
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='d-flex h-100'>
+          <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
+              Contul tau a fost confirmat cu success!
+          </div>
+          <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
+          </div> </div>";
+          unset($_SESSION['activare_cont_success']);
+     }
+     if(isset($_SESSION["activare_cont_fail"])){
+      echo "
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='d-flex h-100'>
+          <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
+              Cod invalid!
+          </div>
+          <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
+          </div> </div>";
+          unset($_SESSION['activare_cont_fail']);
+     }
+     
   ?>
    <div class="py-5 mx-auto row row-cols-1 row-cols-lg-3 g-4" style="width:80%;">
    <?php 
