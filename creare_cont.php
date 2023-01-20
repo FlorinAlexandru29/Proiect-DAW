@@ -4,6 +4,11 @@
 
 
 if(isset($_POST['creeaza_cont'])){
+  if (empty($_POST['g-recaptcha-response'])){
+    $_SESSION['eroare_captcha']="Te rugam sa rezolvi captcha-ul";
+    header('Location:creare_cont.php');
+    exit();
+  }
 
   if(($_POST['parola_i'])!=($_POST['parola_c']))
   {
@@ -80,6 +85,7 @@ if(isset($_POST['creeaza_cont'])){
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </head>
 
 
@@ -120,6 +126,18 @@ include 'fragmente/navbar_guest.php';
   </div>
 </div>";
   unset($_SESSION['eroare_trimitere']);
+ }
+ if(isset($_SESSION["eroare_captcha"])){
+  echo "
+  <div class='toast show align-items-center text-bg-danger border-0 mx-auto mt-5 toast-creare-cont' style='width:40%;' role='alert' aria-live='assertive' aria-atomic='true'>
+  <div class='d-flex'>
+    <div class='toast-body'>".
+    $_SESSION["eroare_captcha"]."
+    </div>
+    <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close'></button>
+  </div>
+</div>";
+  unset($_SESSION['eroare_captcha']);
  }
 ?>
 
@@ -179,7 +197,11 @@ include 'fragmente/navbar_guest.php';
     }
     else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>"; 
     ?>
-      </div><hr class="my-4">
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+                    <div class="g-recaptcha" data-sitekey="6LdiGwskAAAAAM1k7fIQgndokrclgzCxcPV2o3Q2"></div>
+    </div>
+      <hr class="my-4">
         <input type="submit" value="Creeaza cont" name="creeaza_cont" form="creare_cont" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
       </form>
       
