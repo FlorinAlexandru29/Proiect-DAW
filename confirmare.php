@@ -9,7 +9,7 @@ if((isset($_GET["email"]))&&(isset($_GET["code"])))
       exit();
     }
     $cerere_cod_activare="SELECT * FROM USERS WHERE email='".$_GET["email"]."' AND cod_activare='".$_GET["code"]."';";
-    $result_cod_activare=mysqli_query($conexiune,$cerere_activare);
+    $result_cod_activare=mysqli_query($conexiune,$cerere_cod_activare);
     if (mysqli_num_rows($result_cod_activare)) {
     $cerere_activare="UPDATE users SET activat='1' WHERE email='".$_GET["email"]."' AND cod_activare='".$_GET["code"]."';";
 
@@ -19,7 +19,7 @@ if((isset($_GET["email"]))&&(isset($_GET["code"])))
     $_SESSION['activare_cont_success']=1;
 
     header('Location:index.php');}
-    
+
     else {$_SESSION['activare_cont_fail']=1;
       header('Location:index.php');}
 
