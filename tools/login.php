@@ -38,6 +38,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   header($redirect_login);
   exit() ;
 } 
+//afisare notificari eroare cont/parola
   else {
     if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
       echo "Parola Gresita!";}

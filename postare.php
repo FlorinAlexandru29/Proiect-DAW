@@ -184,9 +184,9 @@ if (isset($_COOKIE['user_name'])){
     </form>
     </div>
     </div>";}
-    else echo "<p> trebuie sa iti activezi contul pentru a adauga un comentariu </p>"; 
+    else echo "<p> Trebuie sa iti activezi contul pentru a adauga un comentariu </p>"; 
 }
-else echo "<p> trebuie sa te autentifici pentru a adauga un comentariu </p>";
+else echo "<p> Trebuie sa te autentifici pentru a adauga un comentariu </p>";
 
 $cerere_comentariu="SELECT * FROM comments cm
 INNER JOIN users u ON u.user_name = cm.user_name
@@ -294,7 +294,7 @@ else $poza_profil="resurse/profile_pics/guest.png";
 
 
 }
-else echo "<p> nu exista comentarii momentan </p>";
+else echo "<p> Nu exista comentarii momentan </p>";
 
 ?>
 
