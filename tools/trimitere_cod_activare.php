@@ -6,10 +6,11 @@
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
       }
-      echo "OK";
-/* 
+      
+ 
     $cerere_user="Select * from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
-
+    echo $cerere_user;
+/*
     $result_user=mysqli_query($conexiune,$cerere_user);
     $row_user = mysqli_fetch_assoc($result_user);
 
