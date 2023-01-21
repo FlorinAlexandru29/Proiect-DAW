@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg p-2 text-bg-header sticky-top">
-  <div class="container">
+  <div class="container" style="max-width:1140px !important;">
 
     <button style="background-color:white;" type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasstart" aria-controls="offcanvasstart" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
