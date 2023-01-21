@@ -33,5 +33,8 @@ if (isset($_COOKIE['user_name'])){
 }
 
 
-else //eroare
+else {$_SESSION['activare_cont_fail']="Actiunea nu a putut fi realizata. Sesiunea ta a expirat. Te rugam sa te reconectezi !";
+    header('Location:index.php');
+    exit();}
+
 ?>
