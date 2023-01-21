@@ -9,7 +9,7 @@ $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90fedd
 if (isset($_COOKIE['user_name'])){
    
 
-$cerere_stergere="Select * from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."' AND password='".$_POST['parola_stergere']."' "  ;
+$cerere_stergere="Select * from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."' AND password='".openssl_encrypt($_POST['parola_stergere'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')."' "  ;
 $result_stergere=mysqli_query($conexiune,$cerere_stergere);
 if (mysqli_num_rows($result_stergere) > 0){
     $row_cont = mysqli_fetch_assoc($result_stergere);
