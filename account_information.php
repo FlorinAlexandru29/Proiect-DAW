@@ -19,6 +19,7 @@ mysqli_close($conexiune);
 if(isset($_POST['change_password'])) include 'tools/change_password.php';
 if(isset($_POST['save_photo'])) include 'tools/google_upload.php';
 if(isset($_POST['send_code'])) include 'tools/trimitere_cod_activare.php';
+if(isset($_POST['delete_account'])) include 'tools/stergere_cont.php';
 
 
 
@@ -250,12 +251,13 @@ unset($_SESSION['upload_success']);}
   </div>
   <div class="offcanvas-body container">
     <div class="col-12 my-0">
-    <form id="form-forgot-password" class="w-50 mx-auto form-floating" method="POST" action="index.php">
+    <form id="form-delete-account" class="w-50 mx-auto form-floating" method="POST" action="account_information.php">
       <input type="password" name="parola_stergere" id="floatingInput" placeholder="placeholder" required class="form-control">
       <label for="floatingInput">Parola</label>
-    </form></div>
+    </div>
     <div class="col-12 mt-0 align-items-center">
-      <input type="submit" form="form-forgot-password" class="mt-2 mx-auto btn btn-primary d-block" name="forgot_password" value="Trimite">
+      <input type="submit" name="delete_account" form="form-delete-account" class="mt-2 mx-auto btn btn-primary d-block" value="Sterge Contul">
+      </form>
     </div>
     
  </div>
