@@ -21,6 +21,7 @@ if (mysqli_num_rows($result_stergere) > 0){
     
         $cloudPath = 'profile_pic/' . openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
         echo $cloudPath;
+        
         $bucket = $storage->bucket('lure-prod-bucket');
     
         $object = $bucket->object($cloudPath);
