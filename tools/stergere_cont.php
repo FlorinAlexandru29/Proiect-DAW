@@ -13,7 +13,7 @@ $cerere_stergere="Select * from users where user_name='".openssl_decrypt ($_COOK
 $result_stergere=mysqli_query($conexiune,$cerere_stergere);
 if (mysqli_num_rows($result_stergere) > 0){
     $row_cont = mysqli_fetch_assoc($result_stergere);
-    if ($row_cont ==1) {
+    if ($row_cont['profile_pic'] ==1) {
     try {
         $storage = new StorageClient([
         'keyFile' => json_decode($key, true)
@@ -21,7 +21,7 @@ if (mysqli_num_rows($result_stergere) > 0){
     
         $cloudPath = 'profile_pic/' . openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
         echo $cloudPath;
-        
+
         $bucket = $storage->bucket('lure-prod-bucket');
     
         $object = $bucket->object($cloudPath);
