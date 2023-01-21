@@ -10,10 +10,12 @@
  
     $cerere_user="Select * from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
     echo $cerere_user;
-/*
+
     $result_user=mysqli_query($conexiune,$cerere_user);
     $row_user = mysqli_fetch_assoc($result_user);
 
+    echo $row_user['user_name'];
+/*
     $cerere_cod_activare="UPDATE users SET cod_activare='".$cod_activare."' user_name='".$row_user['user_name']."'";
     mysqli_query($conexiune,$cerere_cod_activare);
 
