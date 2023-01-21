@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE['user_name'])){
+/* if (isset($_COOKIE['user_name'])){
     $cod_activare=uniqid();
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
@@ -36,5 +36,6 @@ if (isset($_COOKIE['user_name'])){
 else {$_SESSION['activare_cont_fail']="Actiunea nu a putut fi realizata. Sesiunea ta a expirat. Te rugam sa te reconectezi !";
     header('Location:index.php');
     exit();}
-
+ */
+echo "OK";
 ?>
