@@ -30,7 +30,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
   @session_start();
 
   if($row["activat"]==0) {
-    $_SESSION['activat'] = 0;
+    $_SESSION['login_pop_up'] = "Contul tau nu este activat, te rugam sa iti activezi contul in maximum 30 de zile pentru a nu pierde accessul la contul tau!";
   }
 
   mysqli_close($conexiune);
@@ -41,10 +41,17 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
 //afisare notificari eroare cont/parola
   else {
     if (mysqli_num_rows($result_email) > 0) {mysqli_close($conexiune);
-      echo "Parola Gresita!";}
-    else {mysqli_close($conexiune); 
-      echo "<p> Nu a fost gasit un utilizator pentru acest email</p>";
-    }
+      $_SESSION['login_pop_up'] = "Parola este gresita!";
+      $redirect_login="Location:".$pagina_request_login;
+      header($redirect_login);
+      exit() ;
+              }
+    else {mysqli_close($conexiune);
+      $_SESSION['login_pop_up'] = "Nu a putut fi gasit un user pentru acest email.";
+      $redirect_login="Location:".$pagina_request_login;
+      header($redirect_login);
+      exit() ;
+              }
 }
 }
 ?>

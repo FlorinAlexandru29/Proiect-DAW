@@ -69,16 +69,16 @@
     if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';
     else {$pagina_request_login="index.php";
       include 'fragmente/navbar_guest.php';}
-      if(isset($_SESSION["activat"])){
+      if(isset($_SESSION["login_pop_up"])){
         echo "
             <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
             <div class='d-flex h-100'>
             <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
-                Contul tau nu este activat, te rugam sa iti activezi contul in maximum 30 de zile pentru a nu pierde accessul la contul tau!
+                ".$_SESSION['login_pop_up']."
             </div>
             <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
             </div> </div>";
-            unset($_SESSION['activat']);
+            unset($_SESSION['login_pop_up']);
        }
     ?>
 <!-- contact form-->
