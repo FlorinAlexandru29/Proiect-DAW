@@ -14,9 +14,7 @@
     $result_user=mysqli_query($conexiune,$cerere_user);
     $row_user = mysqli_fetch_assoc($result_user);
 
-    echo $row_user['user_name'];
-/*
-    $cerere_cod_activare="UPDATE users SET cod_activare='".$cod_activare."' user_name='".$row_user['user_name']."'";
+    $cerere_cod_activare="UPDATE users SET cod_activare='".$cod_activare."' where user_name='".$row_user['user_name']."'";
     mysqli_query($conexiune,$cerere_cod_activare);
 
     $pagina_request="index.php";
@@ -33,7 +31,6 @@
     <br>
     Va rugam sa nu raspundeti la acest email!";
     include 'tools/mailer.php';
- */
 }
 
 
