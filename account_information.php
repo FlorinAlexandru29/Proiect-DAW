@@ -65,20 +65,25 @@ else header('Location:index.php');
     <img src='".$poza_profil_logat."' style='width:200px;height:200px;'  class='d-block img-thumbnail rounded-circle' alt='Profile Pic'>";
 
   ?>
-  <form action="account_information.php" method="POST" enctype="multipart/form-data" id="form1">
+  <?php 
+  if ($row["activat"]==1)
+  echo 
+  "<form action='account_information.php' method='POST' enctype='multipart/form-data' id='form1'>
     
-  <button type="button" id="btnFileUpload" class="btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Schimba poza de profil">
-  <i class="bx bx-refresh bx-md">    </i> </button>
-<input type="file" id="FileUpload1"  name="FileUpload1" accept="image/png, image/jpeg, image/gif" style="display: none" />
+  <button type='button' id='btnFileUpload' class='btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Schimba poza de profil'>
+  <i class='bx bx-refresh bx-md'>    </i> </button>
+<input type='file' id='FileUpload1'  name='FileUpload1' accept='image/png, image/jpeg, image/gif' style='display: none' />
 </div>
-<span id="spnFilePath"></span>
-<?php 
-echo "
-<input type='hidden' name='user_name' value='".$_COOKIE["user_name"]."'>";
-?>
+<span id='spnFilePath'></span>
+<input type='hidden' name='user_name' value='".$_COOKIE["user_name"]."'>
 
-<input class="btn rounded-pill btn-success mb-2" type="submit" value="Salveaza poza" name="save_photo" form="form1">
-</form>
+<input class='btn rounded-pill btn-success mb-2' type='submit' value='Salveaza poza' name='save_photo' form='form1'>
+</form>";
+else echo "<button type='button' id='btnFileUpload' class='btn btn-icon btn-light bg-white btn-sm border rounded-circle shadow-sm position-absolute bottom-0 end-0 me-4' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='Pentru a schimba poza de profil trebuie sa ai contul activat!'>
+<i class='bx bx-refresh bx-md'>    </i> </button>
+</div>"
+
+?>
 <script type="text/javascript">
     window.onload = function () {
         var fileupload = document.getElementById("FileUpload1");
