@@ -1,12 +1,12 @@
 <?php
-/* if (isset($_COOKIE['user_name'])){
+ if (isset($_COOKIE['user_name'])){
     $cod_activare=uniqid();
     $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
         exit();
       }
-
+/* 
     $cerere_user="Select * from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
 
     $result_user=mysqli_query($conexiune,$cerere_user);
@@ -29,13 +29,13 @@
     <br>
     Va rugam sa nu raspundeti la acest email!";
     include 'tools/mailer.php';
-
+ */
 }
 
 
 else {$_SESSION['activare_cont_fail']="Actiunea nu a putut fi realizata. Sesiunea ta a expirat. Te rugam sa te reconectezi !";
     header('Location:index.php');
     exit();}
- */
-echo "OK";
+
+
 ?>
