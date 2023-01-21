@@ -44,7 +44,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
 
     if(isset($_SESSION["activare_cont_success"])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               Contul tau a fost confirmat cu success!
@@ -55,7 +55,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
      }
      if(isset($_SESSION["activare_cont_fail"])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               ".$_SESSION["activare_cont_fail"]."
@@ -66,7 +66,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
      }
      if(isset($_SESSION["login_pop_up"])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               ".$_SESSION['login_pop_up']."
@@ -78,7 +78,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
 
      if(isset($_SESSION["index.php"])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               Codul a fost trimis cu success
@@ -89,7 +89,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
      }
      if(isset($_SESSION["eroare_trimitere"])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               ".$_SESSION['eroare_trimitere']."
@@ -101,7 +101,7 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
 
      if(isset($_SESSION['stergere_success'])){
       echo "
-          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;font-size:1.1rem;'>
           <div class='d-flex h-100'>
           <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
               ".$_SESSION['stergere_success']."
