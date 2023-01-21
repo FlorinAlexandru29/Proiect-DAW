@@ -33,8 +33,8 @@ if (mysqli_num_rows($result_stergere) > 0){
             $_SESSION['activare_cont_fail']="Eroare stergere poza profil, mesajul de eroare: ".$e->getMessage();
             header('index.php');
             exit();
-        } }}
-      /*   //stergere poza profil
+        } }
+         //stergere poza profil
         $cerere_stergere_cont = "DELETE FROM USERS where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
         mysqli_query($conexiune,$cerere_stergere_cont);
         mysqli_close($conexiune);
@@ -44,7 +44,7 @@ if (mysqli_num_rows($result_stergere) > 0){
         header('Location:index.php');
         exit(); 
     //delete account query
-} */
+} 
 else {
     $_SESSION['activare_cont_fail']="Parola introdusa este gresita !";
     header('Location:index.php');
