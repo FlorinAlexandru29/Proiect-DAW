@@ -75,6 +75,29 @@ if(isset($_POST['forgot_password'])) include 'tools/forgot_password.php'
           </div> </div>";
           unset($_SESSION['login_pop_up']);
      }
+
+     if(isset($_SESSION["index.php"])){
+      echo "
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-success border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='d-flex h-100'>
+          <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
+              Codul a fost trimis cu success
+          </div>
+          <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
+          </div> </div>";
+          unset($_SESSION['index.php']);
+     }
+     if(isset($_SESSION["eroare_trimitere"])){
+      echo "
+          <div class='position-absolute top-50 start-50 translate-middle toast show align-items-center text-bg-danger border-0 toast-creare-cont' role='alert' aria-live='assertive' aria-atomic='true' style='z-index:1;width:90%;height:10%;font-size:1.1rem;'>
+          <div class='d-flex h-100'>
+          <div class='mx-auto my-auto text-center toast-body' style='width:100%;'>
+              ".$_SESSION['eroare_trimitere']."
+          </div>
+          <button type='button' class='btn-close btn-close-white me-2 m-auto' data-bs-dismiss='toast' aria-label='Close' style='width:3%;'></button>
+          </div> </div>";
+          unset($_SESSION['eroare_trimitere']);
+     }
      
   ?>
    <div class="py-5 mx-auto row row-cols-1 row-cols-lg-3 g-4" style="width:80%;">
