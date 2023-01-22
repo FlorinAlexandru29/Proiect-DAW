@@ -20,9 +20,10 @@
                    echo "Failed to connect to MySQL: " . mysqli_connect_error();
                    exit();
                  }
-                $cerere="select nume, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
+                $cerere="select nume, rol, profile_pic, activat from users where user_name='".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121')."'";
                 $result_user= mysqli_query($conexiune, $cerere);
                 $row_user = mysqli_fetch_assoc($result_user);
+                if ($row_user['rol']=="admin") $rol="admin";
                 if ($row_user['profile_pic']==1) $poza_profil_logat= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
                   else $poza_profil_logat="resurse/profile_pics/guest.png";
                               echo "<img src='".$poza_profil_logat."' width='40' height='40' class='rounded-circle me-2'>";                            
