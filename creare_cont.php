@@ -190,7 +190,7 @@ $pagina_request_login="index.php";
       </div>
       <div class="mb-3 input-group-lg">
 
-        <label for="password_2" class="form-label" >Confirma Parola</label>
+        <label for="password_2" class="form-label">Confirma Parola</label>
         <?php  
         
       
@@ -202,6 +202,17 @@ $pagina_request_login="index.php";
     else echo"<input type='password' id='password_2' class='form-control' name='parola_c' required>"; 
     ?>
       </div>
+      <?php 
+      if ($rol=="admin") echo "
+      <div class='col-12 d-flex justify-content-center'>
+      <div class='form-check'>
+      <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault'>
+      <label class='form-check-label' for='flexCheckDefault'>
+      Default checkbox
+      </label>
+      </div>
+      </div> ";
+      ?>
       <div class="col-12 d-flex justify-content-center">
                     <div class="g-recaptcha" data-sitekey="6LdiGwskAAAAAM1k7fIQgndokrclgzCxcPV2o3Q2"></div>
     </div>
