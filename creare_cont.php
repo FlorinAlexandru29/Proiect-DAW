@@ -98,9 +98,10 @@ if(isset($_POST['creeaza_cont'])){
       include 'fragmente/navbar_user.php';
       if ($rol != "admin") header('Location:index.php');
     }
+    else include 'fragmente/navbar_guest.php';
 //redirect pe home page daca este deja autentificat
 $pagina_request_login="index.php";
-include 'fragmente/navbar_guest.php';
+
 ?>
 <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
   <!-- notificare ca a fost creat contul -->
