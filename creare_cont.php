@@ -50,8 +50,11 @@ if(isset($_POST['creeaza_cont'])){
     $data_creare_cont = date('Y-m-d H:i');
     $cod_activare=uniqid();
     $cerere="Insert into users(user_name,nume,email,password,data_creare,cod_activare) values ('".$_POST['user_name']."','".$_POST['nume_prenume']."','" .$_POST['email'] ."','".openssl_encrypt($_POST['parola_i'], 'AES-128-CTR', 'kalpsdnj', 0, '1234567891011121')." ','".$data_creare_cont."','".$cod_activare."')";
-    echo $cerere;
+    
     mysqli_query($conexiune, $cerere);
+    if (isset($_POST['redactor'])){
+      mysqli_query($conexiune, "Update users set rol='redactor' where user_name='".$_POST['user_name']."'");
+    }
     mysqli_close($conexiune);
 
     $pagina_request="creare_cont.php";
@@ -206,9 +209,9 @@ $pagina_request_login="index.php";
       if ($rol=="admin") echo "
       <div class='col-12 d-flex justify-content-center'>
       <div class='form-check'>
-      <input class='form-check-input' type='checkbox' value='' id='flexCheckDefault'>
+      <input class='form-check-input' name='redactor' type='checkbox' value='redactor' id='flexCheckDefault'>
       <label class='form-check-label' for='flexCheckDefault'>
-      Default checkbox
+      Cont redactor
       </label>
       </div>
       </div> ";
