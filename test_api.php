@@ -18,5 +18,14 @@ foreach ($date as $data) {
     echo $data_concert[$i];
     $i=$i+1;
 }
+$titluri = $xpath->query("//div[@class='title']");
+$i=0;
+foreach ($titluri as $titlu) {
+    
+    $titlu_concert[$i]=$titlu->nodeValue;
+    echo $titlu_concert[$i];
+    $i=$i+1;
+}
+
 
 ?>
