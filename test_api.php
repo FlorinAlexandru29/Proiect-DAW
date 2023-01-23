@@ -10,8 +10,13 @@ $dom = new DOMDocument;
 $dom->loadHTML($data);
 $xpath = new DOMXPath($dom);
 
-$elements = $xpath->query("//div[@class='date-start']");
-foreach ($elements as $element) {
-    echo $element->nodeValue;
+$date = $xpath->query("//div[@class='date-start']");
+$i=0;
+foreach ($date as $data) {
+    
+    $data_concert[$i]=$data->nodeValue;
+    echo $data_concert[$i];
+    $i=$i+1;
 }
+
 ?>
