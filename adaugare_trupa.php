@@ -68,10 +68,11 @@ catch(Exception $e) {
 
 
 <?php
-   if (isset($_COOKIE["user_name"])) {
-    include 'fragmente/navbar_user.php';
-  } //redirect pe home page daca este deja autentificat
-  else  header('Location:index.php'); ?>
+    if (isset($_COOKIE["user_name"])) {
+    
+      include 'fragmente/navbar_user.php';
+      if ($rol != "admin") header('Location:index.php');
+    } ?>
 <!doctype html>
 <html lang="en">
   <head>

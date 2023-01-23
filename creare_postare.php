@@ -83,7 +83,6 @@ if (isset($_COOKIE["user_name"])) {
   include 'fragmente/navbar_user.php';
   if ($rol == "cititor") header('Location:index.php');
 }
-else include 'fragmente/navbar_guest.php';
 
 ?>
     <main class="form-signin w-100 m-auto" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
