@@ -31,7 +31,7 @@ for($i=0;$i<$n;$i++){
 }
 
 
-$linkuri = $xpath->query("//div[@class='col-xs-2']");
+$linkuri = $xpath->query("//div[@class='price']");
 $i=0;
 foreach($linkuri as $link){
 
