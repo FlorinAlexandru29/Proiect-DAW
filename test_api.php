@@ -32,8 +32,11 @@ for($i=0;$i<$n;$i++){
 
 
 $linkuri = $xpath->query("//div[@class='col-xs-2']");
+$i=0;
 foreach($linkuri as $link){
-    echo $link->nodeValue."<br>";
+
+    $link_concert[$i]=$link->nodeValue;
+    echo "link_concert".[$i].$link_concert[$i]."<br>";
 }
 
 ?>
