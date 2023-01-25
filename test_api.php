@@ -26,7 +26,7 @@ foreach ($titluri as $titlu) {
 }
 $n=$i;
 for($i=0;$i<$n;$i++){
-    echo $data_concert[$i] ."<br>" . $titlu_concert[$i];
+    echo $data_concert[$i] ."<br>" . $titlu_concert[$i] . "<br>";
 }
 
 
