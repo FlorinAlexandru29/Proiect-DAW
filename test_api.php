@@ -37,6 +37,7 @@ foreach($linkuri as $link){
 
     $link_concert[$i]=$link->nodeValue;
     echo "link_concert".[$i].$link_concert[$i]."<br>";
+    $i=$i+1;
 }
 
 ?>
