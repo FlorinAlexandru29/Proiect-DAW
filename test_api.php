@@ -15,7 +15,6 @@ $i=0;
 foreach ($date as $data) {
     
     $data_concert[$i]=$data->nodeValue;
-    echo $data_concert[$i];
     $i=$i+1;
 }
 $titluri = $xpath->query("//div[@class='title']");
@@ -23,8 +22,11 @@ $i=0;
 foreach ($titluri as $titlu) {
     
     $titlu_concert[$i]=$titlu->nodeValue;
-    echo $titlu_concert[$i];
     $i=$i+1;
+}
+$n=$i;
+for($i=0;$i<$n;$i++){
+    echo $data_concert[$i] ."<br>" . $titlu_concert[$i];
 }
 
 
