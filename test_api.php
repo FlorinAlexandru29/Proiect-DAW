@@ -39,7 +39,7 @@ foreach($linkuri as $link){
     echo "Sold Out";
 
 
-    echo "link_concert nr".$i.$link_concert[$i]."<br>";
+   if (str_contains($link_concert[$i],"ia bilet")==TRUE) echo "link_concert nr".$i.$link_concert[$i]."<br>";
     $i=$i+1;
 }
 
