@@ -35,7 +35,7 @@ $linkuri = $xpath->query("//div[@class='col-xs-2']");
 $i=0;
 foreach($linkuri as $link){
     $link_concert[$i]=$link->nodeValue;
-    if ( str_contains($link_concert[$i],"ia bilet")==FALSE && str_contains($link_concert[$i-1],"ia bilet")==FALSE)&&($i>0)
+    if (( str_contains($link_concert[$i],"ia bilet")==FALSE && str_contains($link_concert[$i-1],"ia bilet")==FALSE))&&($i>0))
     echo "Sold Out<br>";
 
 
