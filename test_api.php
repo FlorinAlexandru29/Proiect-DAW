@@ -44,4 +44,13 @@ foreach($linkuri as $link){
     $i=$i+1;
 }
 
+for($i=0;$i<$n;$i++){
+    try{
+        $price = $xpath->query("//div[@class='price']")->item($i);
+        $price_concert[$i]=$price->nodeValue;
+    }catch(Exception $e){
+        $price_concert[$i] = "Sold Out <br>";
+    }
+    echo  $price_concert[$i] . "<br>";
+}
 ?>
