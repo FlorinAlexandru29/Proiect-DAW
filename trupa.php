@@ -125,7 +125,12 @@ overflow:hidden;
   .event-img{display:none;}
   .container_text{
     width:100% !important; 
+    
   }
+  .accordion > div{
+    max-height:150px !important;
+  }
+
 
 .carousel .carousel-inner{
 
