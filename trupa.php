@@ -128,6 +128,39 @@ height:auto
 .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 100%;
 }}
+
+
+.container {
+    width: 60%;
+    height: 250px;
+    position: absolute;
+    background: #72bcd4;
+}
+
+
+
+.txt1 {
+    top: 5%;
+    left: 5%;
+}
+
+
+.txt2 {
+    top: 5%;
+    left:35%;
+}
+.bg-img {
+    width: 90%;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    height:70%;
+}
+.event-img {
+    position:absolute;
+    bottom:0px;
+    right:0px;
+}
     </style>
 <?php
 
@@ -203,6 +236,46 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
        "; 
         ?>
         <hr class="my-4">
+        <div class="accordion" id="accordionExample" style="width:60% !important;">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Accordion Item #3
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
+    <div class="accordion-body p-0 mb-2" style="height:250px;">
+      <div class="container">
+            <img class="bg-img" src="background_bilet.png">
+            <div class="d-flex justify-content-between">
+            <div class="txt1"> 
+            <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
+            <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
+            </div>
+            <div class="txt2">
+            <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
+            </div>
+            </div>
+            <img class="event-img" height="250px" style="
+    border-bottom-right-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+    " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
+        </div>
+        </div>
+      <div class="accordion-body p-0 mb-2" style="height:200px;">
+      <div class="container">
+            <img class="bg-img" src="background_bilet.png">
+            <div class="txt1">1</div>
+            <div class="txt2">2</div>
+            <img class="event-img" height="200px" style="
+    border-bottom-right-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+    " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
         <?php 
         $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
 
