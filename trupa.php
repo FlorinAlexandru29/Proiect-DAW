@@ -127,8 +127,8 @@ overflow:hidden;
     width:100% !important; 
     
   }
-  .accordion > div{
-    max-height:150px !important;
+  .accordion-body , .accordion-body >.container_evenimente{
+    height:150px !important;
   }
 
 
@@ -150,6 +150,10 @@ height:auto;
     background: #72bcd4;
     border-bottom-right-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
+}
+.accordion-body{
+  position:relative;
+  height:250px;
 }
 .bg-img {
     width: 100%;
@@ -253,7 +257,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
-    <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
+    <div class="accordion-body p-0 mb-2">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between container_text">
@@ -269,7 +273,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
         </div>
         </div>
-        <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
+        <div class="accordion-body p-0 mb-2">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between container_text">
