@@ -263,8 +263,8 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
           include 'tools/api_cautare_bilete.php';
           if (isset($eroare_cautare))
           {
-            echo "<div class='accordion-body p-0 mb-2 h-50'>
-            <h2>Nu exista evenimente momentan</h2>
+            echo "<div class='accordion-body p-0 mb-2 bg-light' style='height:150px;'>
+            <h2 class='w-100 text-center position-absolute top-50 start-50 translate-middle'>Nu exista evenimente momentan</h2>
             </div>
             ";
           }
