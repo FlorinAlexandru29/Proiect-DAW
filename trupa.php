@@ -245,7 +245,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
     <div class="accordion-body p-0 mb-2" style="height:250px;">
-      <div class="container_eveniment">
+      <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between" style="width:75%">
             <div class="txt1"> 
@@ -263,7 +263,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
         </div>
         </div>
       <div class="accordion-body p-0 mb-2" style="height:200px;">
-      <div class="container-eveniment">
+      <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="txt1">1</div>
             <div class="txt2">2</div>
