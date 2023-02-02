@@ -266,7 +266,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
             <h5> <i class="fa-solid fa-calendar-day text-primary"></i> Data Concert </h5>
             </div>
-            <div class="mt-5">
+            <div class="mt-2">
             <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
             <h5> <i class="text-success fa-regular fa-money-bill-1"></i> Pret : 10 Lei </h5>
             </div>
