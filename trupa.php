@@ -262,7 +262,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
-            <div class="d-flex justify-content-between container_text" style="width:75%">
+            <div class="d-flex justify-content-between container_text">
             <div class="txt1"> 
             <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
             <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
@@ -278,7 +278,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
         <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
-            <div class="d-flex justify-content-between" style="width:75%">
+            <div class="d-flex justify-content-between container_text">
             <div class="txt1"> 
             <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
             <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
