@@ -91,6 +91,7 @@ if(isset($_POST['login-mobile'])){
     <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap'); </style>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/fb2a34bcfa.js" crossorigin="anonymous"></script>
     </head>
     <style>
 
@@ -236,7 +237,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
        "; 
         ?>
         <hr class="my-4">
-        <div class="accordion" id="accordionExample" style="width:60% !important;">
+        <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
