@@ -130,7 +130,7 @@ overflow:hidden;
   .accordion-body , .accordion-body >.container_evenimente{
     height:150px !important;
   }
-  .bg-img{height:50% !important;}
+  .bg-img{height:60% !important;}
 
 
 .carousel .carousel-inner{
@@ -161,7 +161,7 @@ height:auto;
     position:absolute;
     bottom:0px;
     left:0px;
-    height:70%;
+    height:80%;
 }
 .event-img {
     position:absolute;
@@ -262,13 +262,13 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between container_text">
-            <div> 
+            <div class="ms-3 mt-2"> 
             <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
-            <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
+            <h5> <i class="fa-solid fa-calendar-day text-primary"></i> Data Concert </h5>
             </div>
-            <div class="mt-2">
+            <div class="mt-5">
             <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
-            <h5> <i class="fa-regular fa-money-bill-1"></i> Pret : 10 Lei </h5>
+            <h5> <i class="text-success fa-regular fa-money-bill-1"></i> Pret : 10 Lei </h5>
             </div>
             </div>
             <img class="event-img" height="250px" style="
