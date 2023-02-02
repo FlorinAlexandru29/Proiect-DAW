@@ -120,9 +120,14 @@ overflow:hidden;
 }
 
 @media(max-width:768px){
+  .event-img{display:none;}
+  .container_text{
+    width:100%;
+  }
+
 .carousel .carousel-inner{
 
-height:auto
+height:auto;
  }
 }
 @media (max-width: 2000px){
@@ -153,7 +158,7 @@ height:auto
     left:35%;
 }
 .bg-img {
-    width: 90%;
+    width: 100%;
     position:absolute;
     bottom:0px;
     left:0px;
@@ -166,6 +171,11 @@ height:auto
     border-bottom-right-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
 }
+.container_text{
+  width:75%;
+}
+
+
     </style>
 <?php
 
@@ -242,7 +252,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
         ?>
         <hr class="my-4">
         <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
+  <div class="accordion-item bg-black">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         Accordion Item #3
@@ -252,7 +262,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
-            <div class="d-flex justify-content-between" style="width:75%">
+            <div class="d-flex justify-content-between container_text" style="width:75%">
             <div class="txt1"> 
             <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
             <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
