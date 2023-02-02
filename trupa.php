@@ -268,7 +268,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             </div>
             ";
           }
-          else
+          else{
           for($i=0;$i<$n;$i++){
           echo "
           <div class='accordion-body p-0 mb-2 card-hover'>
@@ -288,7 +288,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             ' src='". $img[$i]."'>
             </div>
             </div>
-          ";}
+          ";}}
         
         ?>
     </div>
