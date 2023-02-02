@@ -120,6 +120,8 @@ overflow:hidden;
 }
 
 @media(max-width:768px){
+    h3,h5{
+    font-size: 1rem !important;}
   .event-img{display:none;}
   .container_text{
     width:100% !important; 
