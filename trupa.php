@@ -122,7 +122,7 @@ overflow:hidden;
 @media(max-width:768px){
   .event-img{display:none;}
   .container_text{
-    width:100%;
+    width:100% !important; 
   }
 
 .carousel .carousel-inner{
