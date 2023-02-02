@@ -244,7 +244,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
-    <div class="accordion-body p-0 mb-2" style="height:250px;">
+    <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between" style="width:75%">
@@ -262,12 +262,19 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
         </div>
         </div>
-      <div class="accordion-body p-0 mb-2" style="height:200px;">
+        <div class="accordion-body p-0 mb-2 position-relative" style="height:250px;">
       <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
-            <div class="txt1">1</div>
-            <div class="txt2">2</div>
-            <img class="event-img" height="200px" style="
+            <div class="d-flex justify-content-between" style="width:75%">
+            <div class="txt1"> 
+            <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
+            <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
+            </div>
+            <div class="txt2 mt-2">
+            <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
+            </div>
+            </div>
+            <img class="event-img" height="250px" style="
     border-bottom-right-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
