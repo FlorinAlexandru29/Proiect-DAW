@@ -261,34 +261,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
           <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
           ";
           include 'tools/api_cautare_bilete';
-          if (isset($eroare_cautare))
-          {
-            echo "<div class='accordion-body p-0 mb-2 h-50'>
-            <h2>Nu exista evenimente momentan</h2>
-            </div>
-            ";
-          }
-          else{
-          for($i=0;$i<$n;$i++){
-          echo "
-          <div class='accordion-body p-0 mb-2 card-hover'>
-          <div class='container_evenimente'>
-          <img class='bg-img' src='resurse\icons\background_bilet.png'>
-          <div class='d-flex justify-content-between container_text'>
-          <div class='ms-3 mt-2'> 
-          <h3 style='border-bottom-style: dotted;'> ". $titlu_concert[$i] ." </h3>
-          <h5> <i class='fa-solid fa-calendar-day text-primary'></i>" .$data_concert[$i] ." </h5>
-            </div>
-            <div class='mt-2 ms-3'>
-            <h5> <i class='fa-solid fa-location-dot text-primary'></i> ". $locatie_concert[$i]." </h5>
-            <h5> <i class='text-success fa-regular fa-money-bill-1'></i> Pret: ".str_replace("ia bilet", "", $pret_concert[$i]) ." </h5>
-            </div>
-            </div>
-            <img class='event-img' height='250px'style='
-            ' src='". $img[$i]."'>
-            </div>
-            </div>
-          ";}}
+      
         
         ?>
     </div>
