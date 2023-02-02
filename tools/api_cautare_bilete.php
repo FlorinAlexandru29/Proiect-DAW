@@ -1,5 +1,5 @@
 <?php
-$url = "https://www.iabilet.ro/cauta/?q=implant+pentru+refuz";
+$url = "https://www.iabilet.ro/cauta/?q=trooper";
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
