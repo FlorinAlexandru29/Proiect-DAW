@@ -281,7 +281,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             </div>
             <div class='mt-2 ms-3'>
             <h5> <i class='fa-solid fa-location-dot text-primary'></i> ". $locatie_concert[$i]." </h5>
-            <h5> <a class='stretched-link link-success' href='https://www.iabilet.ro/".$href_concert[$i]."'><i class='text-success fa-regular fa-money-bill-1'> </i> Pret: ".str_replace("ia bilet", "", $pret_concert[$i]) ." </h5>
+            <h5> <a class='stretched-link link-success' href='https://www.iabilet.ro".$href_concert[$i]."'><i class='text-success fa-regular fa-money-bill-1'> </i> Pret: ".str_replace("ia bilet", "", $pret_concert[$i]) ." </a></h5>
             </div>
             </div>
             <img class='event-img' height='250px'style='
