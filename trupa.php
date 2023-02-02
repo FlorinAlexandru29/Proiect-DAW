@@ -255,48 +255,42 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         <?php 
-        echo "
+        echo "Concerte ".$row_trupa['nume']."
           </button>
           </h2>
           <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
-          ".$row_trupa['nume']."
-          "
+          ";
+          include 'tools/api_cautare_bilete';
+          if (isset($eroare_cautare))
+          {
+            echo "<div class='accordion-body p-0 mb-2 h-50'>
+            <h2>Nu exista evenimente momentan</h2>
+            </div>
+            ";
+          }
+          else
+          for($i=0;$i<$n;$i++){
+          echo "
+          <div class='accordion-body p-0 mb-2 card-hover'>
+          <div class='container_evenimente'>
+          <img class='bg-img' src='resurse\icons\background_bilet.png'>
+          <div class='d-flex justify-content-between container_text'>
+          <div class='ms-3 mt-2'> 
+          <h3 style='border-bottom-style: dotted;'> ". $titlu_concert[$i] ." </h3>
+          <h5> <i class='fa-solid fa-calendar-day text-primary'></i>" .$data_concert[$i] ." </h5>
+            </div>
+            <div class='mt-2 ms-3'>
+            <h5> <i class='fa-solid fa-location-dot text-primary'></i> ". $locatie_concert[$i]." </h5>
+            <h5> <i class='text-success fa-regular fa-money-bill-1'></i> Pret: ".str_replace("ia bilet", "", $pret_concert[$i]) ." </h5>
+            </div>
+            </div>
+            <img class='event-img' height='250px'style='
+            ' src='". $img[$i]."'>
+            </div>
+            </div>
+          ";}
         
         ?>
-    
-    <div class="accordion-body p-0 mb-2 card-hover">
-      <div class="container_evenimente">
-            <img class="bg-img" src="background_bilet.png">
-            <div class="d-flex justify-content-between container_text">
-            <div class="ms-3 mt-2"> 
-            <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
-            <h5> <i class="fa-solid fa-calendar-day text-primary"></i> Data Concert </h5>
-            </div>
-            <div class="mt-2 ms-3">
-            <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
-            <h5> <i class="text-success fa-regular fa-money-bill-1"></i> Pret : 10 Lei </h5>
-            </div>
-            </div>
-            <img class="event-img" height="250px" style="
-    " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
-        </div>
-        </div>
-        <div class="accordion-body p-0 mb-2 card-hover">
-      <div class="container_evenimente">
-            <img class="bg-img" src="background_bilet.png">
-            <div class="d-flex justify-content-between container_text">
-            <div> 
-            <h3 style="border-bottom-style: dotted;"> Titlu Concert </h3>
-            <h5> <i class="fa-solid fa-calendar-day"></i> Data Concert </h5>
-            </div>
-            <div class="mt-2">
-            <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
-            </div>
-            </div>
-            <img class="event-img" height="250px" style="
-    " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
-        </div>
-        </div>
     </div>
   </div>
 </div>

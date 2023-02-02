@@ -87,14 +87,5 @@ foreach($linkuri as $link){
         $img[$i] = $a_img->getAttribute("src");
         $i=$i+1;}
     }
-
-
-
-    
-
-
-for($i=0;$i<$n;$i++){
-    echo $data_concert[$i] ."<br>" . $titlu_concert[$i] . "<br>" . $pret_concert[$i] . "<br>".$href_concert[$i] ."<br>". $img[$i]."<br>". $locatie_concert[$i]. "<br><br>";
-}
 }
 ?>
