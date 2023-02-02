@@ -130,7 +130,7 @@ height:auto
 }}
 
 
-.container {
+.container_evenimente {
     width: 60%;
     height: 250px;
     position: absolute;
@@ -236,7 +236,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
        "; 
         ?>
         <hr class="my-4">
-        <div class="accordion" id="accordionExample" style="width:60% !important;">
+        <div class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -245,7 +245,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="">
     <div class="accordion-body p-0 mb-2" style="height:250px;">
-      <div class="container">
+      <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="d-flex justify-content-between">
             <div class="txt1"> 
@@ -263,7 +263,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
         </div>
         </div>
       <div class="accordion-body p-0 mb-2" style="height:200px;">
-      <div class="container">
+      <div class="container_evenimente">
             <img class="bg-img" src="background_bilet.png">
             <div class="txt1">1</div>
             <div class="txt2">2</div>
