@@ -260,6 +260,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
           </h2>
           <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
           ";
+          $id_trupa=($_GET["id"]);
           include 'tools/api_cautare_bilete.php';
           if (isset($eroare_cautare))
           {
