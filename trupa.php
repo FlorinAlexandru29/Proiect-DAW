@@ -268,6 +268,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             </div>
             <div class="mt-2">
             <h5> <i class="fa-solid fa-location-dot text-primary"></i> Curtea Berarilor Timisoreana · Ploiești </h5>
+            <h5> <i class="fa-regular fa-money-bill-1"></i> Pret : 10 Lei </h5>
             </div>
             </div>
             <img class="event-img" height="250px" style="
