@@ -132,10 +132,12 @@ height:auto
 
 
 .container_evenimente {
-    width: 60%;
+    width: 100%;
     height: 250px;
     position: absolute;
     background: #72bcd4;
+    border-bottom-right-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
 }
 
 
@@ -161,6 +163,8 @@ height:auto
     position:absolute;
     bottom:0px;
     right:0px;
+    border-bottom-right-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
 }
     </style>
 <?php
@@ -258,8 +262,6 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             </div>
             </div>
             <img class="event-img" height="250px" style="
-    border-bottom-right-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
     " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
         </div>
         </div>
@@ -276,9 +278,8 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
             </div>
             </div>
             <img class="event-img" height="250px" style="
-    border-bottom-right-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
     " src="https://static.iabilet.ro/img/auto_resized/db/event/01/3b/d9/00000210222-fab2-506x716-bmm-052b81b9.jpg">
+        </div>
         </div>
         </div>
     </div>
