@@ -1,7 +1,7 @@
 <?php
 
 if(isset($_POST['logout'])){     //scriptul de logout
-  setcookie("user_name", "", time()- 120,'/');
+  setcookie("user_name", "", time()- 259200,'/');
   header('Location:index.php');
 }
 @session_start();

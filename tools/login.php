@@ -25,7 +25,7 @@ if ((mysqli_num_rows($result_email) > 0) && (mysqli_num_rows($result_password) >
      $result_user= mysqli_query($conexiune, $cerere_user);
   $row = mysqli_fetch_assoc($result_user);
   
-  setcookie("user_name", openssl_encrypt($row["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'), time()+ 120,'/');
+  setcookie("user_name", openssl_encrypt($row["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121'), time()+ 259200,'/');
 
   @session_start();
 

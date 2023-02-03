@@ -24,7 +24,7 @@ if(isset($_POST['delete_account'])) include 'tools/stergere_cont.php';
 
 
 if(isset($_POST['logout'])){     //scriptul de logout
-  setcookie("user_name", "guest", time()- 120,'/');
+  setcookie("user_name", "guest", time()- 259200,'/');
   header('Location:index.php');
 }
 if (isset($_COOKIE["user_name"])) include 'fragmente/navbar_user.php';

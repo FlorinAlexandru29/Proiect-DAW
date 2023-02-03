@@ -57,7 +57,7 @@ echo "File uploaded successfully. File path is: https://storage.googleapis.com/$
 }
 
 if(isset($_POST['logout'])){     //scriptul de logout
-  setcookie("user_name", "guest", time()- 120,'/');
+  setcookie("user_name", "guest", time()- 259200,'/');
   header('Location:index.php');
 }
 

@@ -47,7 +47,7 @@ if(isset($_POST['login-mobile'])){
     </head>
     <?php 
     if(isset($_POST['logout'])){     //scriptul de logout
-        setcookie("user_name", "guest", time()- 120,'/');
+        setcookie("user_name", "guest", time()- 259200,'/');
         header('Location:index.php');
       }
       
