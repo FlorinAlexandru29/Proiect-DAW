@@ -32,7 +32,8 @@
         echo "
         <li><a href='creare_postare.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Pagina</a></li>";
         if  ($rol=='admin')
-        echo "<li><a href='adaugare_trupa.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Trupa</a></li>";
+        echo "<li><a href='adaugare_trupa.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Trupa</a></li>
+        <li><a href='creare_cont.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Creare Cont (ADMIN ONLY) </a></li>";
 
                   }
         ?>
@@ -87,6 +88,9 @@
         if  ($rol=="admin")
         echo "<li class='nav-item'>
         <a href='adaugare_trupa.php' class='nav-link'>Adaugare Trupa</a>
+      </li>
+      <li class='nav-item'>
+        <a href='creare_cont.php' class='nav-link'>Creare Cont (ADMIN ONLY)</a>
       </li>";
 
                   }
