@@ -62,12 +62,22 @@
           <li class="nav-item">
             <a href="contact.php" class="nav-link">Contact</a>
         </li>
-        <li class="nav-item">
-          <a href="creare_postare.php" class="nav-link">Adaugare Pagina</a>
-        </li>
-        <li class="nav-item">
-          <a href="adaugare_trupa.php" class="nav-link">Adaugare Trupa</a>
-        </li>
+        <?php 
+        if ($rol['user']!="cititor")
+                  {
+        echo "
+        <li class='nav-item'>
+          <a href='creare_postare.php' class='nav-link'>Adaugare Pagina</a>
+        </li>";
+        if  ($rol['user']=="admin")
+        echo "<li class='nav-item'>
+        <a href='adaugare_trupa.php' class='nav-link'>Adaugare Trupa</a>
+      </li>";
+
+                  }
+        ?>
+        
+        
       </ul>
     <div id="div-login-mobile" class="container ms-0 position-absolute pe-5">
         <div class="mb-3">
