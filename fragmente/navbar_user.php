@@ -9,8 +9,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="btn px-3 btn-primary me-2">Home</a></li>
-          <li><a href="trupe.php" class="btn px-3 rounded-pill btn-outline-header me-2 ">Trupe</a></li>
           <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
+          <li><a href="creare_postare.php" class="btn px-3 rounded-pill btn-outline-header me-2">Adaugare Pagina</a></li>
+          <li><a href="adaugare_trupa.php" class="btn px-3 rounded-pill btn-outline-header me-2">Adaugare Trupa</a></li>
         </ul>
          <div class="dropdown text-end">
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,13 +59,14 @@
         <li class="nav-item">
           <a href="index.php" class="nav-link">Acasa</a>
         </li>
-        <li class="nav-item">
-          <a href="trupe.php" class="nav-link">Trupe</a>
-        </li>
-        <li class="nav-item">
           <li class="nav-item">
             <a href="contact.php" class="nav-link">Contact</a>
-          </li>
+        </li>
+        <li class="nav-item">
+          <a href="creare_postare.php" class="nav-link">Adaugare Pagina</a>
+        </li>
+        <li class="nav-item">
+          <a href="adaugare_trupa.php" class="nav-link">Adaugare Trupa</a>
         </li>
       </ul>
     <div id="div-login-mobile" class="container ms-0 position-absolute pe-5">
