@@ -28,12 +28,23 @@ if(isset($_POST['logout'])){     //scriptul de logout
               <div class="align-self-center mx-auto my-auto pt-1 pt-md-4 pb-4 div-creare-cont" style="width:40%;">
                 <hr class="my-4">
 
-                <form method="POST" id="form-adaugrare-trupa" action="adaugare_trupa.php" enctype='multipart/form-data'>
-                    <div class="mb-3 input-group-lg">
-                           
-                        <label for="band_name" class="form-label">Nume Trupa</label>
-                        <input type='text' id='band_name' class='form-control' name='band_name' required>
+                <form method="POST" id="password_management" action="user_management.php">
+                        <div class="mb-3 input-group-lg">
+                        <label for="band_name" class="form-label">Cripteaza Parola</label>
+                        <input type='text' id='criptare_parola' class='form-control' name="criptare_parola">
                         </div>
+
+                        <div class="mb-3 input-group-lg">
+                        <label for="band_name" class="form-label">Cripteaza Parola</label>
+                        <input type='text' id='decriptare_parola' class='form-control' name="decriptare_parola">
+                        </div>
+
+                        <hr class="my-4">
+                        <input type="submit" value="Afisare Parola" name="show_password" form="password_management" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                        </form>
+
+
+
 
                 <div class="mb-3 input-group-lg">
                     <label class="form-label">Selecteaza genul</label>
@@ -46,31 +57,11 @@ if(isset($_POST['logout'])){     //scriptul de logout
                       </select> 
                 </div>
 
-                    <div class="mb-3 input-group-lg">
-                           
-                        <label for="oras" class="form-label">Oras</label>
-                        <input type="text" class='form-control' id="oras" name="oras" required>
-                    </div>
-                    <div class="mb-3 input-group-lg">
-                           
-                        <label for="an_infiintare" class="form-label">An infiintare</label>
-                        <input type="number" class='form-control' id="an_infiintare" name="year" minlength="4" required>
-                    </div>
-                    <div class="mb-3 input-group-lg">
-                           
-                        <label for="descriere" class="form-label">Descriere</label>
-                        <textarea class='form-control' id="descriere" name="descriere" rows="5" required> </textarea>
-                    </div>
+                    
 
-                    <div class="input-group mb-3">
-                        
-                        <input type="file" name="file[]" class="form-control" id="file" multiple require>
-                        <label class="input-group-text" for="file">Upload</label>
-                      </div>
+                    
                 
-                    <hr class="my-4">
-                  <input type="submit" value="Adauga Trupa" name="add_band" form="form-adaugrare-trupa" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
-                </form>
+                    
                
                 
           </body>
@@ -82,29 +73,17 @@ if(isset($_POST['logout'])){     //scriptul de logout
 
 
 
-if(isset($_POST['submit'])){
-  if(isset($_POST['parola'])){
+if(isset($_POST['show_password'])){
+  if(isset($_POST['criptare_parola'])){
 
-  $encryption = openssl_encrypt($_POST['parola'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+  $encryption = openssl_encrypt($_POST['criptare_parola'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
 
   echo $encryption;}
 
-if(isset($_POST['parola_criptata'])){
+if(isset($_POST['decriptare_parola'])){
 
-$decryption=openssl_decrypt ($_POST['parola_criptata'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+$decryption=openssl_decrypt ($_POST['decriptare_parola'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
 echo $decryption;}
 
 }
 ?>
-        <html>
-        <body>
-        <FORM method="POST" action="decriptare.php">
-          Parola :
-          <INPUT TYPE="text" name="parola"> <br>
-          Parola Criptata
-          <INPUT TYPE="text" name="parola_criptata"> <br>
-          <INPUT TYPE="submit" name="submit" VALUE="send">
-       </form>
-       </body>
-      </html>
-      
