@@ -47,7 +47,7 @@
             <a href="#" class="d-block link-username text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php 
                 if ($row_user['profile_pic']==1) $poza_profil_logat= "https://storage.googleapis.com/lure-prod-bucket/profile_pic/".openssl_decrypt ($_COOKIE["user_name"], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121').".jpg";
-                  else $poza_profil_logat="resurse/profile_pics/guest.png";
+                  else $poza_profil_logat="../resurse/profile_pics/guest.png";
                               echo "<img src='".$poza_profil_logat."' width='40' height='40' class='rounded-circle me-2'>";                            
                           
                               if ($row_user['activat']==1) $cont_activat=1;
