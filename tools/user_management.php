@@ -47,13 +47,24 @@ if(isset($_POST['logout'])){     //scriptul de logout
 
 
                 <div class="mb-3 input-group-lg">
-                    <label class="form-label">Selecteaza genul</label>
-                    <select id="gen" name="gen" class="form-select" aria-label="Default select example">
-                        <option value="rock">rock</option>
-                        <option value="pop">pop</option>
-                        <option value="folk">folk</option>
-                        <option value="rap/hip-hop">rap/hip-hop</option>
-                        <option value="muzica electronica">muzica electronica</option>
+                    <label class="form-label">Selecteaza Userul</label>
+                    <select id="user" name="user" class="form-select">
+
+                    <?php
+
+$conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
+$cerere= "SELECT * FROM users WHERE rol != 'admin'";
+$result_user_management= mysqli_query($conexiune, $cerere);
+if (mysqli_num_rows($result_user_management) > 0){
+  while ($row_user_management = mysqli_fetch_assoc($result_user_management)) 
+  echo "<option value='".$row_user_management['user_name']."'>".$row_user_management['user_name']."</option>";}
+  mysqli_close($conexiune);
+                   
+                    ?>
                       </select> 
                 </div>
 
