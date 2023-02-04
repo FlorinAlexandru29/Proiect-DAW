@@ -7,7 +7,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li><a href="index.php" class="btn px-3 btn-primary me-2">Home</a></li>
-        <li><a href="trupe.php" class="btn px-3 rounded-pill btn-outline-header me-2 ">Trupe</a></li>
         <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
       </ul>
       
@@ -54,9 +53,6 @@
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
         <a href="index.php" class="nav-link">Acasa</a>
-      </li>
-      <li class="nav-item">
-        <a href="trupe.php" class="nav-link">Trupe</a>
       </li>
       <li class="nav-item">
         <li class="nav-item">

@@ -10,6 +10,7 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="btn px-3 btn-primary me-2">Home</a></li>
           <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
+
 <?php   
 
                 $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
@@ -33,7 +34,9 @@
         <li><a href='creare_postare.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Pagina</a></li>";
         if  ($rol=='admin')
         echo "<li><a href='adaugare_trupa.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Trupa</a></li>
-        <li><a href='creare_cont.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Creare Cont (ADMIN ONLY) </a></li>";
+        <li><a href='creare_cont.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Creare Cont (ADMIN ONLY) </a></li>
+        <li><a href='tools/user_management.php' class='btn px-3 rounded-pill btn-outline-header me-2'>User Management (ADMIN ONLY) </a></li>
+        ";
 
                   }
         ?>
@@ -91,7 +94,14 @@
       </li>
       <li class='nav-item'>
         <a href='creare_cont.php' class='nav-link'>Creare Cont (ADMIN ONLY)</a>
-      </li>";
+      </li>
+      <li class='nav-item'>
+        <a href='tools/user_management.php' class='nav-link'>User Management (ADMIN ONLY)</a>
+      </li>
+      
+      
+      
+      ";
 
                   }
         ?>
