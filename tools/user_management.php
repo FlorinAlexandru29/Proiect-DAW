@@ -100,10 +100,6 @@ $decryption=openssl_decrypt ($_POST['decriptare_parola'], "AES-128-CTR", "kalpsd
 echo $decryption;}
 
 if(isset($_POST['show_user_password'])){
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-    exit();
-  }
   $cerere= "SELECT password FROM users WHERE user_name = '".$_POST['user']."'";
   echo $cerere;
 }
