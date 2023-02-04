@@ -5,8 +5,8 @@ if(isset($_POST['logout'])){     //scriptul de logout
 }
     if (isset($_COOKIE["user_name"])) {
     
-      include 'fragmente/navbar_user.php';
-      if ($rol != "admin") header('Location:index.php');
+      include '../fragmente/navbar_user.php';
+      if ($rol != "admin") header('Location:../index.php');
     } ?>
 <!doctype html>
 <html lang="en">
