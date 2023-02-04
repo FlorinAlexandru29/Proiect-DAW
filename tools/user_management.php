@@ -107,11 +107,12 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
-  $cerere= "SELECT password FROM users WHERE user_name = '".$_POST['user']."'";
+  $cerere= "SELECT password,email FROM users WHERE user_name = '".$_POST['user']."'";
   $result_user_management_password= mysqli_query($conexiune, $cerere);
   $row_user_management_password = mysqli_fetch_assoc($result_user_management_password);
   $decryption=openssl_decrypt ($row_user_management_password['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
-  echo $decryption;
+  echo "Pentru userul ".$_POST['user']."<br> Email: ". $row_user_management_password['email']. "<br> Parola: ".
+  $decryption;
 
 }
 
