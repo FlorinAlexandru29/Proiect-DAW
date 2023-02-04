@@ -30,12 +30,12 @@ if(isset($_POST['logout'])){     //scriptul de logout
 
                 <form method="POST" id="password_management" action="user_management.php">
                         <div class="mb-3 input-group-lg">
-                        <label for="band_name" class="form-label">Cripteaza Parola</label>
+                        <label for="criptare_parola" class="form-label">Cripteaza Parola</label>
                         <input type='text' id='criptare_parola' class='form-control' name="criptare_parola">
                         </div>
 
                         <div class="mb-3 input-group-lg">
-                        <label for="band_name" class="form-label">Cripteaza Parola</label>
+                        <label for="decriptare_parola" class="form-label">Decripteaza Parola</label>
                         <input type='text' id='decriptare_parola' class='form-control' name="decriptare_parola">
                         </div>
 
