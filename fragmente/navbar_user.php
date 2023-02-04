@@ -8,8 +8,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="index.php" class="btn px-3 btn-primary me-2">Home</a></li>
-          <li><a href="contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
+          <li><a href="../index.php" class="btn px-3 btn-primary me-2">Home</a></li>
+          <li><a href="../contact.php" class="btn px-3 rounded-pill btn-outline-header me-2">Contact</a></li>
 
 <?php   
 
@@ -33,8 +33,8 @@
         echo "
         <li><a href='creare_postare.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Pagina</a></li>";
         if  ($rol=='admin')
-        echo "<li><a href='adaugare_trupa.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Trupa</a></li>
-        <li><a href='creare_cont.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Creare Cont (ADMIN ONLY) </a></li>
+        echo "<li><a href='../adaugare_trupa.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Adaugare Trupa</a></li>
+        <li><a href='../creare_cont.php' class='btn px-3 rounded-pill btn-outline-header me-2'>Creare Cont (ADMIN ONLY) </a></li>
         <li><a href='tools/user_management.php' class='btn px-3 rounded-pill btn-outline-header me-2'>User Management (ADMIN ONLY) </a></li>
         ";
 
@@ -76,24 +76,24 @@
     <div class="offcanvas-body">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a href="index.php" class="nav-link">Acasa</a>
+          <a href="../index.php" class="nav-link">Acasa</a>
         </li>
           <li class="nav-item">
-            <a href="contact.php" class="nav-link">Contact</a>
+            <a href="../contact.php" class="nav-link">Contact</a>
         </li>
         <?php 
         if ($rol!="cititor")
                   {
         echo "
         <li class='nav-item'>
-          <a href='creare_postare.php' class='nav-link'>Adaugare Pagina</a>
+          <a href='../creare_postare.php' class='nav-link'>Adaugare Pagina</a>
         </li>";
         if  ($rol=="admin")
         echo "<li class='nav-item'>
-        <a href='adaugare_trupa.php' class='nav-link'>Adaugare Trupa</a>
+        <a href='../adaugare_trupa.php' class='nav-link'>Adaugare Trupa</a>
       </li>
       <li class='nav-item'>
-        <a href='creare_cont.php' class='nav-link'>Creare Cont (ADMIN ONLY)</a>
+        <a href='../creare_cont.php' class='nav-link'>Creare Cont (ADMIN ONLY)</a>
       </li>
       <li class='nav-item'>
         <a href='tools/user_management.php' class='nav-link'>User Management (ADMIN ONLY)</a>

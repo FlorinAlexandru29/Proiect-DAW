@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['logout'])){     //scriptul de logout
   setcookie("user_name", "guest", time()- 259200,'/');
-  header('Location:index.php');
+  header('Location:../index.php');
 }
     if (isset($_COOKIE["user_name"])) {
     
@@ -71,6 +71,7 @@ if (mysqli_num_rows($result_user_management) > 0){
                     
                         <hr class="my-4">
                         <input type="submit" value="Afisare Parola User" name="show_user_password" form="form-user_management" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                    <br>
                         <input type="submit" value="Stergere User" name="delete_user" form="form-user_management" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
                         </form>
                     
@@ -113,7 +114,24 @@ if (mysqli_connect_errno()) {
   $decryption=openssl_decrypt ($row_user_management_password['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
   echo "Pentru userul ".$_POST['user']."<br> Email: ". $row_user_management_password['email']. "<br> Parola: ".
   $decryption;
+  mysqli_close($conexiune);
 
 }
+
+
+if(isset($_POST['delete_user'])){
+
+  
+  $conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+  }
+    $cerere= "DELETE FROM USERS where user_name = '".$_POST['user']."'";
+    mysqli_query($conexiune, $cerere);
+    echo "Userul ".$_POST['user']."a fost sters cu success! ";
+    mysqli_close($conexiune);
+  
+  }
 
 ?>
