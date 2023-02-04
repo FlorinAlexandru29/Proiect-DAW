@@ -100,8 +100,19 @@ $decryption=openssl_decrypt ($_POST['decriptare_parola'], "AES-128-CTR", "kalpsd
 echo $decryption;}
 }
 if(isset($_POST['show_user_password'])){
+
+  
+$conexiune=mysqli_connect('eu-cdbr-west-03.cleardb.net','bbd126d58cad2b','90feddf5','heroku_45e2f697954b823');
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
   $cerere= "SELECT password FROM users WHERE user_name = '".$_POST['user']."'";
-  echo $cerere;
+  $result_user_management_password= mysqli_query($conexiune, $cerere);
+  $row_user_management_password = mysqli_fetch_assoc($result_user_management_password);
+  $decryption=openssl_decrypt ($row_user_management_password['password'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
+  echo $decryption;
+
 }
 
 ?>
