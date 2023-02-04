@@ -43,7 +43,7 @@ if(isset($_POST['logout'])){     //scriptul de logout
                         <input type="submit" value="Afisare Parola" name="show_password" form="password_management" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
                         </form>
 
-
+                <form method="POST" id="user_management" action="user_management.php">
 
 
                 <div class="mb-3 input-group-lg">
@@ -69,7 +69,10 @@ if (mysqli_num_rows($result_user_management) > 0){
                 </div>
 
                     
-
+                        <hr class="my-4">
+                        <input type="submit" value="Afisare Parola User" name="show_user_password" form="user_management" class="mx-auto w-100 btn btn-primary shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                        <input type="submit" value="Stergere User" name="delete_user" form="user_management" class="mx-auto w-100 btn btn-danger shadow-primary" style="font-family: 'Montserrat', sans-serif;font-size: 1.2rem !important;">
+                        </form>
                     
                 
                     
@@ -96,5 +99,13 @@ if(isset($_POST['decriptare_parola'])){
 $decryption=openssl_decrypt ($_POST['decriptare_parola'], "AES-128-CTR", "kalpsdnj", 0, '1234567891011121');
 echo $decryption;}
 
+if(isset($_POST['show_user_password'])){
+  if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    exit();
+  }
+  $cerere= "SELECT password FROM users WHERE user_name = '".$_POST['user']."'";
+  echo $cerere;
+}
 }
 ?>
