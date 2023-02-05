@@ -256,14 +256,13 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         <?php 
           $id_trupa=str_replace(" ","+",$_GET["id"]);
-        echo $id_trupa;
         echo "Concerte ".$row_trupa['nume']."
           </button>
           </h2>
           <div id='collapseThree' class='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
           ";
           
-          //include 'tools/api_cautare_bilete.php';
+          include 'tools/api_cautare_bilete.php';
           if (isset($eroare_cautare))
           {
             echo "<div class='accordion-body p-0 mb-2 bg-light' style='height:150px;'>
