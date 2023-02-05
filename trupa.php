@@ -255,7 +255,7 @@ else {$pagina_request_login="trupa.php?id=".$_GET["id"];
     <h2 class="accordion-header" id="headingThree">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
         <?php 
-        $id_trupa=$_GET["id"];
+          $id_trupa=str_replace(" ","+",$_GET["id"]);
         echo $id_trupa;
         echo "Concerte ".$row_trupa['nume']."
           </button>
